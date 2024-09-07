@@ -443,9 +443,9 @@ end
 local opt = { noremap = true, silent = true }
 local k = vim.api.nvim_set_keymap
 
-k("n", ",,1", "<Cmd>Telescope find_files<CR>", opt)
-k("n", ",,2", "<Cmd>Telescope live_grep<CR>", opt)
-k("n", ",,3", "<Cmd>Telescope oldfiles<CR>", opt)
+k("n", "<Space><Space>1", "<Cmd>Telescope find_files<CR>", opt)
+k("n", "<Space><Space>2", "<Cmd>Telescope live_grep<CR>", opt)
+k("n", "<Space><Space>3", "<Cmd>Telescope oldfiles<CR>", opt)
 
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
