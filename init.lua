@@ -167,12 +167,12 @@ keymap.set('n','<A-n>n',':n<CR>')
 keymap.set('n','<A-p>p',':p<CR>')
 
 -- Navigation
-keymap.set('n',',nt',':NvimTreeToggle<CR>', { noremap = true, silent = true })
-keymap.set('n',',nf',':NvimTreeFindFile<CR>')
-keymap.set('n',',nc',':NvimTreeFocus<CR>')
--- keymap.set('n',',nt',':NERDTreeToggle<CR>')
-keymap.set('n',',db',':Dashboard<CR>')
-keymap.set('n',',tl',':Telescope<CR>')
+keymap.set('n','<Space>nt',':NvimTreeToggle<CR>')
+keymap.set('n','<Space>nf',':NvimTreeFindFile<CR>')
+keymap.set('n','<Space>nc',':NvimTreeFocus<CR>')
+-- keymap.set('n','<Space>nt',':NERDTreeToggle<CR>')
+keymap.set('n','<Space>db',':Dashboard<CR>')
+keymap.set('n','<Space>tl',':Telescope<CR>')
 
 local plugins = {
  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
