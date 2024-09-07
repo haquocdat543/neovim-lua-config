@@ -119,8 +119,8 @@ keymap.set('n','<Space>,c',':HopChar1<CR>')
 keymap.set('n','<Space>b',',,')
 
 -- Lazygit
-keymap.set('n',',ll',':Lazy<CR>')
-keymap.set('n',',lg',':LazyGit<CR>')
+keymap.set('n','<Space>ll',':Lazy<CR>')
+keymap.set('n','<Space>lg',':LazyGit<CR>')
 
 -- Mason ( LSP )
 keymap.set('n',',mm',':Mason<CR>')
