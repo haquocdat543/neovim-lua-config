@@ -12,8 +12,8 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = ',' -- for normal mode
-vim.g.maplocalleader = ',' -- for local leader mappings
+vim.g.mapleader = ' ' -- for normal mode
+vim.g.maplocalleader = ' ' -- for local leader mappings
 vim.opt.title = true
 vim.opt.hlsearch = true
 vim.opt.history = 200
@@ -32,16 +32,16 @@ vim.opt.cursorline = true
 local keymap = vim.keymap
 
 -- Spectre [ Search and replace ]
-vim.keymap.set('n', '<Space>S', '<cmd>lua require("spectre").toggle()<CR>', {
+vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', {
     desc = "Toggle Spectre",
 })
-vim.keymap.set('n', '<Space>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+vim.keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
     desc = "Search current word",
 })
-vim.keymap.set('v', '<Space>sw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+vim.keymap.set('v', '<leader>sw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
     desc = "Search current word",
 })
-vim.keymap.set('n', '<Space>sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
     desc = "Search on current file",
 })
 
@@ -55,26 +55,26 @@ keymap.set('n','-','<C-x>')
 keymap.set('n','<C-a>','gg<M-v>G')
 keymap.set('n','ZQ',':q!<CR>')
 keymap.set('n','ZZ',':wq!<CR>')
-keymap.set('n','<Space>hr',':%!xxd<CR> :set filetype=xxd<CR>')
-keymap.set('n','<Space>hw',':%!xxd -r<CR> :set binary<CR> :set filetype=<CR>')
-keymap.set('n','<Space>el','yypC')
-keymap.set('n','<Space>eL','yyPC')
-keymap.set('n','<Space>ra',':call ReplaceAll')
+keymap.set('n','<leader>hr',':%!xxd<CR> :set filetype=xxd<CR>')
+keymap.set('n','<leader>hw',':%!xxd -r<CR> :set binary<CR> :set filetype=<CR>')
+keymap.set('n','<leader>el','yypC')
+keymap.set('n','<leader>eL','yyPC')
+keymap.set('n','<leader>ra',':call ReplaceAll')
 
 -- Map ESC
 keymap.set('i','<C-x>','<Esc><Esc>')
 -- keymap.set('i', '<Esc>', '<Esc><Esc>')
 
 -- System - commands
-keymap.set('n','<Space>rg',':registers<CR>')
+keymap.set('n','<leader>rg',':registers<CR>')
 
 -- System - default file open
-keymap.set('n','<Space>en',':tabnew ~/.config/nvim/init.lua<CR>')
-keymap.set('n','<Space>ev',':tabnew ~/.vimrc<CR>')
-keymap.set('n','<Space>ea',':tabnew ~/.bashrc<CR>')
-keymap.set('n','<Space>ec',':tabnew ~/.ssh/config<CR>')
-keymap.set('n','<Space>nn',':set nopaste<CR>')
-keymap.set('n','<Space>nm',':set paste<CR>')
+keymap.set('n','<leader>en',':tabnew ~/.config/nvim/init.lua<CR>')
+keymap.set('n','<leader>ev',':tabnew ~/.vimrc<CR>')
+keymap.set('n','<leader>ea',':tabnew ~/.bashrc<CR>')
+keymap.set('n','<leader>ec',':tabnew ~/.ssh/config<CR>')
+keymap.set('n','<leader>nn',':set nopaste<CR>')
+keymap.set('n','<leader>nm',':set paste<CR>')
 
 -- System - navigation
 keymap.set('n','ss',':split<CR><C-w>w')
@@ -87,64 +87,64 @@ keymap.set('n','sk','<C-w>k')
 keymap.set('n','sl','<C-w>l')
 
 -- System - tab navigation
-keymap.set('n','<Space>te',':tabedit ')
-keymap.set('n','<Space>to',':tabnew ')
-keymap.set('n','<Space>tx',':tabclose<CR>')
-keymap.set('n','<Space>tn',':tabn<CR>')
-keymap.set('n','<Space>tp',':tabp<CR>')
-keymap.set('n','<Space>ev',':tabnew $MYVIMRC<CR>')
-keymap.set('n','<Space>ea',':tabnew $HOME/.bashrc<CR>')
-keymap.set('n','<Space>cr',':tabnew $HOME/.aws/credentials<CR>')
-keymap.set('n','<Space>cf',':tabnew $HOME/.aws/config<CR>')
+keymap.set('n','<leader>te',':tabedit ')
+keymap.set('n','<leader>to',':tabnew ')
+keymap.set('n','<leader>tx',':tabclose<CR>')
+keymap.set('n','<leader>tn',':tabn<CR>')
+keymap.set('n','<leader>tp',':tabp<CR>')
+keymap.set('n','<leader>ev',':tabnew $MYVIMRC<CR>')
+keymap.set('n','<leader>ea',':tabnew $HOME/.bashrc<CR>')
+keymap.set('n','<leader>cr',':tabnew $HOME/.aws/credentials<CR>')
+keymap.set('n','<leader>cf',':tabnew $HOME/.aws/config<CR>')
 
 -- System - terminal 
-keymap.set('n','<Space>tt',':ter<CR>')
+keymap.set('n','<leader>tt',':ter<CR>')
 
 -- Package manager
-keymap.set('n','<Space>ii',':PackerInstall<CR>')
-keymap.set('n','<Space>is',':PackerSync<CR>')
+keymap.set('n','<leader>ii',':PackerInstall<CR>')
+keymap.set('n','<leader>is',':PackerSync<CR>')
 
 -- Finder
-keymap.set('n','<Space>ff',':Files<CR>')
-keymap.set('n','<Space>fg',':Rg<CR>')
-keymap.set('n','<Space>fb',':Buffers<CR>')
-keymap.set('n','<Space>ft',':FloatermNew<CR>')
-keymap.set('n','<Space>tt',':terminal<CR>')
+keymap.set('n','<leader>ff',':Files<CR>')
+keymap.set('n','<leader>fg',':Rg<CR>')
+keymap.set('n','<leader>fb',':Buffers<CR>')
+keymap.set('n','<leader>ft',':FloatermNew<CR>')
+keymap.set('n','<leader>tt',':terminal<CR>')
 
 -- Hop ( movement )
-keymap.set('n','<Space><Space>g',':HopAnywhere<CR>')
-keymap.set('n','<Space><Space>h',':HopWord<CR>')
-keymap.set('n','<Space><Space>l',':HopLine<CR>')
-keymap.set('n','<Space><Space>c',':HopChar1<CR>')
-keymap.set('n','<Space>b',',,')
+keymap.set('n','<leader><leader>g',':HopAnywhere<CR>')
+keymap.set('n','<leader><leader>h',':HopWord<CR>')
+keymap.set('n','<leader><leader>l',':HopLine<CR>')
+keymap.set('n','<leader><leader>c',':HopChar1<CR>')
+keymap.set('n','<leader>b',',,')
 
 -- Lazygit
-keymap.set('n','<Space>ll',':Lazy<CR>')
-keymap.set('n','<Space>lg',':LazyGit<CR>')
+keymap.set('n','<leader>ll',':Lazy<CR>')
+keymap.set('n','<leader>lg',':LazyGit<CR>')
 
 -- Mason ( LSP )
-keymap.set('n','<Space>mm',':Mason<CR>')
-keymap.set('n','<Space>mi',':MasonInstall ')
+keymap.set('n','<leader>mm',':Mason<CR>')
+keymap.set('n','<leader>mi',':MasonInstall ')
 
 -- Fugitive git
-keymap.set('n','<Space>gs',':G status<CR>')
-keymap.set('n','<Space>ga',':G add ')
-keymap.set('n','<Space>gA',':G add .<CR>')
-keymap.set('n','<Space>gc',':G commit<CR>')
-keymap.set('n','<Space>Gc',':G add .<CR>:G commit<CR>')
-keymap.set('n','<Space>gC',':G checkout ')
-keymap.set('n','<Space>gb',':G branch<CR>')
-keymap.set('n','<Space>gB',':G branch ')
-keymap.set('n','<Space>gm',':G merge ')
-keymap.set('n','<Space>gp',':G pull<CR>')
-keymap.set('n','<Space>gP',':G push<CR>')
-keymap.set('n','<Space>gl',':G log<CR>')
+keymap.set('n','<leader>gs',':G status<CR>')
+keymap.set('n','<leader>ga',':G add ')
+keymap.set('n','<leader>gA',':G add .<CR>')
+keymap.set('n','<leader>gc',':G commit<CR>')
+keymap.set('n','<leader>Gc',':G add .<CR>:G commit<CR>')
+keymap.set('n','<leader>gC',':G checkout ')
+keymap.set('n','<leader>gb',':G branch<CR>')
+keymap.set('n','<leader>gB',':G branch ')
+keymap.set('n','<leader>gm',':G merge ')
+keymap.set('n','<leader>gp',':G pull<CR>')
+keymap.set('n','<leader>gP',':G push<CR>')
+keymap.set('n','<leader>gl',':G log<CR>')
 
 -- Neogit
-keymap.set('n','<Space>ng',':Neogit<CR>')
+keymap.set('n','<leader>ng',':Neogit<CR>')
 
 -- Git blame
-keymap.set('n','<Space>gb',':Git blame<CR>')
+keymap.set('n','<leader>gb',':Git blame<CR>')
 keymap.set('n','<C-b>b',':set backup<CR>')
 keymap.set('n','<C-h>h',':noh<CR>')
 keymap.set('n','<C-q>q',':q!<CR>')
@@ -160,19 +160,19 @@ keymap.set('n','<C-c>6',':.,.+s///g<Left><Left><Left><Left><Left>')
 keymap.set('n','<C-x>','<C-p><CR>')
 keymap.set('n','<A-j>',':m .+1<CR>==')
 keymap.set('n','<A-k>',':m .-2<CR>==')
-keymap.set('n','<Space>aa',':UltiSnipsEdit<CR>')
-keymap.set('n','<Space>ww',':w!<CR>')
+keymap.set('n','<leader>aa',':UltiSnipsEdit<CR>')
+keymap.set('n','<leader>ww',':w!<CR>')
 keymap.set('n','<C-s>s',':<ESC>w!<CR>')
 keymap.set('n','<A-n>n',':n<CR>')
 keymap.set('n','<A-p>p',':p<CR>')
 
 -- Navigation
-keymap.set('n','<Space>nt',':NvimTreeToggle<CR>')
-keymap.set('n','<Space>nf',':NvimTreeFindFile<CR>')
-keymap.set('n','<Space>nc',':NvimTreeFocus<CR>')
--- keymap.set('n','<Space>nt',':NERDTreeToggle<CR>')
-keymap.set('n','<Space>db',':Dashboard<CR>')
-keymap.set('n','<Space>tl',':Telescope<CR>')
+keymap.set('n','<leader>nt',':NvimTreeToggle<CR>')
+keymap.set('n','<leader>nf',':NvimTreeFindFile<CR>')
+keymap.set('n','<leader>nc',':NvimTreeFocus<CR>')
+-- keymap.set('n','<leader>nt',':NERDTreeToggle<CR>')
+keymap.set('n','<leader>db',':Dashboard<CR>')
+keymap.set('n','<leader>tl',':Telescope<CR>')
 
 local plugins = {
  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
@@ -277,7 +277,7 @@ require('git').setup({
 
   keymaps = {
     -- Open blame window
-    blame = "<Space>gb",
+    blame = "<leader>gb",
     -- Close blame window
     quit_blame = "q",
     -- Open blame commit
@@ -285,19 +285,19 @@ require('git').setup({
     -- Quit blame commit
     quit_blame_commit = "q",
     -- Open file/folder in git repository
-    browse = "<Space>go",
+    browse = "<leader>go",
     -- Open pull request of the current branch
-    open_pull_request = "<Space>gp",
+    open_pull_request = "<leader>gp",
     -- Create a pull request with the target branch is set in the `target_branch` option
-    create_pull_request = "<Space>gn",
+    create_pull_request = "<leader>gn",
     -- Opens a new diff that compares against the current index
-    diff = "<Space>gd",
+    diff = "<leader>gd",
     -- Close git diff
-    diff_close = "<Space>gD",
+    diff_close = "<leader>gD",
     -- Revert to the specific commit
-    revert = "<Space>gr",
+    revert = "<leader>gr",
     -- Revert the current file to the specific commit
-    revert_file = "<Space>gR",
+    revert_file = "<leader>gR",
   },
   -- Default target branch when create a pull request
   target_branch = "master",
@@ -443,9 +443,9 @@ end
 local opt = { noremap = true, silent = true }
 local k = vim.api.nvim_set_keymap
 
-k("n", "<Space><Space>1", "<Cmd>Telescope find_files<CR>", opt)
-k("n", "<Space><Space>2", "<Cmd>Telescope live_grep<CR>", opt)
-k("n", "<Space><Space>3", "<Cmd>Telescope oldfiles<CR>", opt)
+k("n", "<leader><leader>1", "<Cmd>Telescope find_files<CR>", opt)
+k("n", "<leader><leader>2", "<Cmd>Telescope live_grep<CR>", opt)
+k("n", "<leader><leader>3", "<Cmd>Telescope oldfiles<CR>", opt)
 
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
