@@ -123,8 +123,8 @@ keymap.set('n','<Space>ll',':Lazy<CR>')
 keymap.set('n','<Space>lg',':LazyGit<CR>')
 
 -- Mason ( LSP )
-keymap.set('n',',mm',':Mason<CR>')
-keymap.set('n',',mi',':MasonInstall ')
+keymap.set('n','<Space>mm',':Mason<CR>')
+keymap.set('n','<Space>mi',':MasonInstall ')
 
 -- Fugitive git
 keymap.set('n',',gs',':G status<CR>')
