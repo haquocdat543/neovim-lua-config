@@ -141,10 +141,10 @@ keymap.set('n','<Space>gP',':G push<CR>')
 keymap.set('n','<Space>gl',':G log<CR>')
 
 -- Neogit
-keymap.set('n',',ng',':Neogit<CR>')
+keymap.set('n','<Space>ng',':Neogit<CR>')
 
 -- Git blame
-keymap.set('n',',gb',':Git blame<CR>')
+keymap.set('n','<Space>gb',':Git blame<CR>')
 keymap.set('n','<C-b>b',':set backup<CR>')
 keymap.set('n','<C-h>h',':noh<CR>')
 keymap.set('n','<C-q>q',':q!<CR>')
@@ -160,8 +160,8 @@ keymap.set('n','<C-c>6',':.,.+s///g<Left><Left><Left><Left><Left>')
 keymap.set('n','<C-x>','<C-p><CR>')
 keymap.set('n','<A-j>',':m .+1<CR>==')
 keymap.set('n','<A-k>',':m .-2<CR>==')
-keymap.set('n',',aa',':UltiSnipsEdit<CR>')
-keymap.set('n',',ww',':w!<CR>')
+keymap.set('n','<Space>aa',':UltiSnipsEdit<CR>')
+keymap.set('n','<Space>ww',':w!<CR>')
 keymap.set('n','<C-s>s',':<ESC>w!<CR>')
 keymap.set('n','<A-n>n',':n<CR>')
 keymap.set('n','<A-p>p',':p<CR>')
