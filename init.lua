@@ -55,26 +55,26 @@ keymap.set('n','-','<C-x>')
 keymap.set('n','<C-a>','gg<M-v>G')
 keymap.set('n','ZQ',':q!<CR>')
 keymap.set('n','ZZ',':wq!<CR>')
-keymap.set('n','<Leader>hr',':%!xxd<CR> :set filetype=xxd<CR>')
-keymap.set('n','<Leader>hw',':%!xxd -r<CR> :set binary<CR> :set filetype=<CR>')
-keymap.set('n','<Leader>el','yypC')
-keymap.set('n','<Leader>eL','yyPC')
-keymap.set('n','<Leader>ra',':call ReplaceAll')
+keymap.set('n','<Space>hr',':%!xxd<CR> :set filetype=xxd<CR>')
+keymap.set('n','<Space>hw',':%!xxd -r<CR> :set binary<CR> :set filetype=<CR>')
+keymap.set('n','<Space>el','yypC')
+keymap.set('n','<Space>eL','yyPC')
+keymap.set('n','<Space>ra',':call ReplaceAll')
 
 -- Map ESC
 keymap.set('i','<C-x>','<Esc><Esc>')
 -- keymap.set('i', '<Esc>', '<Esc><Esc>')
 
 -- System - commands
-keymap.set('n',',rg',':registers<CR>')
+keymap.set('n','<Space>rg',':registers<CR>')
 
 -- System - default file open
-keymap.set('n','<Leader>en',':tabnew ~/.config/nvim/init.lua<CR>')
-keymap.set('n','<Leader>ev',':tabnew ~/.vimrc<CR>')
-keymap.set('n','<Leader>ea',':tabnew ~/.bashrc<CR>')
-keymap.set('n','<Leader>ec',':tabnew ~/.ssh/config<CR>')
-keymap.set('n',',nn',':set nopaste<CR>')
-keymap.set('n',',nm',':set paste<CR>')
+keymap.set('n','<Space>en',':tabnew ~/.config/nvim/init.lua<CR>')
+keymap.set('n','<Space>ev',':tabnew ~/.vimrc<CR>')
+keymap.set('n','<Space>ea',':tabnew ~/.bashrc<CR>')
+keymap.set('n','<Space>ec',':tabnew ~/.ssh/config<CR>')
+keymap.set('n','<Space>nn',':set nopaste<CR>')
+keymap.set('n','<Space>nm',':set paste<CR>')
 
 -- System - navigation
 keymap.set('n','ss',':split<CR><C-w>w')
