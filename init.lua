@@ -112,10 +112,10 @@ keymap.set('n','<Space>ft',':FloatermNew<CR>')
 keymap.set('n','<Space>tt',':terminal<CR>')
 
 -- Hop ( movement )
-keymap.set('n','<Space>,g',':HopAnywhere<CR>')
-keymap.set('n','<Space>,h',':HopWord<CR>')
-keymap.set('n','<Space>,l',':HopLine<CR>')
-keymap.set('n','<Space>,c',':HopChar1<CR>')
+keymap.set('n','<Space><Space>g',':HopAnywhere<CR>')
+keymap.set('n','<Space><Space>h',':HopWord<CR>')
+keymap.set('n','<Space><Space>l',':HopLine<CR>')
+keymap.set('n','<Space><Space>c',':HopChar1<CR>')
 keymap.set('n','<Space>b',',,')
 
 -- Lazygit
