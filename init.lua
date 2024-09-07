@@ -12,8 +12,8 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = ' ' -- for normal mode
-vim.g.maplocalleader = ' ' -- for local leader mappings
+vim.g.mapleader = " " -- for normal mode
+vim.g.maplocalleader = " " -- for local leader mappings
 vim.opt.title = true
 vim.opt.hlsearch = true
 vim.opt.history = 200
@@ -1067,7 +1067,7 @@ vim.cmd[[augroup filetypedetect
 autocmd BufNewFile,BufRead *.tmpl, if search('{{.\+}}', 'nw') | setlocal filetype=gotmpl | endif
 augroup END]]
 
-vim.cmd[[let g:vim_k8s_toggle_key_map = ',k9']]
+vim.g.vim_k8s_toggle_key_map = ',k9'
 
 vim.cmd[[function DisplayName(name)
   echom "Hello!  My name is:"
