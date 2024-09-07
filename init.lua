@@ -844,7 +844,13 @@ lspconfig["tailwindcss"].setup({
 })
 
 -- configure tailwindcss server
-lspconfig["go"].setup({
+lspconfig["gopls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+-- configure tailwindcss server
+lspconfig["gopls"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
