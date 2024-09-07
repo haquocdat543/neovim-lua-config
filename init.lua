@@ -98,25 +98,25 @@ keymap.set('n','<Space>cr',':tabnew $HOME/.aws/credentials<CR>')
 keymap.set('n','<Space>cf',':tabnew $HOME/.aws/config<CR>')
 
 -- System - terminal 
-keymap.set('n',',tt',':ter<CR>')
+keymap.set('n','<Space>tt',':ter<CR>')
 
 -- Package manager
-keymap.set('n',',ii',':PackerInstall<CR>')
-keymap.set('n',',is',':PackerSync<CR>')
+keymap.set('n','<Space>ii',':PackerInstall<CR>')
+keymap.set('n','<Space>is',':PackerSync<CR>')
 
 -- Finder
-keymap.set('n',',ff',':Files<CR>')
-keymap.set('n',',fg',':Rg<CR>')
-keymap.set('n',',fb',':Buffers<CR>')
-keymap.set('n',',ft',':FloatermNew<CR>')
-keymap.set('n',',tt',':terminal<CR>')
+keymap.set('n','<Space>ff',':Files<CR>')
+keymap.set('n','<Space>fg',':Rg<CR>')
+keymap.set('n','<Space>fb',':Buffers<CR>')
+keymap.set('n','<Space>ft',':FloatermNew<CR>')
+keymap.set('n','<Space>tt',':terminal<CR>')
 
 -- Hop ( movement )
-keymap.set('n',',,g',':HopAnywhere<CR>')
-keymap.set('n',',,h',':HopWord<CR>')
-keymap.set('n',',,l',':HopLine<CR>')
-keymap.set('n',',,c',':HopChar1<CR>')
-keymap.set('n',',b',',,')
+keymap.set('n','<Space>,g',':HopAnywhere<CR>')
+keymap.set('n','<Space>,h',':HopWord<CR>')
+keymap.set('n','<Space>,l',':HopLine<CR>')
+keymap.set('n','<Space>,c',':HopChar1<CR>')
+keymap.set('n','<Space>b',',,')
 
 -- Lazygit
 keymap.set('n',',ll',':Lazy<CR>')
