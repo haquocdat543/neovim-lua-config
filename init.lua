@@ -885,14 +885,16 @@ lspconfig["gopls"].setup({
   on_attach = on_attach,
 })
 
--- configure tailwindcss server
-lspconfig["gopls"].setup({
+-- configure clangd server
+lspconfig["clangd"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
 
 -- Mason and lsp configuration. See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#gopls
 require'lspconfig'.gopls.setup{}
+
+require'lspconfig'.clangd.setup{}
 
 require'lspconfig'.rust_analyzer.setup{
   settings = {
