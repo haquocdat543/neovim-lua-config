@@ -1114,7 +1114,7 @@ vim.cmd[[augroup filetypedetect
 autocmd BufNewFile,BufRead *.tmpl, if search('{{.\+}}', 'nw') | setlocal filetype=gotmpl | endif
 augroup END]]
 
-vim.g.vim_k8s_toggle_key_map = ',k9'
+vim.g.vim_k8s_toggle_key_map = ',kk'
 
 vim.cmd[[function DisplayName(name)
   echom "Hello!  My name is:"
