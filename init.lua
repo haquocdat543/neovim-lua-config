@@ -73,6 +73,7 @@ keymap.set('n','<leader>en',':tabnew ~/.config/nvim/init.lua<CR>')
 keymap.set('n','<leader>ev',':tabnew ~/.vimrc<CR>')
 keymap.set('n','<leader>ea',':tabnew ~/.bashrc<CR>')
 keymap.set('n','<leader>ec',':tabnew ~/.ssh/config<CR>')
+keymap.set('n','<leader>sc',':tabnew ~/preconfig/Suitcase/bash/scripts/BasicCalculator.sh<CR>')
 keymap.set('n','<leader>nn',':set nopaste<CR>')
 keymap.set('n','<leader>nm',':set paste<CR>')
 
