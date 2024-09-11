@@ -177,6 +177,13 @@ keymap.set('n','<leader>db',':Dashboard<CR>')
 keymap.set('n','<leader>tl',':Telescope<CR>')
 
 local plugins = {
+{
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+    -- use opts = {} for passing setup options
+    -- this is equivalent to setup({}) function
+},
  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 'diepm/vim-rest-console',
 'nvim-pack/nvim-spectre',
