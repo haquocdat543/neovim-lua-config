@@ -177,6 +177,7 @@ keymap.set('n','<leader>db',':Dashboard<CR>')
 keymap.set('n','<leader>tl',':Telescope<CR>')
 
 local plugins = {
+'brenoprata10/nvim-highlight-colors',
 {
     'windwp/nvim-autopairs',
     event = "InsertEnter",
@@ -280,6 +281,11 @@ local status, lualine = pcall(require, "lualine")
 if not status then
   return
 end
+
+-- Ensure termguicolors is enabled if not already
+vim.opt.termguicolors = true
+
+require('nvim-highlight-colors').setup({})
 
 require('git').setup({
   default_mappings = true, -- NOTE: `quit_blame` and `blame_commit` are still merged to the keymaps even if `default_mappings = false`
