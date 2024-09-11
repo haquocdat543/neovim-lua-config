@@ -893,6 +893,12 @@ lspconfig["groovyls"].setup({
   on_attach = on_attach,
 })
 
+-- configure gradle ls language server
+lspconfig["gradle_ls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
 -- configure clangd server
 lspconfig["clangd"].setup({
   capabilities = capabilities,
@@ -903,6 +909,8 @@ lspconfig["clangd"].setup({
 require'lspconfig'.gopls.setup{}
 
 require'lspconfig'.clangd.setup{}
+
+require'lspconfig'.gradle_ls.setup{}
 
 require'lspconfig'.groovyls.setup{}
 
