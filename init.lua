@@ -887,6 +887,12 @@ lspconfig["gopls"].setup({
   on_attach = on_attach,
 })
 
+-- configure groovy language server
+lspconfig["groovyls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
 -- configure clangd server
 lspconfig["clangd"].setup({
   capabilities = capabilities,
@@ -897,6 +903,8 @@ lspconfig["clangd"].setup({
 require'lspconfig'.gopls.setup{}
 
 require'lspconfig'.clangd.setup{}
+
+require'lspconfig'.groovyls.setup{}
 
 require'lspconfig'.rust_analyzer.setup{
   settings = {
