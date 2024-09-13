@@ -916,6 +916,12 @@ lspconfig["gopls"].setup({
   on_attach = on_attach,
 })
 
+-- configure jsonls server
+lspconfig["jsonls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
 -- configure groovy language server
 lspconfig["groovyls"].setup({
   capabilities = capabilities,
@@ -938,6 +944,8 @@ lspconfig["clangd"].setup({
 require'lspconfig'.gopls.setup{}
 
 require'lspconfig'.clangd.setup{}
+
+require'lspconfig'.jsonls.setup{}
 
 require'lspconfig'.gradle_ls.setup{}
 
