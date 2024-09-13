@@ -177,6 +177,7 @@ keymap.set('n','<leader>db',':Dashboard<CR>')
 keymap.set('n','<leader>tl',':Telescope<CR>')
 
 local plugins = {
+"p00f/nvim-ts-rainbow",
 'brenoprata10/nvim-highlight-colors',
 {
     'windwp/nvim-autopairs',
@@ -281,6 +282,21 @@ local status, lualine = pcall(require, "lualine")
 if not status then
   return
 end
+
+require("nvim-treesitter.configs").setup {
+  highlight = {
+      -- ...
+  },
+  -- ...
+  rainbow = {
+    enable = true,
+    -- disable = { "jsx", "cpp" }, list of languages you want to disable the plugin for
+    extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
+    max_file_lines = nil, -- Do not enable for files with more than n lines, int
+    -- colors = {}, -- table of hex strings
+    -- termcolors = {} -- table of colour name strings
+  }
+}
 
 -- Ensure termguicolors is enabled if not already
 vim.opt.termguicolors = true
