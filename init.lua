@@ -177,6 +177,8 @@ keymap.set('n','<leader>db',':Dashboard<CR>')
 keymap.set('n','<leader>tl',':Telescope<CR>')
 
 local plugins = {
+"fsouza/prettierd",
+"jose-elias-alvarez/null-ls.nvim",
 "p00f/nvim-ts-rainbow",
 'brenoprata10/nvim-highlight-colors',
 {
@@ -282,6 +284,28 @@ local status, lualine = pcall(require, "lualine")
 if not status then
   return
 end
+
+-- Prettier configuration
+local prettier = {
+  formatCommand = 'prettierd "${INPUT}"',
+  formatStdin = true,
+  env = {
+    string.format('PRETTIERD_DEFAULT_CONFIG=%s', vim.fn.expand('~/.config/nvim/utils/linter-config/.prettierrc.json')),
+  },
+}
+
+-- Key mapping with anonymous function to run Prettier formatting
+vim.api.nvim_set_keymap('n', '<leader>p', '', {
+  noremap = true,
+  silent = true,
+  callback = function()
+    vim.lsp.buf.format({
+      async = true,
+      cmd = prettier.formatCommand,
+      env = prettier.env,
+    })
+  end
+})
 
 require("nvim-treesitter.configs").setup {
   highlight = {
@@ -643,8 +667,11 @@ require('nvim-treesitter.configs').setup {
   -- ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'help', 'vim' },
 
   -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
+  rainbow = {
+    enable = false, -- disable rainbow for now
+  },
   auto_install = true,
-  ensure_installed = { "c", "lua", "vim", "vimdoc", "helm", "dockerfile", "yaml", "gotmpl" },
+  ensure_installed = { "javascript", "c", "lua", "vim", "vimdoc", "helm", "dockerfile", "yaml", "gotmpl" },
   -- open_on_setup = true,
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
@@ -893,7 +920,7 @@ lspconfig["html"].setup({
 })
 
 -- configure typescript server with plugin
-lspconfig["tsserver"].setup({
+lspconfig["ts_ls"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
@@ -912,6 +939,12 @@ lspconfig["tailwindcss"].setup({
 
 -- configure tailwindcss server
 lspconfig["gopls"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+-- configure tailwindcss server
+lspconfig["bufls"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
@@ -944,6 +977,10 @@ lspconfig["clangd"].setup({
 require'lspconfig'.gopls.setup{}
 
 require'lspconfig'.clangd.setup{}
+
+require'lspconfig'.efm.setup{}
+
+require'lspconfig'.bufls.setup{}
 
 require'lspconfig'.jsonls.setup{}
 
@@ -1047,7 +1084,7 @@ mason.setup({
 mason_lspconfig.setup({
   -- list of servers for mason to install
   ensure_installed = {
-    "tsserver",
+    "ts_ls",
     "html",
     "cssls",
     "tailwindcss",
@@ -1073,6 +1110,13 @@ mason_tool_installer.setup({
     "black", -- python formatter
     "pylint", -- python linter
     "eslint_d", -- js linter
+  },
+})
+
+local null_ls = require("null-ls")
+null_ls.setup({
+  sources = {
+    null_ls.builtins.formatting.prettierd,
   },
 })
 
