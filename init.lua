@@ -1017,6 +1017,8 @@ require 'lspconfig'.efm.setup {
 
 require'lspconfig'.bashls.setup{}
 
+require'lspconfig'.sqls.setup{}
+
 require 'lspconfig'.bufls.setup {}
 
 require 'lspconfig'.jsonls.setup {}
