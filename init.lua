@@ -976,6 +976,12 @@ lspconfig["jsonls"].setup({
 	on_attach = on_attach,
 })
 
+-- configure terraformls server
+lspconfig["terraformls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
 -- configure groovy language server
 lspconfig["groovyls"].setup({
 	capabilities = capabilities,
@@ -993,6 +999,11 @@ lspconfig["clangd"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
+-- configure clangd server
+lspconfig["pyright"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
 
 -- Mason and lsp configuration. See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#gopls
 require 'lspconfig'.gopls.setup {}
@@ -1001,7 +1012,7 @@ require 'lspconfig'.clangd.setup {}
 
 require 'lspconfig'.efm.setup {
 	init_options = { documentFormatting = true },
-	filetypes = { 'python', 'cpp', 'lua', 'go', 'rust', 'bash', 'sh' },
+	filetypes = { 'python', 'cpp', 'lua', 'go', 'rust', 'bash', 'sh', 'groovy' },
 	settings = {
 		rootMarkers = { ".git/" },
 		languages = {
@@ -1022,6 +1033,10 @@ require'lspconfig'.bashls.setup{}
 require'lspconfig'.sqls.setup{}
 
 require 'lspconfig'.bufls.setup {}
+
+require 'lspconfig'.pyright.setup {}
+
+require 'lspconfig'.terraformls.setup {}
 
 require 'lspconfig'.jsonls.setup {}
 
