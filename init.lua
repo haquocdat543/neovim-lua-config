@@ -63,7 +63,9 @@ keymap.set('n', '<leader>ra', ':call ReplaceAll')
 
 -- Map ESC
 keymap.set('i', '<C-x>', '<Esc><Esc>')
--- keymap.set('i', '<Esc>', '<Esc><Esc>')
+
+-- Nvimtree - resize
+keymap.set('n', '<leader><leader>v', ':vertical res ')
 
 -- System - commands
 keymap.set('n', '<leader>rg', ':registers<CR>')
@@ -999,6 +1001,13 @@ lspconfig["clangd"].setup({
 	capabilities = capabilities,
 	on_attach = on_attach,
 })
+
+-- configure sqlls server
+lspconfig["sqlls"].setup({
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+
 -- configure clangd server
 lspconfig["pyright"].setup({
 	capabilities = capabilities,
@@ -1030,7 +1039,7 @@ require 'lspconfig'.efm.setup {
 
 require'lspconfig'.bashls.setup{}
 
-require'lspconfig'.sqls.setup{}
+require'lspconfig'.sqlls.setup{}
 
 require 'lspconfig'.bufls.setup {}
 
