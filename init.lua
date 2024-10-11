@@ -49,6 +49,9 @@ vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search(
 keymap.set('n', ',xr', ':call VrcQuery()<CR>')
 
 -- System
+keymap.set('n', '<leader>ya', 'gg"*yG\'\'')
+
+-- System
 keymap.set('n', ',ch', ':checkhealth ')
 keymap.set('n', '+', '<C-a>')
 keymap.set('n', '-', '<C-x>')
