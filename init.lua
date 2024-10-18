@@ -48,6 +48,9 @@ vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search(
 -- Query { Rest API ]
 keymap.set('n', ',xr', ':call VrcQuery()<CR>')
 
+-- Markdown
+keymap.set('n', '<leader>md', ':MarkdownPreview<CR>')
+
 -- System
 keymap.set('n', '<leader>pa', '"*p')
 keymap.set('n', '<leader>ya', 'gg"*yG\'\'')
