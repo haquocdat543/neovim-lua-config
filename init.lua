@@ -51,6 +51,9 @@ keymap.set('n', ',xr', ':call VrcQuery()<CR>')
 -- Markdown
 keymap.set('n', '<leader>md', ':MarkdownPreview<CR>')
 
+-- Kubernetes
+keymap.set('n', '<leader>kk', '<cmd>lua require("kubectl").toggle()<CR>')
+
 -- System
 keymap.set('n', '<leader>pa', '"*p')
 keymap.set('n', '<leader>ya', 'gg"*yG\'\'')
@@ -186,6 +189,15 @@ keymap.set('n', '<leader>db', ':Dashboard<CR>')
 keymap.set('n', '<leader>tl', ':Telescope<CR>')
 
 local plugins = {
+	"Ramilito/kubectl.nvim",
+	{
+		{
+			"ramilito/kubectl.nvim",
+			config = function()
+				require("kubectl").setup()
+			end,
+		},
+	},
 	"fsouza/prettierd",
 	"jose-elias-alvarez/null-ls.nvim",
 	"p00f/nvim-ts-rainbow",
@@ -302,14 +314,14 @@ local shfmt = {
 
 -- gofmt configuration for Go
 local gofmt = {
-    formatCommand = "gofmt",
-    formatStdin = true
+	formatCommand = "gofmt",
+	formatStdin = true
 }
 
 -- rustfmt configuration for Rust
 local rustfmt = {
-    formatCommand = "rustfmt",
-    formatStdin = true
+	formatCommand = "rustfmt",
+	formatStdin = true
 }
 
 -- Prettier configuration
@@ -808,11 +820,11 @@ local lualine_nightfly = require("lualine.themes.catppuccin")
 
 -- new colors for theme
 -- local new_colors = {
-	-- blue = "#65D1FF",
-	-- green = "#3EFFDC",
-	-- violet = "#FF61EF",
-	-- yellow = "#FFDA7B",
-	-- black = "#000000",
+-- blue = "#65D1FF",
+-- green = "#3EFFDC",
+-- violet = "#FF61EF",
+-- yellow = "#FFDA7B",
+-- black = "#000000",
 -- }
 
 -- change nightlfy theme colors
@@ -820,11 +832,11 @@ local lualine_nightfly = require("lualine.themes.catppuccin")
 -- lualine_nightfly.insert.a.bg = new_colors.green
 -- lualine_nightfly.visual.a.bg = new_colors.violet
 -- lualine_nightfly.command = {
-	-- a = {
-		-- gui = "bold",
-		-- bg = new_colors.yellow,
-		-- fg = new_colors.black, -- black
-	-- },
+-- a = {
+-- gui = "bold",
+-- bg = new_colors.yellow,
+-- fg = new_colors.black, -- black
+-- },
 -- }
 
 -- configure lualine with modified theme
@@ -1044,9 +1056,9 @@ require 'lspconfig'.efm.setup {
 	}
 }
 
-require'lspconfig'.bashls.setup{}
+require 'lspconfig'.bashls.setup {}
 
-require'lspconfig'.sqlls.setup{}
+require 'lspconfig'.sqlls.setup {}
 
 require 'lspconfig'.bufls.setup {}
 
