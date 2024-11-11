@@ -57,6 +57,8 @@ keymap.set('n', '<leader>kk', '<cmd>lua require("kubectl").toggle()<CR>')
 -- System
 keymap.set('n', '<leader>pa', '"*p')
 keymap.set('n', '<leader>ya', 'gg"*yG\'\'')
+keymap.set('n', '<leader>el', 'yypC')
+keymap.set('n', '<leader>eL', 'yyPC')
 
 -- System
 keymap.set('n', ',ch', ':checkhealth ')
