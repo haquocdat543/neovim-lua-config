@@ -45,6 +45,9 @@ vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search(
 	desc = "Search on current file",
 })
 
+-- Dadbod UI
+keymap.set('n', 'dt', ':DBUIToggle')
+
 -- Query { Rest API ]
 keymap.set('n', ',xr', ':call VrcQuery()<CR>')
 
@@ -192,6 +195,8 @@ keymap.set('n', '<leader>db', ':Dashboard<CR>')
 keymap.set('n', '<leader>tl', ':Telescope<CR>')
 
 local plugins = {
+	"tpope/vim-dadbod",
+        "kristijanhusak/vim-dadbod-ui",
 	"Ramilito/kubectl.nvim",
 	{
 		{

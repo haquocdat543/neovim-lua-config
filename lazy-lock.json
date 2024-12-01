@@ -53,6 +53,8 @@
   "tokyonight.nvim": { "branch": "main", "commit": "2e1daa1d164ad8cc3e99b44ca68e990888a66038" },
   "typescript.nvim": { "branch": "main", "commit": "4de85ef699d7e6010528dcfbddc2ed4c2c421467" },
   "ultisnips": { "branch": "master", "commit": "49dc8cb2086db19d385791c8e1635723b0fd95c7" },
+  "vim-dadbod": { "branch": "master", "commit": "fe5a55e92b2dded7c404006147ef97fb073d8b1b" },
+  "vim-dadbod-ui": { "branch": "master", "commit": "28a16902cb2134c934b85da5250033ee43b0dee5" },
   "vim-floaterm": { "branch": "master", "commit": "4e28c8dd0271e10a5f55142fb6fe9b1599ee6160" },
   "vim-fugitive": { "branch": "master", "commit": "d4877e54cef67f5af4f950935b1ade19ed6b7370" },
   "vim-gitgutter": { "branch": "main", "commit": "7b0b5098e3e57be86bb96cfbf2b8902381eef57c" },
