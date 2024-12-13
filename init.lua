@@ -45,9 +45,6 @@ vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search(
 	desc = "Search on current file",
 })
 
--- Dadbod UI
-keymap.set('n', '<leader>dt', ':DBUIToggle')
-
 -- Query { Rest API ]
 keymap.set('n', ',xr', ':call VrcQuery()<CR>')
 
@@ -195,6 +192,38 @@ keymap.set('n', '<leader>db', ':Dashboard<CR>')
 keymap.set('n', '<leader>tl', ':Telescope<CR>')
 
 local plugins = {
+	{
+		"mikavilpas/yazi.nvim",
+		event = "VeryLazy",
+		keys = {
+			-- 👇 in this section, choose your own keymappings!
+			{
+				"<leader>-",
+				"<cmd>Yazi<cr>",
+				desc = "Open yazi at the current file",
+			},
+			{
+				-- Open in the current working directory
+				"<leader>cw",
+				"<cmd>Yazi cwd<cr>",
+				desc = "Open the file manager in nvim's working directory",
+			},
+			{
+				-- NOTE: this requires a version of yazi that includes
+				-- https://github.com/sxyazi/yazi/pull/1305 from 2024-07-18
+				'<c-up>',
+				"<cmd>Yazi toggle<cr>",
+				desc = "Resume the last yazi session",
+			},
+		},
+		opts = {
+			-- if you want to open yazi instead of netrw, see below for more info
+			open_for_directories = false,
+			keymaps = {
+				show_help = '<f1>',
+			},
+		},
+	},
 	{
 		"sphamba/smear-cursor.nvim",
 		opts = {
@@ -1014,12 +1043,6 @@ lspconfig["gopls"].setup({
 	on_attach = on_attach,
 })
 
--- configure tailwindcss server
-lspconfig["bufls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
 -- configure jsonls server
 lspconfig["jsonls"].setup({
 	capabilities = capabilities,
@@ -1088,8 +1111,6 @@ require 'lspconfig'.efm.setup {
 require 'lspconfig'.bashls.setup {}
 
 require 'lspconfig'.sqlls.setup {}
-
-require 'lspconfig'.bufls.setup {}
 
 require 'lspconfig'.pyright.setup {}
 
