@@ -45,6 +45,9 @@ vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search(
 	desc = "Search on current file",
 })
 
+-- Snippets
+keymap.set('n', '<leader>sg', ':Snippets<CR>') -- sg = Suggest
+
 -- Query { Rest API ]
 keymap.set('n', ',xr', ':call VrcQuery()<CR>')
 
