@@ -45,7 +45,11 @@ vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search(
 	desc = "Search on current file",
 })
 
--- Snippets
+-- Diff
+keymap.set('n', '<leader>dd', ':windo diffthis<CR>')
+keymap.set('n', '<leader>do', ':diffoff!<CR>')
+
+-- Snippet
 keymap.set('n', '<leader>sg', ':Snippets<CR>') -- sg = Suggest
 
 -- Query { Rest API ]
