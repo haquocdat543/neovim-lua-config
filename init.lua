@@ -46,6 +46,7 @@ vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search(
 })
 
 -- Terminal
+keymap.set('n', '<leader>tn', ':split<CR><C-w>w:term<CR>i')
 keymap.set('n', '<leader>tm', ':split<CR><C-w>w:horizontal resize -10<CR>:term<CR>i')
 
 -- Diff
