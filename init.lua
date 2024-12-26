@@ -201,8 +201,10 @@ keymap.set('n', '<leader>nc', ':NvimTreeFocus<CR>')
 -- keymap.set('n','<leader>nt',':NERDTreeToggle<CR>')
 keymap.set('n', '<leader>db', ':Dashboard<CR>')
 keymap.set('n', '<leader>tl', ':Telescope<CR>')
+keymap.set('n', '<leader><leader>4', ':Telescope projects<CR>:NvimTreeToggle<CR>')
 
 local plugins = {
+	'ahmedkhalf/project.nvim',
 	{
 		'nvim-orgmode/orgmode',
 		event = 'VeryLazy',
@@ -394,6 +396,12 @@ if not status then
 	return
 end
 
+require("project_nvim").setup {
+-- your configuration comes here
+-- or leave it empty to use the default settings
+-- refer to the configuration section below
+}
+
 -- shfmt configuration for Bash
 local shfmt = {
 	formatCommand = "shfmt -i 2 -ci -s",
@@ -513,6 +521,8 @@ require('tabnine').setup({
 -- })
 --
 require('spectre').setup()
+
+require('telescope').load_extension('projects')
 
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
@@ -652,6 +662,7 @@ require("nvim-tree").setup({
 	update_focused_file = {
 		enable = true, -- Enable updating the focused file
 		update_cwd = true, -- Change the root directory of the tree to the current file's directory
+		update_root = true, -- Change the root directory of the tree to the current file's directory
 		ignore_list = {}
 	},
 	sort = {
@@ -1419,3 +1430,11 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = "markdown",
 	command = "setlocal conceallevel=0"
 })
+
+-- Automatically refresh NvimTree whenever a file is opened
+vim.cmd([[
+  augroup NvimTreeAutoReload
+    autocmd!
+    autocmd BufEnter * if &buftype != 'terminal' | if &ft != 'NvimTree' | NvimTreeRefresh | endif
+  augroup END
+]])
