@@ -201,9 +201,11 @@ keymap.set('n', '<leader>nc', ':NvimTreeFocus<CR>')
 -- keymap.set('n','<leader>nt',':NERDTreeToggle<CR>')
 keymap.set('n', '<leader>db', ':Dashboard<CR>')
 keymap.set('n', '<leader>tl', ':Telescope<CR>')
-keymap.set('n', '<leader><leader>4', ':Telescope projects<CR>:NvimTreeToggle<CR>')
+keymap.set('n', '<leader><leader>4', ':Telescope projects<CR>')
+keymap.set('n', '<leader><leader>5', ':Telescope telescope-tabs list_tabs<CR>')
 
 local plugins = {
+	'LukasPietzschmann/telescope-tabs',
 	'ahmedkhalf/project.nvim',
 	{
 		'nvim-orgmode/orgmode',
