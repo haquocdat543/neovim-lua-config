@@ -46,7 +46,7 @@ vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search(
 })
 
 -- Terminal
-keymap.set('n', '<leader>tm', ':split<CR><C-w>w:horizontal resize -10<CR>:term<CR>')
+keymap.set('n', '<leader>tm', ':split<CR><C-w>w:horizontal resize -10<CR>:term<CR>i')
 
 -- Diff
 keymap.set('n', '<leader>dd', ':windo diffthis<CR>')
@@ -1344,25 +1344,25 @@ vim.cmd([[let g:lazygit_config_file_path = '' " custom config file path ]])
 vim.cmd([[set viminfo='100,<1000000,s100000,h]])
 vim.cmd([[autocmd FileType markdown let g:indentLine_enabled=0]])
 
-vim.cmd [[autocmd BufEnter * lcd %:p:h]]
+vim.cmd [[autocmd BufEnter * if &buftype != 'terminal' | lcd %:p:h]]
 -- vim.cmd[[autocmd VimEnter * NERDTree | wincmd p]]
 -- vim.cmd[[autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif]]
 -- vim.cmd[[autocmd VimEnter * if argc() == 0 | NERDTree | endif]]
 
 -- Auto open nvim-tree on startup
 vim.cmd [[autocmd VimEnter * NvimTreeOpen | wincmd p]]
-vim.cmd [[autocmd bufenter * if (winnr("$") == 1 && &filetype == "nerdtree") | q | endif]]
+vim.cmd [[autocmd bufenter * if &buftype != 'terminal' | if (winnr("$") == 1 && &filetype == "nerdtree") | q | endif]]
 
 vim.cmd([[
   augroup NvimTree
     autocmd!
     autocmd VimEnter * ++nested if argc() == 0 | NvimTreeOpen | endif
-    autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == '' | NvimTreeOpen | wincmd p | endif
+    autocmd BufEnter * ++nested if &buftype != 'terminal' | if winnr('$') == 1 && bufname() == '' | NvimTreeOpen | wincmd p | endif
   augroup end
 ]])
 
 -- Auto close nvim-tree if it's the last window
-vim.cmd [[ autocmd BufEnter * if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif ]]
+vim.cmd [[ autocmd BufEnter * if &buftype != 'terminal' | if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif ]]
 
 vim.cmd [[
 
@@ -1410,7 +1410,7 @@ vim.cmd [[
 
 -- Automatically open Nvim Tree when a directory is opened
 vim.cmd([[
-  autocmd BufEnter * if &ft ==# 'netrw' | silent! lua require'nvim-tree'.find_file(true) | endif
+  autocmd BufEnter * if &buftype != 'terminal' | if &ft ==# 'netrw' | silent! lua require'nvim-tree'.find_file(true) | endif
 ]])
 
 -- Enable concealment for markdown files
