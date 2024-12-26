@@ -1356,55 +1356,18 @@ vim.cmd([[let g:lazygit_config_file_path = '' " custom config file path ]])
 vim.cmd([[set viminfo='100,<1000000,s100000,h]])
 vim.cmd([[autocmd FileType markdown let g:indentLine_enabled=0]])
 
-vim.cmd [[autocmd BufEnter * if &buftype != 'terminal' | lcd %:p:h]]
--- vim.cmd[[autocmd VimEnter * NERDTree | wincmd p]]
--- vim.cmd[[autocmd bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif]]
--- vim.cmd[[autocmd VimEnter * if argc() == 0 | NERDTree | endif]]
+vim.api.nvim_create_augroup('TestBufEnterCondition', { clear = true })
 
--- Auto open nvim-tree on startup
-vim.cmd [[autocmd VimEnter * NvimTreeOpen | wincmd p]]
-vim.cmd [[autocmd bufenter * if &buftype != 'terminal' | if (winnr("$") == 1 && &filetype == "nerdtree") | q | endif]]
-
-vim.cmd([[
-  augroup NvimTree
-    autocmd!
-    autocmd VimEnter * ++nested if argc() == 0 | NvimTreeOpen | endif
-    autocmd BufEnter * ++nested if &buftype != 'terminal' | if winnr('$') == 1 && bufname() == '' | NvimTreeOpen | wincmd p | endif
-  augroup end
-]])
-
--- Auto close nvim-tree if it's the last window
-vim.cmd [[ autocmd BufEnter * if &buftype != 'terminal' | if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif ]]
-
-vim.cmd [[
-
-augroup Mkdir
-  autocmd!
-  autocmd BufWritePre * call mkdir(expand("<afile>:p:h"), "p")
-augroup END
-
-]]
-
-vim.cmd [[augroup filetypedetect
-autocmd BufNewFile,BufRead *.tmpl, if search('{{.\+}}', 'nw') | setlocal filetype=gotmpl | endif
-augroup END]]
+vim.api.nvim_create_autocmd('VimEnter', {
+  group = 'TestBufEnterCondition',
+  callback = function()
+    -- Open NvimTree
+    vim.cmd('NvimTreeOpen')
+    vim.cmd('wincmd w')
+  end,
+})
 
 vim.g.vim_k8s_toggle_key_map = ',kk'
-
-vim.cmd [[function DisplayName(name)
-  echom "Hello!  My name is:"
-  echom a:name
-endfunction]]
-vim.cmd [[function ReplaceAll(old_text, new_text)
-  execute '%s/' . a:old_text . '/' . a:new_text . '/gc | update'
-endfunction]]
-
-vim.g.vrc_set_default_mapping = 0
-vim.g.vrc_response_default_content_type = 'application/json'
-vim.g.vrc_output_butter_name = '_OUTPUT.json'
-vim.g.vrc_auto_format_response_patterns = {
-	json = 'jq'
-}
 
 -- vim.cmd[[colorscheme gruvbox]]
 -- vim.cmd[[colorscheme tokyonight-night]]
@@ -1420,21 +1383,8 @@ vim.cmd [[
     highlight RainbowDelimiterCyan guifg=#f4ca0d ctermfg=White
 ]]
 
--- Automatically open Nvim Tree when a directory is opened
-vim.cmd([[
-  autocmd BufEnter * if &buftype != 'terminal' | if &ft ==# 'netrw' | silent! lua require'nvim-tree'.find_file(true) | endif
-]])
-
 -- Enable concealment for markdown files
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "markdown",
 	command = "setlocal conceallevel=0"
 })
-
--- Automatically refresh NvimTree whenever a file is opened
-vim.cmd([[
-  augroup NvimTreeAutoReload
-    autocmd!
-    autocmd BufEnter * if &buftype != 'terminal' | if &ft != 'NvimTree' | NvimTreeRefresh | endif
-  augroup END
-]])
