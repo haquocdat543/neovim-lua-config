@@ -104,14 +104,14 @@ keymap.set('n', '<leader>nn', ':set nopaste<CR>')
 keymap.set('n', '<leader>nm', ':set paste<CR>')
 
 -- System - navigation
-keymap.set('n', 'ss', ':split<CR><C-w>w')
+keymap.set('n', 'ss', ':split<CR>C-w>w')
 keymap.set('n', 'sv', ':vsplit<CR><C-w>w')
 keymap.set('n', 'sx', ':close<CR>')
-keymap.set('n', 'sw', '<C-w>w')
-keymap.set('n', 'sh', '<C-w>h')
-keymap.set('n', 'sj', '<C-w>j')
-keymap.set('n', 'sk', '<C-w>k')
-keymap.set('n', 'sl', '<C-w>l')
+keymap.set('n', 'sw', ':wincmd w<CR>')
+keymap.set('n', 'sl', ':wincmd l<CR>')
+keymap.set('n', 'sh', ':wincmd h<CR>')
+keymap.set('n', 'sj', ':wincmd j<CR>')
+keymap.set('n', 'sk', ':wincmd k<CR>')
 
 -- System - tab navigation
 keymap.set('n', '<leader>te', ':tabedit ')
