@@ -205,6 +205,18 @@ keymap.set('n', '<leader><leader>4', ':Telescope projects<CR>')
 keymap.set('n', '<leader><leader>5', ':Telescope telescope-tabs list_tabs<CR>')
 
 local plugins = {
+	{
+		'saecki/crates.nvim',
+		tag = 'stable',
+		config = function()
+			require('crates').setup()
+		end,
+	},
+	{
+		'mrcjkb/rustaceanvim',
+		version = '^5', -- Recommended
+		lazy = false, -- This plugin is already lazy
+	},
 	'LukasPietzschmann/telescope-tabs',
 	'ahmedkhalf/project.nvim',
 	{
@@ -399,9 +411,9 @@ if not status then
 end
 
 require("project_nvim").setup {
--- your configuration comes here
--- or leave it empty to use the default settings
--- refer to the configuration section below
+	-- your configuration comes here
+	-- or leave it empty to use the default settings
+	-- refer to the configuration section below
 }
 
 -- shfmt configuration for Bash
@@ -1361,12 +1373,12 @@ vim.cmd([[autocmd FileType markdown let g:indentLine_enabled=0]])
 vim.api.nvim_create_augroup('TestBufEnterCondition', { clear = true })
 
 vim.api.nvim_create_autocmd('VimEnter', {
-  group = 'TestBufEnterCondition',
-  callback = function()
-    -- Open NvimTree
-    vim.cmd('NvimTreeOpen')
-    vim.cmd('wincmd w')
-  end,
+	group = 'TestBufEnterCondition',
+	callback = function()
+		-- Open NvimTree
+		vim.cmd('NvimTreeOpen')
+		vim.cmd('wincmd w')
+	end,
 })
 
 vim.g.vim_k8s_toggle_key_map = ',kk'
