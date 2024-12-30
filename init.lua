@@ -45,6 +45,9 @@ vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search(
 	desc = "Search on current file",
 })
 
+-- Ranger
+keymap.set('n', '<leader>rr', ':Ranger<CR>')
+
 -- Terminal
 keymap.set('n', '<leader>tn', ':split<CR><C-w>w:term<CR>i')
 keymap.set('n', '<leader>tm', ':split<CR><C-w>w:horizontal resize -10<CR>:term<CR>i')
@@ -1181,7 +1184,7 @@ require 'lspconfig'.rust_analyzer.setup {
 	settings = {
 		['rust-analyzer'] = {
 			diagnostics = {
-				enable = false,
+				enable = true,
 			}
 		}
 	}
