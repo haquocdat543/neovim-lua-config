@@ -32,6 +32,10 @@ vim.opt.cursorline = true
 
 local keymap = vim.keymap
 
+-- Pomodoro
+vim.keymap.set('n', '<leader>ts', 'TimerShow<CR>')
+vim.keymap.set('n', '<leader>th', 'TimerHide<CR>')
+
 -- Spectre [ Search and replace ]
 vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', {
 	desc = "Toggle Spectre",
