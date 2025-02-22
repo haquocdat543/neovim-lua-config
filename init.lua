@@ -135,7 +135,7 @@ keymap.set('n', '<leader>ii', ':PackerInstall<CR>')
 keymap.set('n', '<leader>is', ':PackerSync<CR>')
 
 -- Finder
-keymap.set('n', '<leader>ff', ':Files<CR>')
+keymap.set('n', '<leader>fi', ':FZF<CR>')
 keymap.set('n', '<leader>fg', ':Rg<CR>')
 keymap.set('n', '<leader>fb', ':Buffers<CR>')
 keymap.set('n', '<leader>ft', ':FloatermNew<CR>')
@@ -446,15 +446,40 @@ if not status then
 	return
 end
 
-local servers = {
-	"angularls", "gopls", "ts_ls", "flow", "bashls", "dockerls", "julials", "pylsp", "pyright",
-	"jedi_language_server", "jdtls", "lua_ls", "vimls", "html", "jsonls", "solargraph", "cssls",
-	"yamlls", "clangd", "ccls", "sqlls", "denols", "graphql", "dartls", "dotls",
-	"kotlin_language_server", "nimls", "intelephense", "vuels", "phpactor", "omnisharp",
-	"r_language_server", "rust_analyzer", "terraformls", "svelte", "texlab", "clojure_lsp", "elixirls",
-	"sourcekit", "fsautocomplete", "vls", "hls"
-}
-require 'navigator'.setup()
+require 'navigator'.setup({
+	debug = false,
+	mason = true,
+	lsp = {
+		enable = true,
+		hover = {
+			enable = true,
+			-- fallback when hover failed
+			-- e.g. if filetype is go, try godoc
+			go = function()
+				local w = vim.fn.expand('<cWORD>')
+				vim.cmd('GoDoc ' .. w)
+			end,
+			-- if python, do python doc
+			python = function()
+				-- run pydoc, behaviours defined in lua/navigator.lua
+			end,
+			default = function()
+				-- fallback apply to all file types not been specified above
+				-- local w = vim.fn.expand('<cWORD>')
+				-- vim.lsp.buf.workspace_symbol(w)
+			end,
+		},
+		servers = {
+			"angularls", "gopls", "ts_ls", "flow", "bashls", "dockerls", "julials", "pylsp", "pyright",
+			"jedi_language_server", "jdtls", "lua_ls", "vimls", "html", "jsonls", "solargraph", "cssls",
+			"yamlls", "clangd", "ccls", "sqlls", "graphql", "dartls", "dotls",
+			"kotlin_language_server", "nimls", "intelephense", "vuels", "phpactor", "omnisharp",
+			"r_language_server", "rust_analyzer", "terraformls", "svelte", "texlab", "clojure_lsp",
+			"elixirls",
+			"sourcekit", "fsautocomplete", "vls", "hls"
+		}
+	}
+})
 
 
 local map = vim.api.nvim_set_keymap
