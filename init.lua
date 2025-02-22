@@ -208,6 +208,19 @@ keymap.set('n', '<leader><leader>5', ':Telescope telescope-tabs list_tabs<CR>')
 
 local plugins = {
 	{
+		"epwalsh/pomo.nvim",
+		version = "*", -- Recommended, use latest release instead of latest commit
+		lazy = true,
+		cmd = { "TimerStart", "TimerRepeat", "TimerSession" },
+		dependencies = {
+			-- Optional, but highly recommended if you want to use the "Default" timer
+			"rcarriga/nvim-notify",
+		},
+		opts = {
+			-- See below for full list of options 👇
+		},
+	},
+	{
 		"hedyhli/outline.nvim",
 		config = function()
 			-- Example mapping to toggle outline
