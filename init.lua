@@ -16,6 +16,7 @@ vim.g.mapleader = " "      -- for normal mode
 vim.g.maplocalleader = " " -- for local leader mappings
 vim.opt.title = true
 vim.opt.hlsearch = true
+-- vim.opt.shell = "/opt/homebrew/bin/zsh"
 vim.opt.history = 200
 vim.opt.background = 'dark'
 vim.opt.paste = true
@@ -66,7 +67,7 @@ keymap.set('n', ',xr', ':call VrcQuery()<CR>')
 keymap.set('n', '<leader>md', ':MarkdownPreview<CR>')
 
 -- Kubernetes
-keymap.set('n', '<leader>kk', '<cmd>lua require("kubectl").toggle()<CR>')
+-- keymap.set('n', '<leader>kk', '<cmd>lua require("kubectl").toggle()<CR>')
 
 -- System
 keymap.set('n', '<leader>pa', '"*p')
@@ -128,8 +129,6 @@ keymap.set('n', '<leader>ea', ':tabnew $HOME/.bashrc<CR>')
 keymap.set('n', '<leader>cr', ':tabnew $HOME/.aws/credentials<CR>')
 keymap.set('n', '<leader>cf', ':tabnew $HOME/.aws/config<CR>')
 
--- System - terminal
-keymap.set('n', '<leader>tt', ':ter<CR>')
 
 -- Package manager
 keymap.set('n', '<leader>ii', ':PackerInstall<CR>')
@@ -208,6 +207,21 @@ keymap.set('n', '<leader><leader>4', ':Telescope projects<CR>')
 keymap.set('n', '<leader><leader>5', ':Telescope telescope-tabs list_tabs<CR>')
 
 local plugins = {
+	{
+		'romgrk/barbar.nvim',
+		dependencies = {
+			'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
+			'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+		},
+		init = function() vim.g.barbar_auto_setup = false end,
+		opts = {
+			-- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
+			-- animation = true,
+			-- insert_at_start = true,
+			-- …etc.
+		},
+		version = '^1.0.0', -- optional: only update when a new 1.x version is released
+	},
 	{
 		'saecki/crates.nvim',
 		tag = 'stable',
