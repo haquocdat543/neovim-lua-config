@@ -218,6 +218,23 @@ local plugins = {
 		},
 		opts = {
 			-- See below for full list of options 👇
+			work_time = 25,
+			break_time = 5,
+			long_break_time = 15,
+			notifier = {
+				sticky = true,
+			},
+			sessions = {
+				-- Example session configuration for a session called "pomodoro".
+				pomodoro = {
+					{ name = "Work",        duration = "25m" },
+					{ name = "Short Break", duration = "5m" },
+					{ name = "Work",        duration = "25m" },
+					{ name = "Short Break", duration = "5m" },
+					{ name = "Work",        duration = "25m" },
+					{ name = "Long Break",  duration = "15m" },
+				},
+			},
 		},
 	},
 	{
