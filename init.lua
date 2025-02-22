@@ -208,6 +208,18 @@ keymap.set('n', '<leader><leader>5', ':Telescope telescope-tabs list_tabs<CR>')
 
 local plugins = {
 	{
+		"hedyhli/outline.nvim",
+		config = function()
+			-- Example mapping to toggle outline
+			vim.keymap.set("n", "<leader>oo", "<cmd>Outline<CR>",
+				{ desc = "Toggle Outline" })
+
+			require("outline").setup {
+				-- Your setup opts here (leave empty to use defaults)
+			}
+		end,
+	},
+	{
 		'ray-x/navigator.lua',
 		dependencies = {
 			{ 'ray-x/guihua.lua',     run = 'cd lua/fzy && make' },
@@ -435,12 +447,12 @@ if not status then
 end
 
 local servers = {
-  "angularls", "gopls", "ts_ls", "flow", "bashls", "dockerls", "julials", "pylsp", "pyright",
-  "jedi_language_server", "jdtls", "lua_ls", "vimls", "html", "jsonls", "solargraph", "cssls",
-  "yamlls", "clangd", "ccls", "sqlls", "denols", "graphql", "dartls", "dotls",
-  "kotlin_language_server", "nimls", "intelephense", "vuels", "phpactor", "omnisharp",
-  "r_language_server", "rust_analyzer", "terraformls", "svelte", "texlab", "clojure_lsp", "elixirls",
-  "sourcekit", "fsautocomplete", "vls", "hls"
+	"angularls", "gopls", "ts_ls", "flow", "bashls", "dockerls", "julials", "pylsp", "pyright",
+	"jedi_language_server", "jdtls", "lua_ls", "vimls", "html", "jsonls", "solargraph", "cssls",
+	"yamlls", "clangd", "ccls", "sqlls", "denols", "graphql", "dartls", "dotls",
+	"kotlin_language_server", "nimls", "intelephense", "vuels", "phpactor", "omnisharp",
+	"r_language_server", "rust_analyzer", "terraformls", "svelte", "texlab", "clojure_lsp", "elixirls",
+	"sourcekit", "fsautocomplete", "vls", "hls"
 }
 require 'navigator'.setup()
 
