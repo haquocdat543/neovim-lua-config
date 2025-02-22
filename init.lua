@@ -469,15 +469,7 @@ require 'navigator'.setup({
 				-- vim.lsp.buf.workspace_symbol(w)
 			end,
 		},
-		servers = {
-			"angularls", "gopls", "ts_ls", "flow", "bashls", "dockerls", "julials", "pylsp", "pyright",
-			"jedi_language_server", "jdtls", "lua_ls", "vimls", "html", "jsonls", "solargraph", "cssls",
-			"yamlls", "clangd", "ccls", "sqlls", "graphql", "dartls", "dotls",
-			"kotlin_language_server", "nimls", "intelephense", "vuels", "phpactor", "omnisharp",
-			"r_language_server", "rust_analyzer", "terraformls", "svelte", "texlab", "clojure_lsp",
-			"elixirls",
-			"sourcekit", "fsautocomplete", "vls", "hls"
-		}
+		servers = {}
 	}
 })
 
