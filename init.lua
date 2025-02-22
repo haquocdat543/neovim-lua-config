@@ -208,6 +208,13 @@ keymap.set('n', '<leader><leader>5', ':Telescope telescope-tabs list_tabs<CR>')
 
 local plugins = {
 	{
+		'ray-x/navigator.lua',
+		dependencies = {
+			{ 'ray-x/guihua.lua',     run = 'cd lua/fzy && make' },
+			{ 'neovim/nvim-lspconfig' },
+		},
+	},
+	{
 		'romgrk/barbar.nvim',
 		dependencies = {
 			'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
@@ -427,6 +434,17 @@ if not status then
 	return
 end
 
+local servers = {
+  "angularls", "gopls", "ts_ls", "flow", "bashls", "dockerls", "julials", "pylsp", "pyright",
+  "jedi_language_server", "jdtls", "lua_ls", "vimls", "html", "jsonls", "solargraph", "cssls",
+  "yamlls", "clangd", "ccls", "sqlls", "denols", "graphql", "dartls", "dotls",
+  "kotlin_language_server", "nimls", "intelephense", "vuels", "phpactor", "omnisharp",
+  "r_language_server", "rust_analyzer", "terraformls", "svelte", "texlab", "clojure_lsp", "elixirls",
+  "sourcekit", "fsautocomplete", "vls", "hls"
+}
+require 'navigator'.setup()
+
+
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
@@ -471,7 +489,7 @@ map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
 --                 :BufferCloseBuffersRight
 
 -- Magic buffer-picking mode
-map('n', '<C-p>',   '<Cmd>BufferPick<CR>', opts)
+map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
 map('n', '<C-s-p>', '<Cmd>BufferPickDelete<CR>', opts)
 
 -- Sort automatically by...
