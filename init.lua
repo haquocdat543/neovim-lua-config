@@ -342,8 +342,6 @@ require("nvim-treesitter.configs").setup {
 -- Ensure termguicolors is enabled if not already
 vim.opt.termguicolors = true
 
-require('nvim-highlight-colors').setup({})
-
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -917,3 +915,4 @@ require("plugin.telescope")
 require("plugin.hop")
 require("plugin.tokyonight")
 require("plugin.lualine")
+require("plugin.hightlight")
