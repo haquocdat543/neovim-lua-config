@@ -13,7 +13,7 @@ require("nvim-treesitter.configs").setup({
 
 	-- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
 	rainbow = {
-		enable = false, -- disable rainbow for now
+		enable = true, -- disable rainbow for now
 	},
 	auto_install = true,
 	sync_install = true,
