@@ -29,6 +29,11 @@ require("formatter").setup({
 			end,
 		},
 
+		go = {
+			function()
+				return { exe = "gofmt", stdin = true }
+			end,
+		},
 		-- YAML formatter using yamlfmt (uncomment if needed)
 		-- yaml = { require("formatter.filetypes.yaml").yamlfmt },
 
