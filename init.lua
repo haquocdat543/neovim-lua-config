@@ -480,12 +480,6 @@ if not status then
 	return
 end
 
-require("project_nvim").setup {
-	-- your configuration comes here
-	-- or leave it empty to use the default settings
-	-- refer to the configuration section below
-}
-
 -- shfmt configuration for Bash
 local shfmt = {
 	formatCommand = "shfmt -i 2 -ci -s",
@@ -1463,3 +1457,4 @@ require("core.colorscheme")
 require("plugin.lazygit")
 require("plugin.k9s")
 require("plugin.navigator")
+require("plugin.project")
