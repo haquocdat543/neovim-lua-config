@@ -1528,10 +1528,6 @@ vim.api.nvim_create_autocmd('VimEnter', {
 	end,
 })
 
--- vim.cmd[[colorscheme gruvbox]]
--- vim.cmd[[colorscheme tokyonight-night]]
-vim.cmd [[colorscheme catppuccin]]
-
 vim.cmd [[
     highlight RainbowDelimiterRed  guifg=#f4ca0d ctermfg=White
     highlight RainbowDelimiterYellow guifg=#9d7cd8 ctermfg=White
@@ -1550,3 +1546,4 @@ vim.api.nvim_create_autocmd("FileType", {
 
 require("plugin.lazygit")
 require("plugin.k9s")
+require("core.colorscheme")
