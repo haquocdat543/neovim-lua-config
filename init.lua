@@ -528,18 +528,6 @@ vim.opt.termguicolors = true
 
 require('nvim-highlight-colors').setup({})
 
--- Import the nvim-tree module
--- local nvim_tree = require'nvim-tree'
-
--- Configure nvim-tree
--- nvim_tree.setup({
--- -- Your other nvim-tree settings here
--- update_cwd = true,  -- Update the current working directory of nvim-tree
--- respect_buf_cwd = true, -- Use the current buffer's directory rather than the current working directory
--- })
---
-require('spectre').setup()
-
 require('telescope').load_extension('projects')
 
 local status_ok, telescope = pcall(require, "telescope")
@@ -1348,3 +1336,4 @@ require("plugin.git")
 require("plugin.tabnine")
 require("plugin.icon")
 require("plugin.neogit")
+require("plugin.spectre")
