@@ -13,10 +13,21 @@ require("formatter").setup({
 		lua = { require("formatter.filetypes.lua").stylua },
 
 		-- HCL formatter using hclfmt
-		hcl = { function() return { exe = "hclfmt", stdin = true } end },
+		hcl = {
+			function()
+				return { exe = "hclfmt", stdin = true }
+			end,
+		},
 
 		-- Bash formatter using shfmt
 		sh = { require("formatter.filetypes.sh").shfmt },
+
+		-- JSON formatter (choose jq or prettier)
+		json = {
+			function()
+				return { exe = "jq", args = { "." }, stdin = true }
+			end,
+		},
 
 		-- YAML formatter using yamlfmt (uncomment if needed)
 		-- yaml = { require("formatter.filetypes.yaml").yamlfmt },
@@ -26,5 +37,5 @@ require("formatter").setup({
 			require("formatter.filetypes.any").remove_trailing_whitespace,
 			-- Alternative: require("formatter.filetypes.any").substitute_trailing_whitespace,
 		},
-	}
+	},
 })
