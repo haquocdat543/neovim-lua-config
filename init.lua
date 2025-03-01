@@ -396,9 +396,8 @@ end
 -- ---
 -- }
 
-local lspconfig = require("lspconfig")
-local cmp_nvim_lsp = require("cmp_nvim_lsp")
 local opts = { noremap = true, silent = true }
+local keymap = vim.keymap
 local on_attach = function(client, bufnr)
 	opts.buffer = bufnr
 	keymap.set("n", "gs", "<cmd>Lspsaga show_workspace_diagnostics<CR>", opts)
@@ -435,7 +434,6 @@ local on_attach = function(client, bufnr)
 	keymap.set("n", ",rs", ":LspRestart<CR>", opts)
 end
 
-local capabilities = cmp_nvim_lsp.default_capabilities()
 
 -- Change the Diagnostic symbols in the sign column (gutter)
 -- (not in youtube nvim video)
