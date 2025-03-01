@@ -1,3 +1,12 @@
+vim.filetype.add({
+	extension = { gotmpl = "gotmpl" },
+	pattern = {
+		[".*/templates/.*%.tpl"] = "helm",
+		[".*/templates/.*%.ya?ml"] = "helm",
+		["helmfile.*%.ya?ml"] = "helm",
+	},
+})
+
 require("nvim-treesitter.configs").setup({
 	-- Add languages to be installed here that you want installed for treesitter
 	-- ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'help', 'vim' },
@@ -7,6 +16,7 @@ require("nvim-treesitter.configs").setup({
 		enable = false, -- disable rainbow for now
 	},
 	auto_install = true,
+	sync_install = true,
 	ensure_installed = { "javascript", "c", "lua", "vim", "vimdoc", "helm", "dockerfile", "yaml", "gotmpl" },
 	-- open_on_setup = true,
 	highlight = { enable = true },
