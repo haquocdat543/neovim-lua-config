@@ -30,6 +30,9 @@ lualine_nightfly.command = {
 -- configure lualine with modified theme
 lualine.setup({
 	options = {
-		theme = lualine_nightfly,
+		-- theme = "gruvbox",
+		-- theme = "catppuccin",
+		-- theme = "tokyonight",
+		theme = "auto",
 	},
 })
