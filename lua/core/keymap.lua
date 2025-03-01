@@ -207,10 +207,10 @@ keymap.set('n', '<leader>db', ':Dashboard<CR>')
 -- Telescope
 ----------------------------------------------------------------------------------------------------
 keymap.set('n', '<leader>tl', ':set nopaste<CR>:Telescope<CR>')
-keymap.set("n", "<leader><leader>1", "<Cmd>Telescope find_files hidden=true no_ignore=true<CR>")
-keymap.set("n", "<leader><leader>2", "<Cmd>Telescope live_grep hidden=true no_ignore=true<CR>")
-keymap.set("n", "<leader><leader>3", "<Cmd>Telescope buffers hidden=true no_ignore=true<CR>")
-keymap.set("n", "<leader><leader>4", "<Cmd>Telescope oldfiles hidden=true no_ignore=true<CR>")
+keymap.set("n", "<leader><leader>1", ":set nopaste<CR><Cmd>Telescope find_files hidden=true no_ignore=true<CR>")
+keymap.set("n", "<leader><leader>2", ":set nopaste<CR><Cmd>Telescope live_grep hidden=true no_ignore=true<CR>")
+keymap.set("n", "<leader><leader>3", ":set nopaste<CR><Cmd>Telescope buffers hidden=true no_ignore=true<CR>")
+keymap.set("n", "<leader><leader>4", ":set nopaste<CR><Cmd>Telescope oldfiles hidden=true no_ignore=true<CR>")
 keymap.set('n', '<leader><leader>5', ':Telescope projects<CR>')
 keymap.set('n', '<leader><leader>6', ':Telescope telescope-tabs list_tabs<CR>')
 
