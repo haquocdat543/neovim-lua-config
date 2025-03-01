@@ -174,6 +174,11 @@ keymap.set('n', '<leader>nf', ':NvimTreeFindFile<CR>')
 keymap.set('n', '<leader>nc', ':NvimTreeFocus<CR>')
 -- keymap.set('n','<leader>nt',':NERDTreeToggle<CR>')
 keymap.set('n', '<leader>db', ':Dashboard<CR>')
+
+
 keymap.set('n', '<leader>tl', ':Telescope<CR>')
 keymap.set('n', '<leader><leader>4', ':Telescope projects<CR>')
 keymap.set('n', '<leader><leader>5', ':Telescope telescope-tabs list_tabs<CR>')
+keymap.set("n", "<leader><leader>1", "<Cmd>Telescope find_files<CR>")
+keymap.set("n", "<leader><leader>2", "<Cmd>Telescope live_grep<CR>")
+keymap.set("n", "<leader><leader>3", "<Cmd>Telescope oldfiles<CR>")

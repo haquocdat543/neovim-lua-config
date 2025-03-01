@@ -101,9 +101,3 @@ end
 -- # },
 -- }
 
-local opt = { noremap = true, silent = true }
-local k = vim.api.nvim_set_keymap
-
-k("n", "<leader><leader>1", "<Cmd>Telescope find_files<CR>", opt)
-k("n", "<leader><leader>2", "<Cmd>Telescope live_grep<CR>", opt)
-k("n", "<leader><leader>3", "<Cmd>Telescope oldfiles<CR>", opt)
