@@ -49,59 +49,60 @@ local plugins = {
 		"hedyhli/outline.nvim",
 		config = function()
 			-- Example mapping to toggle outline
-			vim.keymap.set("n", "<leader>oo", "<cmd>Outline<CR>",
-				{ desc = "Toggle Outline" })
+			vim.keymap.set("n", "<leader>oo", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
 
-			require("outline").setup {
+			require("outline").setup({
 				-- Your setup opts here (leave empty to use defaults)
-			}
+			})
 		end,
 	},
 	{
-		'ray-x/navigator.lua',
+		"ray-x/navigator.lua",
 		dependencies = {
-			{ 'ray-x/guihua.lua',     run = 'cd lua/fzy && make' },
-			{ 'neovim/nvim-lspconfig' },
+			{ "ray-x/guihua.lua",     run = "cd lua/fzy && make" },
+			{ "neovim/nvim-lspconfig" },
 		},
 	},
 	{
-		'romgrk/barbar.nvim',
+		"romgrk/barbar.nvim",
 		dependencies = {
-			'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
-			'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
+			"lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
+			"nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
 		},
-		init = function() vim.g.barbar_auto_setup = false end,
+		init = function()
+			vim.g.barbar_auto_setup = false
+		end,
 		opts = {
 			-- lazy.nvim will automatically call setup for you. put your options here, anything missing will use the default:
 			-- animation = true,
 			-- insert_at_start = true,
 			-- …etc.
 		},
-		version = '^1.0.0', -- optional: only update when a new 1.x version is released
+		version = "^1.0.0", -- optional: only update when a new 1.x version is released
 	},
 	{
-		'saecki/crates.nvim',
-		tag = 'stable',
+		"saecki/crates.nvim",
+		tag = "stable",
 		config = function()
-			require('crates').setup()
+			require("crates").setup()
 		end,
 	},
 	{
-		'mrcjkb/rustaceanvim',
-		version = '^5', -- Recommended
+		"mrcjkb/rustaceanvim",
+		version = "^5", -- Recommended
 		lazy = false, -- This plugin is already lazy
 	},
-	'LukasPietzschmann/telescope-tabs',
-	'ahmedkhalf/project.nvim',
+	"LukasPietzschmann/telescope-tabs",
+	"ahmedkhalf/project.nvim",
 	{
-		'nvim-orgmode/orgmode',
-		event = 'VeryLazy',
-		ft = { 'org' },
+		"nvim-orgmode/orgmode",
+		event = "VeryLazy",
+		ft = { "org" },
 		config = function()
 			-- Setup orgmode
-			require('orgmode').setup({
-				org_agenda_files = '~/orgfiles/**/*',
-				org_default_notes_file = '~/orgfiles/refile.org',
+			require("orgmode").setup({
+				org_agenda_files = "~/orgfiles/**/*",
+				org_default_notes_file = "~/orgfiles/refile.org",
 			})
 
 			-- NOTE: If you are using nvim-treesitter with ~ensure_installed = "all"~ option
@@ -131,7 +132,7 @@ local plugins = {
 			{
 				-- NOTE: this requires a version of yazi that includes
 				-- https://github.com/sxyazi/yazi/pull/1305 from 2024-07-18
-				'<c-up>',
+				"<c-up>",
 				"<cmd>Yazi toggle<cr>",
 				desc = "Resume the last yazi session",
 			},
@@ -140,7 +141,7 @@ local plugins = {
 			-- if you want to open yazi instead of netrw, see below for more info
 			open_for_directories = false,
 			keymaps = {
-				show_help = '<f1>',
+				show_help = "<f1>",
 			},
 		},
 	},
@@ -179,28 +180,30 @@ local plugins = {
 	"fsouza/prettierd",
 	"jose-elias-alvarez/null-ls.nvim",
 	"p00f/nvim-ts-rainbow",
-	'brenoprata10/nvim-highlight-colors',
+	"brenoprata10/nvim-highlight-colors",
 	{
-		'windwp/nvim-autopairs',
+		"windwp/nvim-autopairs",
 		event = "InsertEnter",
-		config = true
+		config = true,
 		-- use opts = {} for passing setup options
 		-- this is equivalent to setup({}) function
 	},
 	{ "catppuccin/nvim",     name = "catppuccin",       priority = 1000 },
-	'diepm/vim-rest-console',
-	'nvim-pack/nvim-spectre',
+	"diepm/vim-rest-console",
+	"nvim-pack/nvim-spectre",
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		ft = { "markdown" },
-		build = function() vim.fn["mkdp#util#install"]() end,
+		build = function()
+			vim.fn["mkdp#util#install"]()
+		end,
 	},
 	{
-		'nvim-tree/nvim-tree.lua'
+		"nvim-tree/nvim-tree.lua",
 	},
 	{
-		'hsalem7/nvim-k8s'
+		"hsalem7/nvim-k8s",
 	},
 	{
 		"NeogitOrg/neogit",
@@ -212,14 +215,13 @@ local plugins = {
 			"nvim-telescope/telescope.nvim", -- optional
 			"ibhagwan/fzf-lua", -- optional
 		},
-		config = true
+		config = true,
 	},
 	{
-		'nvimdev/dashboard-nvim',
-		event = 'VimEnter',
+		"nvimdev/dashboard-nvim",
+		event = "VimEnter",
 		config = function()
-			require('dashboard').setup {
-			}
+			require("dashboard").setup({})
 		end,
 	},
 	{
@@ -229,52 +231,52 @@ local plugins = {
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 			"MunifTanjim/nui.nvim",
-		}
+		},
 	},
-	{ 'codota/tabnine-nvim', build = "./dl_binaries.sh" },
-	'rbgrouleff/bclose.vim',
-	'francoiscabrol/ranger.vim',
-	'wbthomason/packer.nvim',
-	'nvim-treesitter/nvim-treesitter',
-	'folke/tokyonight.nvim',
-	'kdheepak/lazygit.nvim',
+	{ "codota/tabnine-nvim", build = "./dl_binaries.sh" },
+	"rbgrouleff/bclose.vim",
+	"francoiscabrol/ranger.vim",
+	"wbthomason/packer.nvim",
+	"nvim-treesitter/nvim-treesitter",
+	"folke/tokyonight.nvim",
+	"kdheepak/lazygit.nvim",
 	--'ryanoasis/vim-devicons',
-	'phaazon/hop.nvim',
-	'Yggdroot/indentLine',
-	'ellisonleao/gruvbox.nvim',
-	{ 'junegunn/fzf',    run = ":call fzf#install()" },
-	{ 'junegunn/fzf.vim' },
-	'nvim-tree/nvim-tree.lua',
-	'nvim-tree/nvim-web-devicons', -- optional,
-	'voldikss/vim-floaterm',
-	'SirVer/ultisnips',
-	'dinhhuy258/git.nvim',
-	'tpope/vim-fugitive',
-	'airblade/vim-gitgutter',
-	'preservim/nerdtree',
-	'hrsh7th/nvim-cmp',
-	'hrsh7th/cmp-buffer',
-	'hrsh7th/cmp-path',
-	'L3MON4D3/LuaSnip',
-	'saadparwaiz1/cmp_luasnip',
-	'rafamadriz/friendly-snippets',
-	'nvim-lualine/lualine.nvim',
-	'williamboman/mason.nvim',
-	'williamboman/mason-lspconfig.nvim',
-	'neovim/nvim-lspconfig',
-	'hrsh7th/cmp-nvim-lsp',
-	'glepnir/lspsaga.nvim',
-	'nvim-treesitter/nvim-treesitter',
-	'jose-elias-alvarez/typescript.nvim',
-	'onsails/lspkind.nvim',
-	'jose-elias-alvarez/null-ls.nvim',
-	'jayp0521/mason-null-ls.nvim',
-	'nvim-lua/plenary.nvim',
-	'nvim-telescope/telescope-fzf-native.nvim',
-	'nvim-telescope/telescope.nvim',
-	'antosha417/nvim-lsp-file-operations',
-	'WhoIsSethDaniel/mason-tool-installer.nvim',
-	'mhartington/formatter.nvim'
+	"phaazon/hop.nvim",
+	"Yggdroot/indentLine",
+	"ellisonleao/gruvbox.nvim",
+	{ "junegunn/fzf",    run = ":call fzf#install()" },
+	{ "junegunn/fzf.vim" },
+	"nvim-tree/nvim-tree.lua",
+	"nvim-tree/nvim-web-devicons", -- optional,
+	"voldikss/vim-floaterm",
+	"SirVer/ultisnips",
+	"dinhhuy258/git.nvim",
+	"tpope/vim-fugitive",
+	"airblade/vim-gitgutter",
+	"preservim/nerdtree",
+	"hrsh7th/nvim-cmp",
+	"hrsh7th/cmp-buffer",
+	"hrsh7th/cmp-path",
+	"L3MON4D3/LuaSnip",
+	"saadparwaiz1/cmp_luasnip",
+	"rafamadriz/friendly-snippets",
+	"nvim-lualine/lualine.nvim",
+	"williamboman/mason.nvim",
+	"williamboman/mason-lspconfig.nvim",
+	"neovim/nvim-lspconfig",
+	"hrsh7th/cmp-nvim-lsp",
+	"glepnir/lspsaga.nvim",
+	"nvim-treesitter/nvim-treesitter",
+	"jose-elias-alvarez/typescript.nvim",
+	"onsails/lspkind.nvim",
+	"jose-elias-alvarez/null-ls.nvim",
+	"jayp0521/mason-null-ls.nvim",
+	"nvim-lua/plenary.nvim",
+	"nvim-telescope/telescope-fzf-native.nvim",
+	"nvim-telescope/telescope.nvim",
+	"antosha417/nvim-lsp-file-operations",
+	"WhoIsSethDaniel/mason-tool-installer.nvim",
+	"mhartington/formatter.nvim",
 }
 
 local opts = {}

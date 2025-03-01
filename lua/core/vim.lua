@@ -20,18 +20,18 @@ vim.cmd([[let g:gitgutter_sign_modified_removed = '<' ]])
 vim.cmd([[set viminfo='100,<1000000,s100000,h]])
 vim.cmd([[autocmd FileType markdown let g:indentLine_enabled=0]])
 
-vim.api.nvim_create_augroup('TestBufEnterCondition', { clear = true })
+vim.api.nvim_create_augroup("TestBufEnterCondition", { clear = true })
 
-vim.api.nvim_create_autocmd('VimEnter', {
-	group = 'TestBufEnterCondition',
+vim.api.nvim_create_autocmd("VimEnter", {
+	group = "TestBufEnterCondition",
 	callback = function()
 		-- Open NvimTree
-		vim.cmd('NvimTreeOpen')
-		vim.cmd('wincmd w')
+		vim.cmd("NvimTreeOpen")
+		vim.cmd("wincmd w")
 	end,
 })
 
-vim.cmd [[
+vim.cmd([[
     highlight RainbowDelimiterRed  guifg=#f4ca0d ctermfg=White
     highlight RainbowDelimiterYellow guifg=#9d7cd8 ctermfg=White
     highlight RainbowDelimiterBlue guifg=#7dcfff ctermfg=White
@@ -39,10 +39,10 @@ vim.cmd [[
     highlight RainbowDelimiterGreen guifg=#9d7cd8 ctermfg=White
     highlight RainbowDelimiterViolet guifg=#7dcfff ctermfg=White
     highlight RainbowDelimiterCyan guifg=#f4ca0d ctermfg=White
-]]
+]])
 
 -- Enable concealment for markdown files
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "markdown",
-	command = "setlocal conceallevel=0"
+	command = "setlocal conceallevel=0",
 })

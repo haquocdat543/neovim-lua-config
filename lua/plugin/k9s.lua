@@ -1,1 +1,1 @@
-vim.g.vim_k8s_toggle_key_map = ',kk'
+vim.g.vim_k8s_toggle_key_map = ",kk"

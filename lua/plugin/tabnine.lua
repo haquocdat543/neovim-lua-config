@@ -1,4 +1,4 @@
-require('tabnine').setup({
+require("tabnine").setup({
 	disable_auto_comment = true,
 	accept_keymap = "<C-]>",
 	dismiss_keymap = "<C-[>",

@@ -1,10 +1,10 @@
-vim.g.mapleader = " "      -- for normal mode
+vim.g.mapleader = " " -- for normal mode
 vim.g.maplocalleader = " " -- for local leader mappings
 vim.opt.title = true
 vim.opt.hlsearch = true
 -- vim.opt.shell = "/opt/homebrew/bin/zsh"
 vim.opt.history = 200
-vim.opt.background = 'dark'
+vim.opt.background = "dark"
 vim.opt.paste = true
 vim.opt.wrap = true
 vim.opt.number = true
