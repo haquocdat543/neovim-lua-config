@@ -100,7 +100,7 @@ vim.keymap.set('n', '<leader>ts', 'TimerShow<CR>')
 vim.keymap.set('n', '<leader>th', 'TimerHide<CR>')
 
 ----------------------------------------------------------------------------------------------------
--- Spectre 
+-- Spectre
 ----------------------------------------------------------------------------------------------------
 -- [ Search and replace ]
 vim.keymap.set('n', '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', { desc = "Toggle Spectre", })
@@ -206,12 +206,13 @@ keymap.set('n', '<leader>db', ':Dashboard<CR>')
 ----------------------------------------------------------------------------------------------------
 -- Telescope
 ----------------------------------------------------------------------------------------------------
-keymap.set('n', '<leader>tl', ':Telescope<CR>')
-keymap.set('n', '<leader><leader>4', ':Telescope projects<CR>')
-keymap.set('n', '<leader><leader>5', ':Telescope telescope-tabs list_tabs<CR>')
+keymap.set('n', '<leader>tl', ':set nopaste<CR>:Telescope<CR>')
 keymap.set("n", "<leader><leader>1", "<Cmd>Telescope find_files<CR>")
 keymap.set("n", "<leader><leader>2", "<Cmd>Telescope live_grep<CR>")
-keymap.set("n", "<leader><leader>3", "<Cmd>Telescope oldfiles<CR>")
+keymap.set("n", "<leader><leader>3", "<Cmd>Telescope buffers<CR>")
+keymap.set("n", "<leader><leader>4", "<Cmd>Telescope oldfiles<CR>")
+keymap.set('n', '<leader><leader>5', ':Telescope projects<CR>')
+keymap.set('n', '<leader><leader>6', ':Telescope telescope-tabs list_tabs<CR>')
 
 ----------------------------------------------------------------------------------------------------
 -- BarBar
