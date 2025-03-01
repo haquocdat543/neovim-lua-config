@@ -396,19 +396,6 @@ end
 -- ---
 -- }
 
--- terraform lsp
-require 'lspconfig'.terraformls.setup {}
-vim.api.nvim_create_autocmd({ "BufWritePre" }, {
-	pattern = { "*.tf", "*.tfvars" },
-	callback = function()
-		vim.lsp.buf.format()
-	end,
-})
-
--- init.lua
-
-
-
 local lspconfig = require("lspconfig")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
 local opts = { noremap = true, silent = true }
@@ -452,154 +439,11 @@ local capabilities = cmp_nvim_lsp.default_capabilities()
 
 -- Change the Diagnostic symbols in the sign column (gutter)
 -- (not in youtube nvim video)
-local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
+local signs = { Error = "e ", Warn = "w ", Hint = "h ", Info = "i " }
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
 	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
-
--- configure html server
-lspconfig["html"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- configure typescript server with plugin
-lspconfig["ts_ls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- configure css server
-lspconfig["cssls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- configure tailwindcss server
-lspconfig["tailwindcss"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- configure tailwindcss server
-lspconfig["gopls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- configure jsonls server
-lspconfig["jsonls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- configure terraformls server
-lspconfig["terraformls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- configure groovy language server
-lspconfig["groovyls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- configure gradle ls language server
-lspconfig["gradle_ls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- configure clangd server
-lspconfig["clangd"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- configure sqlls server
-lspconfig["sqlls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- configure clangd server
-lspconfig["pyright"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- configure svelte server
-lspconfig["svelte"].setup({
-	capabilities = capabilities,
-	on_attach = function(client, bufnr)
-		on_attach(client, bufnr)
-
-		vim.api.nvim_create_autocmd("BufWritePost", {
-			pattern = { "*.js", "*.ts" },
-			callback = function(ctx)
-				if client.name == "svelte" then
-					client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
-				end
-			end,
-		})
-	end,
-})
-
--- configure prisma orm server
-lspconfig["prismals"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- configure graphql language server
-lspconfig["graphql"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-})
-
--- configure emmet language server
-lspconfig["emmet_ls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-})
-
--- configure python server
-lspconfig["pyright"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-})
-
--- configure lua server (with special settings)
-lspconfig["lua_ls"].setup({
-	capabilities = capabilities,
-	on_attach = on_attach,
-	settings = { -- custom settings for lua
-		Lua = {
-			-- make the language server recognize "vim" global
-			diagnostics = {
-				globals = { "vim" },
-			},
-			workspace = {
-				-- make language server aware of runtime files
-				library = {
-					[vim.fn.expand("$VIMRUNTIME/lua")] = true,
-					[vim.fn.stdpath("config") .. "/lua"] = true,
-				},
-			},
-		},
-	},
-})
-
-local null_ls = require("null-ls")
-null_ls.setup({
-	sources = {
-		null_ls.builtins.formatting.prettierd,
-	},
-})
 
 require("core.colorscheme")
 require("core.keymap")
@@ -626,3 +470,4 @@ require("plugin.mason")
 require("plugin.saga")
 require("plugin.treesitter")
 require("plugin.cmp")
+require("plugin.lsp")
