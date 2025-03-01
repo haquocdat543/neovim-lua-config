@@ -563,8 +563,6 @@ require("tokyonight").setup({
 	end
 })
 
-require 'hop'.setup()
-
 -- get lualine nightfly theme
 local lualine_nightfly = require("lualine.themes.catppuccin")
 
@@ -1039,3 +1037,4 @@ require("plugin.icon")
 require("plugin.neogit")
 require("plugin.spectre")
 require("plugin.telescope")
+require("plugin.hop")
