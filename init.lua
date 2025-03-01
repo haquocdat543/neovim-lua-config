@@ -13,22 +13,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "      -- for normal mode
-vim.g.maplocalleader = " " -- for local leader mappings
-vim.opt.title = true
-vim.opt.hlsearch = true
--- vim.opt.shell = "/opt/homebrew/bin/zsh"
-vim.opt.history = 200
-vim.opt.background = 'dark'
-vim.opt.paste = true
-vim.opt.wrap = true
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.ruler = true
-vim.opt.showcmd = true
-vim.opt.showmode = true
-vim.opt.wildmenu = true
-vim.opt.laststatus = 2
-vim.opt.cursorline = true
 
 local plugins = {
 	{
@@ -299,6 +283,7 @@ require("lazy").setup(plugins, opts)
 require("core.colorscheme")
 require("core.keymap")
 require("core.format")
+require("core.option")
 require("core.vim")
 require("core.function")
 
