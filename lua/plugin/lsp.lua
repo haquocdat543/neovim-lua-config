@@ -1,14 +1,8 @@
-require("lspconfig").dockerls.setup({
-	settings = {
-		docker = {
-			languageserver = {
-				formatter = {
-					ignoreMultilineInstructions = true,
-				},
-			},
-		},
-	},
-})
+-- You dont need to configure lsp
+-- Just need to install it and include it in ${PATH} or install it using mason
+-- docker: yarn global add dockerfile-language-server-nodejs
+-- terraform: go install github.com/hashicorp/terraform-ls@latest
+-- bash: yarn global add bash-language-server
 
 local signs = { Error = "e ", Warn = "w ", Hint = "h ", Info = "i " }
 for type, icon in pairs(signs) do
