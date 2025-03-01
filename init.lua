@@ -12,7 +12,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-vim.g.mapleader = " "      -- for normal mode
+vim.g.mapleader = " " -- for normal mode
 
 local plugins = {
 	{
@@ -273,7 +273,8 @@ local plugins = {
 	'nvim-telescope/telescope-fzf-native.nvim',
 	'nvim-telescope/telescope.nvim',
 	'antosha417/nvim-lsp-file-operations',
-	'WhoIsSethDaniel/mason-tool-installer.nvim'
+	'WhoIsSethDaniel/mason-tool-installer.nvim',
+	'mhartington/formatter.nvim'
 }
 
 local opts = {}
