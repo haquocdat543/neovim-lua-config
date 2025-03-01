@@ -176,3 +176,61 @@ keymap.set('n', '<leader><leader>5', ':Telescope telescope-tabs list_tabs<CR>')
 keymap.set("n", "<leader><leader>1", "<Cmd>Telescope find_files<CR>")
 keymap.set("n", "<leader><leader>2", "<Cmd>Telescope live_grep<CR>")
 keymap.set("n", "<leader><leader>3", "<Cmd>Telescope oldfiles<CR>")
+
+----------------------------------------------------------------------------------------------------
+-- BarBar
+----------------------------------------------------------------------------------------------------
+-- Move to previous/next
+keymap.set('n', '<A-,>', '<Cmd>BufferPrevious<CR>')
+keymap.set('n', '<A-.>', '<Cmd>BufferNext<CR>')
+
+-- Re-order to previous/next
+keymap.set('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>')
+keymap.set('n', '<A->>', '<Cmd>BufferMoveNext<CR>')
+
+-- Goto buffer in position...
+keymap.set('n', '<A-1>', '<Cmd>BufferGoto 1<CR>')
+keymap.set('n', '<A-2>', '<Cmd>BufferGoto 2<CR>')
+keymap.set('n', '<A-3>', '<Cmd>BufferGoto 3<CR>')
+keymap.set('n', '<A-4>', '<Cmd>BufferGoto 4<CR>')
+keymap.set('n', '<A-5>', '<Cmd>BufferGoto 5<CR>')
+keymap.set('n', '<A-6>', '<Cmd>BufferGoto 6<CR>')
+keymap.set('n', '<A-7>', '<Cmd>BufferGoto 7<CR>')
+keymap.set('n', '<A-8>', '<Cmd>BufferGoto 8<CR>')
+keymap.set('n', '<A-9>', '<Cmd>BufferGoto 9<CR>')
+keymap.set('n', '<A-0>', '<Cmd>BufferLast<CR>')
+
+-- Pin/unpin buffer
+keymap.set('n', '<A-p>', '<Cmd>BufferPin<CR>')
+
+-- Goto pinned/unpinned buffer
+--                 :BufferGotoPinned
+--                 :BufferGotoUnpinned
+
+-- Close buffer
+keymap.set('n', '<A-c>', '<Cmd>BufferClose<CR>')
+
+-- Wipeout buffer
+--                 :BufferWipeout
+
+-- Close commands
+--                 :BufferCloseAllButCurrent
+--                 :BufferCloseAllButPinned
+--                 :BufferCloseAllButCurrentOrPinned
+--                 :BufferCloseBuffersLeft
+--                 :BufferCloseBuffersRight
+
+-- Magic buffer-picking mode
+keymap.set('n', '<C-p>', '<Cmd>BufferPick<CR>')
+keymap.set('n', '<C-s-p>', '<Cmd>BufferPickDelete<CR>')
+
+-- Sort automatically by...
+keymap.set('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>')
+keymap.set('n', '<Space>bn', '<Cmd>BufferOrderByName<CR>')
+keymap.set('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>')
+keymap.set('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>')
+keymap.set('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>')
+
+-- Other:
+-- :BarbarEnable - enables barbar (enabled by default)
+-- :BarbarDisable - very bad command, should never be used
