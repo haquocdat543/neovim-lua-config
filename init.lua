@@ -765,8 +765,6 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 
 -- init.lua
-local neogit = require('neogit')
-neogit.setup {}
 
 require('nvim-treesitter.configs').setup {
 	-- Add languages to be installed here that you want installed for treesitter
@@ -1349,3 +1347,4 @@ require("plugin.project")
 require("plugin.git")
 require("plugin.tabnine")
 require("plugin.icon")
+require("plugin.neogit")
