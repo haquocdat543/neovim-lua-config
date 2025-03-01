@@ -1528,8 +1528,6 @@ vim.api.nvim_create_autocmd('VimEnter', {
 	end,
 })
 
-vim.g.vim_k8s_toggle_key_map = ',kk'
-
 -- vim.cmd[[colorscheme gruvbox]]
 -- vim.cmd[[colorscheme tokyonight-night]]
 vim.cmd [[colorscheme catppuccin]]
@@ -1549,3 +1547,6 @@ vim.api.nvim_create_autocmd("FileType", {
 	pattern = "markdown",
 	command = "setlocal conceallevel=0"
 })
+
+require("plugin.lazygit")
+require("plugin.k9s")
