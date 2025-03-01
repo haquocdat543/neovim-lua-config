@@ -5,16 +5,6 @@ if not status_ok then
 	return
 end
 
--- require("neo-tree").setup({
--- filesystem = {
--- bind_to_cwd = false, -- true creates a 2-way binding between vim's cwd and neo-tree's root
--- cwd_target = {
--- sidebar = "tab",   -- sidebar is when position = left or right
--- current = "window" -- current is when position = current
--- },
--- }
--- })
-
 -- local actions = require "telescope.actions"
 -- local trouble = require("trouble.providers.telescope")
 --
