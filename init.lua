@@ -1514,15 +1514,6 @@ vim.cmd([[let g:gitgutter_sign_modified = '*' ]])
 vim.cmd([[let g:gitgutter_sign_removed = 'x' ]])
 vim.cmd([[let g:gitgutter_sign_removed_first_line = '^' ]])
 vim.cmd([[let g:gitgutter_sign_modified_removed = '<' ]])
-vim.cmd([[let g:lazygit_floating_window_winblend = 0 " transparency of floating window ]])
-vim.cmd([[let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating window ]])
-vim.cmd(
-	[[let g:lazygit_floating_window_border_chars = ['╭','─', '╮', '│', '╯','─', '╰', '│'] " customize lazygit popup window border characters ]])
-vim.cmd([[let g:lazygit_floating_window_use_plenary = 0 " use plenary.nvim to manage floating window if available ]])
-vim.cmd([[let g:lazygit_use_neovim_remote = 1 " fallback to 0 if neovim-remote is not installed ]])
-
-vim.cmd([[let g:lazygit_use_custom_config_file_path = 0 " config file path is evaluated if this value is 1 ]])
-vim.cmd([[let g:lazygit_config_file_path = '' " custom config file path ]])
 vim.cmd([[set viminfo='100,<1000000,s100000,h]])
 vim.cmd([[autocmd FileType markdown let g:indentLine_enabled=0]])
 
