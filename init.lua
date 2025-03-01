@@ -790,26 +790,6 @@ null_ls.setup({
 	},
 })
 
--- import lspsaga safely
-local saga_status, saga = pcall(require, "lspsaga")
-if not saga_status then
-	return
-end
-
-saga.setup({
-	-- keybinds for navigation in lspsaga window
-	scroll_preview = { scroll_down = "<C-f>", scroll_up = "<C-b>" },
-	-- use enter to open file with definition preview
-	definition = {
-		edit = "<CR>",
-	},
-	ui = {
-		colors = {
-			normal_bg = "#022746",
-		},
-	},
-})
-
 require("core.colorscheme")
 require("core.keymap")
 require("core.format")
@@ -832,3 +812,4 @@ require("plugin.hightlight")
 require("plugin.nvim-tree")
 require("plugin.parser")
 require("plugin.mason")
+require("plugin.saga")
