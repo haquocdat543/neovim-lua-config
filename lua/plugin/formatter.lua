@@ -13,14 +13,10 @@ require("formatter").setup({
 		lua = { require("formatter.filetypes.lua").stylua },
 
 		-- HCL formatter using hclfmt
-		hcl = {
-			function()
-				return {
-					exe = "hclfmt",
-					stdin = true
-				}
-			end
-		},
+		hcl = { function() return { exe = "hclfmt", stdin = true } end },
+
+		-- Bash formatter using shfmt
+		sh = { require("formatter.filetypes.sh").shfmt },
 
 		-- YAML formatter using yamlfmt (uncomment if needed)
 		-- yaml = { require("formatter.filetypes.yaml").yamlfmt },
