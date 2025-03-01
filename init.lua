@@ -408,66 +408,6 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 -- init.lua
 
 
--- import nvim-cmp plugin safely
-local cmp_status, cmp = pcall(require, "cmp")
-if not cmp_status then
-	return
-end
-
--- import luasnip plugin safely
-local luasnip_status, luasnip = pcall(require, "luasnip")
-if not luasnip_status then
-	return
-end
-
--- import lspkind plugin safely
-local lspkind_status, lspkind = pcall(require, "lspkind")
-if not lspkind_status then
-	return
-end
-
-cmp.setup {
-	snippet = {
-		expand = function(args)
-			luasnip.lsp_expand(args.body)
-		end,
-	},
-	mapping = cmp.mapping.preset.insert {
-		['<C-j>'] = cmp.mapping.scroll_docs(-4),
-		['<C-k>'] = cmp.mapping.scroll_docs(4),
-		['<C-b>'] = cmp.mapping.complete {},
-		['<CR>'] = cmp.mapping.confirm {
-			behavior = cmp.ConfirmBehavior.Replace,
-			select = true,
-		},
-		['<Tab>'] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_next_item()
-			elseif luasnip.expand_or_jumpable() then
-				luasnip.expand_or_jump()
-			else
-				fallback()
-			end
-		end, { 'i', 's' }),
-		['<S-Tab>'] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_prev_item()
-			elseif luasnip.jumpable(-1) then
-				luasnip.jump(-1)
-			else
-				fallback()
-			end
-		end, { 'i', 's' }),
-	},
-
-	sources = {
-		{ name = "luasnip" },
-		{ name = "nvim_lsp" },
-		{ name = "buffer" },
-		{ name = "nvim_lua" },
-		{ name = "path" },
-	},
-}
 
 local lspconfig = require("lspconfig")
 local cmp_nvim_lsp = require("cmp_nvim_lsp")
@@ -590,53 +530,6 @@ lspconfig["pyright"].setup({
 	on_attach = on_attach,
 })
 
--- Mason and lsp configuration. See https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#gopls
-require 'lspconfig'.gopls.setup {}
-
-require 'lspconfig'.clangd.setup {}
-
-require 'lspconfig'.efm.setup {
-	init_options = { documentFormatting = true },
-	filetypes = { 'python', 'cpp', 'lua', 'go', 'rust', 'bash', 'sh', 'groovy' },
-	settings = {
-		rootMarkers = { ".git/" },
-		languages = {
-			javascript = { prettier },
-			typescript = { prettier },
-			json = { prettier },
-			html = { prettier },
-			css = { prettier },
-			bash = { shfmt },
-			go = { gofmt },
-			rust = { rustfmt }
-		}
-	}
-}
-
-require 'lspconfig'.bashls.setup {}
-
-require 'lspconfig'.sqlls.setup {}
-
-require 'lspconfig'.pyright.setup {}
-
-require 'lspconfig'.terraformls.setup {}
-
-require 'lspconfig'.jsonls.setup {}
-
-require 'lspconfig'.gradle_ls.setup {}
-
-require 'lspconfig'.groovyls.setup {}
-
-require 'lspconfig'.rust_analyzer.setup {
-	settings = {
-		['rust-analyzer'] = {
-			diagnostics = {
-				enable = true,
-			}
-		}
-	}
-}
-
 -- configure svelte server
 lspconfig["svelte"].setup({
 	capabilities = capabilities,
@@ -732,3 +625,4 @@ require("plugin.parser")
 require("plugin.mason")
 require("plugin.saga")
 require("plugin.treesitter")
+require("plugin.cmp")
