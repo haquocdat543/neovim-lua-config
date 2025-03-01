@@ -228,6 +228,17 @@ keymap.set("n", "<leader><leader>5", ":Telescope projects<CR>")
 keymap.set("n", "<leader><leader>6", ":Telescope telescope-tabs list_tabs<CR>")
 
 ----------------------------------------------------------------------------------------------------
+-- LSP
+----------------------------------------------------------------------------------------------------
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
+vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Find References" })
+vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
+vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename Symbol" })
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
+vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Help" })
+vim.keymap.set("n", "<leader>fc", function() vim.lsp.buf.format({ async = true }) end, { desc = "Format Code" })
+
+----------------------------------------------------------------------------------------------------
 -- Format
 ----------------------------------------------------------------------------------------------------
 keymap.set("n", "<leader>fm", ":Format<CR>")
