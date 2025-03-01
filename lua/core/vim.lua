@@ -1,5 +1,5 @@
-vim.o.background = "dark" -- or "light" for light mode
-vim.cmd([[colorscheme gruvbox]])
+-- vim.o.background = "dark" -- or "light" for light mode
+-- vim.cmd([[colorscheme gruvbox]])
 vim.cmd([[let g:UltiSnipsExpandTrigger="<tab>"]])
 vim.cmd([[let g:UltiSnipsListSnippets="<c-y>"]])
 vim.cmd([[let g:UltiSnipsJumpForwardTrigger="<CR>"]])
