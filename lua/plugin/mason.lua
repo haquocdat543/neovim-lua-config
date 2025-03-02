@@ -22,6 +22,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local on_attach = function(client, bufnr)
 	local opts = { noremap = true, silent = true, buffer = bufnr }
+	client.server_capabilities.documentFormattingProvider = true
 end
 
 local servers = mason_lspconfig.get_installed_servers()

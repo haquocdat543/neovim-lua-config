@@ -6,6 +6,16 @@
 -- java: install [jdtls] using mason
 -- yaml: npm i -g yaml-language-server
 
+-- require("lspconfig").yamlls.setup({
+	-- settings = {
+		-- yaml = {
+			-- format = {
+				-- enable = true,
+			-- },
+		-- },
+	-- },
+-- })
+
 local signs = { Error = "e ", Warn = "w ", Hint = "h ", Info = "i " }
 for type, icon in pairs(signs) do
 	local hl = "DiagnosticSign" .. type
