@@ -15,3 +15,7 @@ vim.opt.showmode = true
 vim.opt.wildmenu = true
 vim.opt.laststatus = 2
 vim.opt.cursorline = true
+
+vim.opt.tabstop = 2      -- Set tab width to 2 spaces
+vim.opt.shiftwidth = 2   -- Indent by 2 spaces
+vim.opt.expandtab = true -- Use spaces instead of tabs
