@@ -224,7 +224,11 @@ vim.keymap.set("n", "<leader>2", ":set nopaste<CR><Cmd>Telescope live_grep hidde
 vim.keymap.set("n", "<leader>3", ":set nopaste<CR><Cmd>Telescope buffers hidden=true no_ignore=true<CR>")
 vim.keymap.set("n", "<leader>4", ":set nopaste<CR><Cmd>Telescope oldfiles hidden=true no_ignore=true<CR>")
 vim.keymap.set("n", "<leader>5", ":Telescope projects<CR>")
-vim.keymap.set("n", "<leader>6", ":Telescope telescope-tabs list_tabs<CR>")
+vim.keymap.set("n", "<leader>cs", ":Telescope colorscheme<CR>")
+vim.keymap.set("n", "<leader>6", ":Telescope lsp_definition<CR>")
+vim.keymap.set("n", "<leader>7", ":Telescope lsp_definitions<CR>")
+vim.keymap.set("n", "<leader>8", ":Telescope lsp_implementations<CR>")
+vim.keymap.set("n", "<leader>9", ":Telescope lsp_references<CR>")
 
 ----------------------------------------------------------------------------------------------------
 -- LSP
@@ -242,6 +246,7 @@ vim.keymap.set("n", "<leader>tt", ":Lspsaga term_toggle<CR>")
 vim.keymap.set("n", "<leader>wt", ":Lspsaga winbar_toggle<CR>")
 vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Help" })
 vim.keymap.set("n", "<leader>fc", function() vim.lsp.buf.format({ async = true }) end, { desc = "Format Code" })
+
 vim.keymap.set("n", "<leader>ab", function()
     local clients = vim.lsp.get_active_clients()
     if #clients == 0 then
