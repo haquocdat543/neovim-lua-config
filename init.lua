@@ -16,6 +16,17 @@ vim.g.mapleader = " " -- for normal mode
 
 local plugins = {
 	{
+		"mfussenegger/nvim-dap",
+		dependencies = {
+			"rcarriga/nvim-dap-ui", -- UI for DAP
+			"leoluz/nvim-dap-go", -- DAP for Go
+			"nvim-neotest/nvim-nio"
+		},
+		config = function()
+			require("dap-go").setup()
+		end
+	},
+	{
 		"epwalsh/pomo.nvim",
 		version = "*", -- Recommended, use latest release instead of latest commit
 		lazy = true,
@@ -295,3 +306,4 @@ require("plugin.treesitter")
 require("plugin.cmp")
 require("plugin.lsp")
 require("plugin.formatter")
+require("plugin.debugger")

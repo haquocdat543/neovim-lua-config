@@ -243,3 +243,16 @@ vim.keymap.set("n", "<leader>fc", function() vim.lsp.buf.format({ async = true }
 -- Format
 ----------------------------------------------------------------------------------------------------
 keymap.set("n", "<leader>fm", ":Format<CR>")
+
+----------------------------------------------------------------------------------------------------
+-- DAP
+----------------------------------------------------------------------------------------------------
+vim.keymap.set("n", "<leader>dc", function() require("dap").continue() end)
+vim.keymap.set("n", "<leader>sv", function() require("dap").step_over() end)
+vim.keymap.set("n", "<leader>si", function() require("dap").step_into() end)
+vim.keymap.set("n", "<leader>so", function() require("dap").step_out() end)
+vim.keymap.set("n", "<Leader>b", function() require("dap").toggle_breakpoint() end)
+vim.keymap.set("n", "<Leader>B", function() require("dap").set_breakpoint() end)
+vim.keymap.set("n", "<Leader>dr", function() require("dap").repl.open() end)
+vim.keymap.set("n", "<Leader>du", function() require("dapui").toggle() end)
+vim.keymap.set("n", "<Leader>du", function() require("dapui").toggle() end)
