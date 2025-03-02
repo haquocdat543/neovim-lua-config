@@ -21,12 +21,19 @@ local cmp_nvim_lsp = require("cmp_nvim_lsp")
 local capabilities = cmp_nvim_lsp.default_capabilities()
 
 cmp.setup({
+
+	window = {
+		completion = cmp.config.window.bordered(),
+	},
+
 	snippet = {
 		expand = function(args)
 			luasnip.lsp_expand(args.body)
 		end,
 	},
+
 	mapping = cmp.mapping.preset.insert({
+
 		["<C-j>"] = cmp.mapping.scroll_docs(-4),
 		["<C-k>"] = cmp.mapping.scroll_docs(4),
 		["<C-b>"] = cmp.mapping.complete({}),
@@ -34,6 +41,7 @@ cmp.setup({
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,
 		}),
+
 		["<Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
@@ -43,6 +51,7 @@ cmp.setup({
 				fallback()
 			end
 		end, { "i", "s" }),
+
 		["<S-Tab>"] = cmp.mapping(function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
