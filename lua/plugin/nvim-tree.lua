@@ -1,4 +1,8 @@
 require("nvim-tree").setup({
+	git = {
+    enable = true, -- Disable Git integration
+    ignore = false, -- Don't hide .gitignored files
+  },
 	-- Automatically update the tree when changing directories
 	sync_root_with_cwd = true,
 	respect_buf_cwd = true,
