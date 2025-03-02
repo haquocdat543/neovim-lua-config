@@ -22,9 +22,6 @@ local plugins = {
 			"leoluz/nvim-dap-go", -- DAP for Go
 			"nvim-neotest/nvim-nio"
 		},
-		config = function()
-			require("dap-go").setup()
-		end
 	},
 	{
 		"epwalsh/pomo.nvim",
@@ -57,17 +54,6 @@ local plugins = {
 		},
 	},
 	{
-		"hedyhli/outline.nvim",
-		config = function()
-			-- Example mapping to toggle outline
-			vim.keymap.set("n", "<leader>oo", "<cmd>Outline<CR>", { desc = "Toggle Outline" })
-
-			require("outline").setup({
-				-- Your setup opts here (leave empty to use defaults)
-			})
-		end,
-	},
-	{
 		"ray-x/navigator.lua",
 		dependencies = {
 			{ "ray-x/guihua.lua",     run = "cd lua/fzy && make" },
@@ -86,8 +72,6 @@ local plugins = {
 		version = "^5", -- Recommended
 		lazy = false, -- This plugin is already lazy
 	},
-	"LukasPietzschmann/telescope-tabs",
-	"ahmedkhalf/project.nvim",
 	{
 		"nvim-orgmode/orgmode",
 		event = "VeryLazy",
@@ -106,38 +90,6 @@ local plugins = {
 			-- ignore_install = { 'org' },
 			-- })
 		end,
-	},
-	{
-		"mikavilpas/yazi.nvim",
-		event = "VeryLazy",
-		keys = {
-			-- 👇 in this section, choose your own keymappings!
-			{
-				"<leader>-",
-				"<cmd>Yazi<cr>",
-				desc = "Open yazi at the current file",
-			},
-			{
-				-- Open in the current working directory
-				"<leader>cw",
-				"<cmd>Yazi cwd<cr>",
-				desc = "Open the file manager in nvim's working directory",
-			},
-			{
-				-- NOTE: this requires a version of yazi that includes
-				-- https://github.com/sxyazi/yazi/pull/1305 from 2024-07-18
-				"<c-up>",
-				"<cmd>Yazi toggle<cr>",
-				desc = "Resume the last yazi session",
-			},
-		},
-		opts = {
-			-- if you want to open yazi instead of netrw, see below for more info
-			open_for_directories = false,
-			keymaps = {
-				show_help = "<f1>",
-			},
-		},
 	},
 	{
 		"sphamba/smear-cursor.nvim",
@@ -160,21 +112,6 @@ local plugins = {
 			legacy_computing_symbols_support = false,
 		},
 	},
-	"tpope/vim-dadbod",
-	"kristijanhusak/vim-dadbod-ui",
-	"Ramilito/kubectl.nvim",
-	{
-		{
-			"ramilito/kubectl.nvim",
-			config = function()
-				require("kubectl").setup()
-			end,
-		},
-	},
-	"fsouza/prettierd",
-	"jose-elias-alvarez/null-ls.nvim",
-	"p00f/nvim-ts-rainbow",
-	"brenoprata10/nvim-highlight-colors",
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
@@ -183,8 +120,6 @@ local plugins = {
 		-- this is equivalent to setup({}) function
 	},
 	{ "catppuccin/nvim",     name = "catppuccin",       priority = 1000 },
-	"diepm/vim-rest-console",
-	"nvim-pack/nvim-spectre",
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -192,12 +127,6 @@ local plugins = {
 		build = function()
 			vim.fn["mkdp#util#install"]()
 		end,
-	},
-	{
-		"nvim-tree/nvim-tree.lua",
-	},
-	{
-		"hsalem7/nvim-k8s",
 	},
 	{
 		"NeogitOrg/neogit",
@@ -214,9 +143,6 @@ local plugins = {
 	{
 		"nvimdev/dashboard-nvim",
 		event = "VimEnter",
-		config = function()
-			require("dashboard").setup({})
-		end,
 	},
 	{
 		"nvim-neo-tree/neo-tree.nvim",
@@ -228,18 +154,25 @@ local plugins = {
 		},
 	},
 	{ "codota/tabnine-nvim", build = "./dl_binaries.sh" },
+	"LukasPietzschmann/telescope-tabs",
+	"ahmedkhalf/project.nvim",
+	"ramilito/kubectl.nvim",
+	"brenoprata10/nvim-highlight-colors",
+	"diepm/vim-rest-console",
+	"nvim-pack/nvim-spectre",
+	"nvim-tree/nvim-tree.lua",
+	"hsalem7/nvim-k8s",
 	"rbgrouleff/bclose.vim",
 	"francoiscabrol/ranger.vim",
 	"wbthomason/packer.nvim",
 	"nvim-treesitter/nvim-treesitter",
 	"folke/tokyonight.nvim",
 	"kdheepak/lazygit.nvim",
-	--'ryanoasis/vim-devicons',
 	"phaazon/hop.nvim",
 	"Yggdroot/indentLine",
 	"ellisonleao/gruvbox.nvim",
 	{ "junegunn/fzf",    run = ":call fzf#install()" },
-	{ "junegunn/fzf.vim" },
+	"junegunn/fzf.vim",
 	"nvim-tree/nvim-tree.lua",
 	"nvim-tree/nvim-web-devicons", -- optional,
 	"voldikss/vim-floaterm",
@@ -263,8 +196,6 @@ local plugins = {
 	"nvim-treesitter/nvim-treesitter",
 	"jose-elias-alvarez/typescript.nvim",
 	"onsails/lspkind.nvim",
-	"jose-elias-alvarez/null-ls.nvim",
-	"jayp0521/mason-null-ls.nvim",
 	"nvim-lua/plenary.nvim",
 	"nvim-telescope/telescope-fzf-native.nvim",
 	"nvim-telescope/telescope.nvim",
@@ -307,3 +238,6 @@ require("plugin.cmp")
 require("plugin.lsp")
 require("plugin.formatter")
 require("plugin.debugger")
+
+require("plugin.kubectl")
+require("plugin.dashboard")
