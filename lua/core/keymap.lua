@@ -238,6 +238,35 @@ vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action
 vim.keymap.set("n", "ca", ":Lspsaga code_action<CR>")
 vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Help" })
 vim.keymap.set("n", "<leader>fc", function() vim.lsp.buf.format({ async = true }) end, { desc = "Format Code" })
+vim.keymap.set("n", "<leader>ab", function()
+    local clients = vim.lsp.get_active_clients()
+    if #clients == 0 then
+        print("No active LSP clients")
+        return
+    end
+
+    local capabilities = vim.inspect(clients[1].server_capabilities)
+
+    -- Display in a floating window
+    local buf = vim.api.nvim_create_buf(false, true)
+    vim.api.nvim_buf_set_lines(buf, 0, -1, false, vim.split(capabilities, "\n"))
+
+    local width = math.min(80, vim.o.columns - 4)
+    local height = math.min(20, vim.o.lines - 4)
+
+    local options = {
+        relative = "editor",
+        width = width,
+        height = height,
+        row = (vim.o.lines - height) / 2,
+        col = (vim.o.columns - width) / 2,
+        style = "minimal",
+        border = "rounded",
+    }
+
+    vim.api.nvim_open_win(buf, true, options)
+end, { desc = "Show LSP Capabilities" })
+
 
 ----------------------------------------------------------------------------------------------------
 -- Format
