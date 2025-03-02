@@ -15,9 +15,11 @@ telescope.setup({
 				["<C-k>"] = actions.move_selection_previous, -- Move up
 				["<C-n>"] = false, -- Disable default <C-n>
 				["<C-p>"] = false, -- Disable default <C-p>
+				["<C-o>"] = actions.select_default,  -- Open with <C-o>
 			},
 			n = {
 				["q"] = actions.close, -- Quit with 'q' in normal mode
+				["o"] = actions.select_default,  -- Open with <C-o>
 			},
 		},
 	},
