@@ -7,14 +7,22 @@
 -- yaml: npm i -g yaml-language-server
 
 -- require("lspconfig").yamlls.setup({
-	-- settings = {
-		-- yaml = {
-			-- format = {
-				-- enable = true,
-			-- },
-		-- },
-	-- },
+-- settings = {
+-- yaml = {
+-- format = {
+-- enable = true,
+-- },
+-- },
+-- },
 -- })
+
+require("lspconfig").terraformls.setup({
+	filetypes = { "terraform", "hcl", "tf" }, -- Include HCL
+	on_attach = function(client, bufnr)
+		-- Enable formatting
+		client.server_capabilities.documentFormattingProvider = true
+	end,
+})
 
 local signs = { Error = "e ", Warn = "w ", Hint = "h ", Info = "i " }
 for type, icon in pairs(signs) do
