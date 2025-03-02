@@ -188,6 +188,7 @@ local plugins = {
 	"antosha417/nvim-lsp-file-operations",
 	"WhoIsSethDaniel/mason-tool-installer.nvim",
 	"mhartington/formatter.nvim",
+  "mfussenegger/nvim-lint",
 }
 
 local opts = {}
@@ -223,6 +224,7 @@ require("plugin.cmp")
 require("plugin.lsp")
 require("plugin.formatter")
 require("plugin.debugger")
+require("plugin.linter")
 
 require("plugin.kubectl")
 require("plugin.dashboard")
