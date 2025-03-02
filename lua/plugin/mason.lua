@@ -9,6 +9,7 @@ local lsps = {
 	"yamlls",
 	"jdtls",
 	"jsonls",
+	"bashls",
 	"gopls",
 	"rust_analyzer",
 }
