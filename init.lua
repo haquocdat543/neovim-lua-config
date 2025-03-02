@@ -57,9 +57,6 @@ local plugins = {
 	{
 		"saecki/crates.nvim",
 		tag = "stable",
-		config = function()
-			require("crates").setup()
-		end,
 	},
 	{
 		"mrcjkb/rustaceanvim",
@@ -229,3 +226,4 @@ require("plugin.debugger")
 
 require("plugin.kubectl")
 require("plugin.dashboard")
+require("plugin.crates")
