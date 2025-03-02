@@ -54,13 +54,6 @@ local plugins = {
 		},
 	},
 	{
-		"ray-x/navigator.lua",
-		dependencies = {
-			{ "ray-x/guihua.lua",     run = "cd lua/fzy && make" },
-			{ "neovim/nvim-lspconfig" },
-		},
-	},
-	{
 		"saecki/crates.nvim",
 		tag = "stable",
 		config = function()
@@ -171,7 +164,7 @@ local plugins = {
 	"phaazon/hop.nvim",
 	"Yggdroot/indentLine",
 	"ellisonleao/gruvbox.nvim",
-	{ "junegunn/fzf",    run = ":call fzf#install()" },
+	{ "junegunn/fzf", run = ":call fzf#install()" },
 	"junegunn/fzf.vim",
 	"nvim-tree/nvim-tree.lua",
 	"nvim-tree/nvim-web-devicons", -- optional,
@@ -217,7 +210,6 @@ require("core.function")
 
 require("plugin.lazygit")
 require("plugin.k9s")
-require("plugin.navigator")
 require("plugin.project")
 require("plugin.git")
 require("plugin.tabnine")
