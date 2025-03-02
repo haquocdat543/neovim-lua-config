@@ -9,6 +9,7 @@ local servers = {
 	"yamlls",
 	"jdtls",
 	"jsonls",
+	"gopls",
 }
 
 mason.setup()
