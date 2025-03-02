@@ -3,6 +3,7 @@
 -- docker: yarn global add dockerfile-language-server-nodejs
 -- terraform: go install github.com/hashicorp/terraform-ls@latest
 -- bash: yarn global add bash-language-server
+-- java: install [jdtls] using mason
 
 local signs = { Error = "e ", Warn = "w ", Hint = "h ", Info = "i " }
 for type, icon in pairs(signs) do
