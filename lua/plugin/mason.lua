@@ -10,6 +10,7 @@ local lsps = {
 	"jdtls",
 	"jsonls",
 	"gopls",
+	"rust_analyzer",
 }
 
 mason.setup()
