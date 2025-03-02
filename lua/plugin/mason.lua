@@ -12,6 +12,7 @@ local lsps = {
 	"bashls",
 	"gopls",
 	"rust_analyzer",
+	"terraformls",
 }
 
 mason.setup()
