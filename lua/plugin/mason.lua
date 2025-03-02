@@ -10,7 +10,9 @@ mason.setup({
 			package_uninstalled = "✗",
 		},
 	},
-	ensure_installed = {},
+	ensure_installed = {
+		"jdtls"
+	},
 	-- auto-install configured servers (with lspconfig)
 	automatic_installation = true, -- not the same as ensure_installed
 })
