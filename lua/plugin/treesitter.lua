@@ -12,9 +12,7 @@ require("nvim-treesitter.configs").setup({
 	-- ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'help', 'vim' },
 
 	-- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-	rainbow = {
-		enable = true, -- disable rainbow for now
-	},
+	rainbow = { enable = false },
 	auto_install = true,
 	sync_install = true,
 	ensure_installed = { "javascript", "c", "lua", "vim", "vimdoc", "helm", "dockerfile", "yaml", "gotmpl" },
