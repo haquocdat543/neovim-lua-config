@@ -22,3 +22,6 @@ vim.opt.softtabstop = 2  -- Backspace removes 2 spaces at a time
 vim.opt.expandtab = true -- Convert tabs to spaces
 vim.opt.autoindent = true -- Maintain indentation level on new lines
 vim.opt.smartindent = true -- Auto-indent based on syntax
+
+-- Disable mouse
+vim.opt.mouse = ""
