@@ -34,7 +34,7 @@ require("tokyonight").setup({
 		hl.rainbowcol5             = { fg = c.purple }
 		hl.rainbowcol6             = { fg = c.cyan }
 		hl.rainbowcol7             = { fg = '#F4CA0D' }
-		-- hl.rainbowcol7 = { fg = c.purple }
+		hl.rainbowcol7             = { fg = c.purple }
 		hl["@punctuation.bracket"] = { fg = c.magenta } -- For brackets and parens.
 	end
 })
