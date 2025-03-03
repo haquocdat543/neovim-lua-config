@@ -308,10 +308,14 @@ vim.keymap.set("n", "<leader>fm", ":Format<CR>")
 -- Move to previous/next
 vim.keymap.set("n", "<A-,>", "<Cmd>BufferPrevious<CR>")
 vim.keymap.set("n", "<A-.>", "<Cmd>BufferNext<CR>")
+vim.keymap.set("n", "<A-h>", "<Cmd>BufferPrevious<CR>")
+vim.keymap.set("n", "<A-l>", "<Cmd>BufferNext<CR>")
 
 -- Re-order to previous/next
 vim.keymap.set("n", "<A-<>", "<Cmd>BufferMovePrevious<CR>")
 vim.keymap.set("n", "<A->>", "<Cmd>BufferMoveNext<CR>")
+vim.keymap.set("n", "<A-H", "<Cmd>BufferMovePrevious<CR>")
+vim.keymap.set("n", "<A-L", "<Cmd>BufferMoveNext<CR>")
 
 -- Goto buffer in position...
 vim.keymap.set("n", "<A-1>", "<Cmd>BufferGoto 1<CR>")
