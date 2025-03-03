@@ -225,7 +225,7 @@ vim.keymap.set("n", "<leader>2", ":set nopaste<CR><Cmd>Telescope live_grep hidde
 vim.keymap.set("n", "<leader>3", ":set nopaste<CR><Cmd>Telescope buffers hidden=true no_ignore=true<CR>")
 vim.keymap.set("n", "<leader>4", ":set nopaste<CR><Cmd>Telescope oldfiles hidden=true no_ignore=true<CR>")
 vim.keymap.set("n", "<leader>5", ":Telescope projects<CR>")
-vim.keymap.set("n", "<leader>cs", ":Telescope colorscheme<CR>")
+vim.keymap.set("n", "<leader>cs", function() require("telescope.builtin").colorscheme({ enable_preview = true }) end, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>6", ":Telescope lsp_definition<CR>")
 vim.keymap.set("n", "<leader>7", ":Telescope lsp_definitions<CR>")
 vim.keymap.set("n", "<leader>8", ":Telescope lsp_implementations<CR>")
