@@ -7,5 +7,5 @@ lint.linters_by_ft = {
 	python = { "flake8" },
 	sh = { "shellcheck" },
 	lua = { "luacheck" },
-	yaml = { "yamllint", "actionlint" },
+	go = { "golangci-lint" },
 }
