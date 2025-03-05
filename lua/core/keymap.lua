@@ -50,6 +50,8 @@ vim.keymap.set("i", "<C-x>", "<Esc><Esc>")
 -- Nvimtree - resize
 vim.keymap.set("n", "<leader>vv", ":vertical res +5<CR>")
 vim.keymap.set("n", "<leader>vd", ":vertical res -5<CR>")
+vim.keymap.set("n", "<leader>hh", ":horizontal res +5<CR>")
+vim.keymap.set("n", "<leader>hd", ":horizontal res -5<CR>")
 
 -- System - commands
 vim.keymap.set("n", "<leader>rg", ":registers<CR>")
