@@ -13,21 +13,21 @@ telescope.setup({
 			i = {
 				["<C-j>"] = actions.move_selection_next, -- Move down
 				["<C-k>"] = actions.move_selection_previous, -- Move up
-				["<C-n>"] = false, -- Disable default <C-n>
-				["<C-p>"] = false, -- Disable default <C-p>
-				["<C-o>"] = actions.select_default,  -- Open with <C-o>
+				["<C-n>"] = false,                       -- Disable default <C-n>
+				["<C-p>"] = false,                       -- Disable default <C-p>
+				["<C-o>"] = actions.select_default,      -- Open with <C-o>
 			},
 			n = {
-				["q"] = actions.close, -- Quit with 'q' in normal mode
-				["o"] = actions.select_default,  -- Open with <C-o>
+				["q"] = actions.close,      -- Quit with 'q' in normal mode
+				["o"] = actions.select_default, -- Open with <C-o>
 			},
 		},
 	},
 	pickers = {
-		live_grep = {
-			additional_args = function(opts)
-				return { "--hidden" }
-			end,
-		},
+		-- live_grep = {
+		-- additional_args = function(opts)
+		-- return { "--hidden" }
+		-- end,
+		-- },
 	},
 })
