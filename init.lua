@@ -195,7 +195,6 @@ local opts = {}
 
 require("lazy").setup(plugins, opts)
 
-require("core.colorscheme")
 require("core.keymap")
 require("core.format")
 require("core.option")
@@ -229,3 +228,5 @@ require("plugin.linter")
 require("plugin.kubectl")
 require("plugin.dashboard")
 require("plugin.crates")
+
+require("core.colorscheme")
