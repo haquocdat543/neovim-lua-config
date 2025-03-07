@@ -3,6 +3,8 @@ local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
 
 local lsps = {
+	"tailwindcss",
+	"gitlab_ci_ls",
 	"lua_ls",
 	"ts_ls",
 	"dockerls",
@@ -14,6 +16,7 @@ local lsps = {
 	"rust_analyzer",
 	"terraformls",
 	"zls",
+	"zk",
 }
 
 mason.setup()
