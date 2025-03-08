@@ -15,7 +15,7 @@ telescope.setup({
 			".terraform",
 			".vscode",
 			"dist",
-			".git",
+			"%.git/",
 		},
 		mappings = {
 			i = {
