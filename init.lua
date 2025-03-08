@@ -106,7 +106,7 @@ local plugins = {
 
 			-- Only one of these is needed, not both.
 			"nvim-telescope/telescope.nvim", -- optional
-			"ibhagwan/fzf-lua", -- optional
+			"ibhagwan/fzf-lua",           -- optional
 		},
 		config = true,
 	},
@@ -122,10 +122,11 @@ local plugins = {
 			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 			"MunifTanjim/nui.nvim",
 		},
-	},{
+	},
+	{
 		"romgrk/barbar.nvim",
 		dependencies = {
-			"lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
+			"lewis6991/gitsigns.nvim",  -- OPTIONAL: for git status
 			"nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
 		},
 		init = function()
@@ -144,7 +145,8 @@ local plugins = {
 	"ahmedkhalf/project.nvim",
 	"ramilito/kubectl.nvim",
 	"brenoprata10/nvim-highlight-colors",
-	"diepm/vim-rest-console",
+	"rest-nvim/rest.nvim",
+	dependencies = { "nvim-lua/plenary.nvim" },
 	"nvim-pack/nvim-spectre",
 	"nvim-tree/nvim-tree.lua",
 	"hsalem7/nvim-k8s",
@@ -188,7 +190,7 @@ local plugins = {
 	"antosha417/nvim-lsp-file-operations",
 	"WhoIsSethDaniel/mason-tool-installer.nvim",
 	"mhartington/formatter.nvim",
-  "mfussenegger/nvim-lint",
+	"mfussenegger/nvim-lint",
 }
 
 local opts = {}
@@ -224,6 +226,7 @@ require("plugin.lsp")
 require("plugin.formatter")
 require("plugin.debugger")
 require("plugin.linter")
+require("plugin.rest")
 
 require("plugin.kubectl")
 require("plugin.dashboard")
