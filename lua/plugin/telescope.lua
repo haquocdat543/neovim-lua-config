@@ -13,6 +13,7 @@ telescope.setup({
 			".terragrunt-cache",
 			"node_modules",
 			".terraform",
+			".vscode",
 			"dist",
 			".git",
 		},
