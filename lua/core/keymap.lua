@@ -236,6 +236,7 @@ vim.keymap.set("n", "<leader>cs", function() require("telescope.builtin").colors
 vim.keymap.set("n", "<leader>6", ":Telescope lsp_definitions<CR>")
 vim.keymap.set("n", "<leader>7", ":Telescope lsp_references<CR>")
 vim.keymap.set("n", "<leader>8", ":Telescope lsp_implementations<CR>")
+vim.keymap.set("n", "<leader>9", ":Telescope git_status<CR>")
 
 ----------------------------------------------------------------------------------------------------
 -- Linter
