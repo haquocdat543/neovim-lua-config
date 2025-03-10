@@ -52,7 +52,7 @@ require("lazy").setup({
 	require("plugin.hop"),
 	require("plugin.tokyonight"),
 	require("plugin.lualine"),
-	require("plugin.hightlight"),
+	require("plugin.highlight"),
 	require("plugin.nvim-tree"),
 	require("plugin.mason"),
 	require("plugin.saga"),
