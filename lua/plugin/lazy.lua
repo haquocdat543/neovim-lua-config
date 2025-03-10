@@ -18,12 +18,17 @@ require("lazy").setup({
 	"rbgrouleff/bclose.vim",
 	"francoiscabrol/ranger.vim",
 	"Yggdroot/indentLine",
-	"ellisonleao/gruvbox.nvim",
 	"voldikss/vim-floaterm",
 	"SirVer/ultisnips",
 	"L3MON4D3/LuaSnip",
 	"rafamadriz/friendly-snippets",
 	"jose-elias-alvarez/typescript.nvim",
+
+	-- colorscheme
+	require("plugin.colorscheme.gruvbox"),
+	require("plugin.colorscheme.tokyonight"),
+	require("plugin.colorscheme.catppuccin"),
+
 	require("plugin.lazygit"),
 	require("plugin.k9s"),
 	require("plugin.project"),
@@ -34,7 +39,6 @@ require("lazy").setup({
 	require("plugin.spectre"),
 	require("plugin.telescope"),
 	require("plugin.hop"),
-	require("plugin.tokyonight"),
 	require("plugin.lualine"),
 	require("plugin.highlight"),
 	require("plugin.nvim-tree"),
@@ -55,7 +59,6 @@ require("lazy").setup({
 	require("plugin.orgmode"),
 	require("plugin.barbar"),
 	require("plugin.autopair"),
-	require("plugin.catppuccin"),
 	require("plugin.markdown-preview"),
 	-- require("plugin.neotree"),
 })
