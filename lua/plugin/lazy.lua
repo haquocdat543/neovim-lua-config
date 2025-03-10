@@ -45,6 +45,7 @@ require("lazy").setup({
 	-- require("plugin.navigation.navigator"),
 	require("plugin.navigation.nvim-tree"),
 	require("plugin.navigation.project"),
+	require("plugin.navigation.spectre"),
 	require("plugin.navigation.ranger"),
 	require("plugin.navigation.barbar"),
 	require("plugin.navigation.hop"),
@@ -54,25 +55,31 @@ require("lazy").setup({
 	require("plugin.visualize.icon"),
 	require("plugin.visualize.parser"),
 	require("plugin.visualize.lualine"),
+	require("plugin.visualize.orgmode"),
 	require("plugin.visualize.autopair"),
 	require("plugin.visualize.highlight"),
 	require("plugin.visualize.treesitter"),
 	require("plugin.visualize.markdown-preview"),
 
+	-- operation
 	require("plugin.k9s"),
 	require("plugin.kubectl"),
 	require("plugin.rest"),
 
-	require("plugin.tabnine"),
-	require("plugin.spectre"),
-	require("plugin.mason"),
-	require("plugin.saga"),
-	require("plugin.cmp"),
-	require("plugin.lsp"),
-	require("plugin.debugger"),
-	require("plugin.linter"),
-	require("plugin.crates"),
+	-- code
+	require("plugin.code.tabnine"),
+	require("plugin.code.mason"),
+	require("plugin.code.saga"),
+	require("plugin.code.cmp"),
+	require("plugin.code.lsp"),
+	require("plugin.code.debugger"),
+	require("plugin.code.linter"),
+
+	-- task management
 	require("plugin.pomodoro"),
+
+	-- rust
+	require("plugin.crates"),
 	require("plugin.rustacean"),
-	require("plugin.orgmode"),
+
 })
