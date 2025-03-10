@@ -1,75 +1,99 @@
-vim.filetype.add({
-	extension = { gotmpl = "gotmpl" },
-	pattern = {
-		[".*/templates/.*%.tpl"] = "helm",
-		[".*/templates/.*%.ya?ml"] = "helm",
-		["helmfile.*%.ya?ml"] = "helm",
-	},
-})
+return {
+	"nvim-treesitter/nvim-treesitter",
+	config = function()
+		vim.filetype.add({
+			extension = { gotmpl = "gotmpl" },
+			pattern = {
+				[".*/templates/.*%.tpl"] = "helm",
+				[".*/templates/.*%.ya?ml"] = "helm",
+				["helmfile.*%.ya?ml"] = "helm",
+			},
+		})
 
-require("nvim-treesitter.configs").setup({
-	-- Add languages to be installed here that you want installed for treesitter
-	-- ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'help', 'vim' },
+		require("nvim-treesitter.configs").setup({
+			-- Add languages to be installed here that you want installed for treesitter
+			-- ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'help', 'vim' },
 
-	-- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
-	rainbow = { enable = false },
-	auto_install = true,
-	sync_install = true,
-	ensure_installed = { "javascript", "c", "lua", "vim", "vimdoc", "helm", "dockerfile", "yaml", "gotmpl" },
-	-- open_on_setup = true,
-	highlight = { enable = true },
-	indent = { enable = true, disable = { "python" } },
-	incremental_selection = {
-		enable = true,
-		keymaps = {
-			init_selection = "<c-f>",
-			node_incremental = "<c-f>",
-			scope_incremental = "<c-s>",
-			node_decremental = "<M-f>",
-		},
-	},
-	textobjects = {
-		select = {
-			enable = true,
-			lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
-			keymaps = {
-				-- You can use the capture groups defined in textobjects.scm
-				["aa"] = "@parameter.outer",
-				["ia"] = "@parameter.inner",
-				["af"] = "@function.outer",
-				["if"] = "@function.inner",
-				["ac"] = "@class.outer",
-				["ic"] = "@class.inner",
+			-- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
+			rainbow = {
+				enable = false
 			},
-		},
-		move = {
-			enable = true,
-			set_jumps = true, -- whether to set jumps in the jumplist
-			goto_next_start = {
-				["]m"] = "@function.outer",
-				["]]"] = "@class.outer",
+			auto_install = true,
+			sync_install = true,
+			ensure_installed = {
+				"javascript",
+				"c",
+				"lua",
+				"vim",
+				"vimdoc",
+				"helm",
+				"dockerfile",
+				"yaml",
+				"gotmpl"
 			},
-			goto_next_end = {
-				["]M"] = "@function.outer",
-				["]["] = "@class.outer",
+			-- open_on_setup = true,
+			highlight = {
+				enable = true
 			},
-			goto_previous_start = {
-				["[m"] = "@function.outer",
-				["[["] = "@class.outer",
+			indent = {
+				enable = true,
+				disable = {
+					"python"
+				}
 			},
-			goto_previous_end = {
-				["[M"] = "@function.outer",
-				["[]"] = "@class.outer",
+			incremental_selection = {
+				enable = true,
+				keymaps = {
+					init_selection = "<c-f>",
+					node_incremental = "<c-f>",
+					scope_incremental = "<c-s>",
+					node_decremental = "<M-f>",
+				},
 			},
-		},
-		swap = {
-			enable = true,
-			swap_next = {
-				[",a"] = "@parameter.inner",
+			textobjects = {
+				select = {
+					enable = true,
+					lookahead = true, -- Automatically jump forward to textobj, similar to targets.vim
+					keymaps = {
+						-- You can use the capture groups defined in textobjects.scm
+						["aa"] = "@parameter.outer",
+						["ia"] = "@parameter.inner",
+						["af"] = "@function.outer",
+						["if"] = "@function.inner",
+						["ac"] = "@class.outer",
+						["ic"] = "@class.inner",
+					},
+				},
+				move = {
+					enable = true,
+					set_jumps = true, -- whether to set jumps in the jumplist
+					goto_next_start = {
+						["]m"] = "@function.outer",
+						["]]"] = "@class.outer",
+					},
+					goto_next_end = {
+						["]M"] = "@function.outer",
+						["]["] = "@class.outer",
+					},
+					goto_previous_start = {
+						["[m"] = "@function.outer",
+						["[["] = "@class.outer",
+					},
+					goto_previous_end = {
+						["[M"] = "@function.outer",
+						["[]"] = "@class.outer",
+					},
+				},
+				swap = {
+					enable = true,
+					swap_next = {
+						[",a"] = "@parameter.inner",
+					},
+					swap_previous = {
+						[",A"] = "@parameter.inner",
+					},
+				},
 			},
-			swap_previous = {
-				[",A"] = "@parameter.inner",
-			},
-		},
-	},
-})
+		})
+	end,
+}

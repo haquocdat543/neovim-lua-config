@@ -16,16 +16,34 @@
 -- },
 -- })
 
-require("lspconfig").terraformls.setup({
-	filetypes = { "terraform", "hcl", "tf" }, -- Include HCL
-	on_attach = function(client, bufnr)
-		-- Enable formatting
-		client.server_capabilities.documentFormattingProvider = true
-	end,
-})
+return {
+	"neovim/nvim-lspconfig",
+	dependencies = {
+		"onsails/lspkind.nvim",
+		"antosha417/nvim-lsp-file-operations",
+	},
+	config = function()
+		require("lspconfig").terraformls.setup({
+			filetypes = {
+				"terraform",
+				"hcl",
+				"tf"
+			}, -- Include HCL
+			on_attach = function(client, bufnr)
+				-- Enable formatting
+				client.server_capabilities.documentFormattingProvider = true
+			end,
+		})
 
-local signs = { Error = "e ", Warn = "w ", Hint = "h ", Info = "i " }
-for type, icon in pairs(signs) do
-	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
+		local signs = {
+			Error = "e ",
+			Warn = "w ",
+			Hint = "h ",
+			Info = "i "
+		}
+		for type, icon in pairs(signs) do
+			local hl = "DiagnosticSign" .. type
+			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+		end
+	end,
+}
