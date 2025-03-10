@@ -75,11 +75,11 @@ require("lazy").setup({
 	require("plugin.code.debugger"),
 	require("plugin.code.linter"),
 
-	-- task management
-	require("plugin.pomodoro"),
+	-- task
+	require("plugin.task.pomodoro"),
 
 	-- rust
-	require("plugin.crates"),
-	require("plugin.rustacean"),
+	require("plugin.rust.crates"),
+	require("plugin.rust.rustacean"),
 
 })
