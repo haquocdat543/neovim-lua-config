@@ -17,7 +17,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	"rbgrouleff/bclose.vim",
 	"voldikss/vim-floaterm",
-	"jose-elias-alvarez/typescript.nvim",
 
 	-- colorscheme
 	require("plugin.colorscheme.gruvbox"),
@@ -77,6 +76,9 @@ require("lazy").setup({
 
 	-- task
 	require("plugin.task.pomodoro"),
+
+	-- typescipe
+	require("plugin.typescipt.typescipt"),
 
 	-- rust
 	require("plugin.rust.crates"),
