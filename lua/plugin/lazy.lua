@@ -15,15 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Import plugin configurations
 require("lazy").setup({
-	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-			"MunifTanjim/nui.nvim",
-		},
-	},
 	{ "codota/tabnine-nvim", build = "./dl_binaries.sh" },
 	"brenoprata10/nvim-highlight-colors",
 	dependencies = { "nvim-lua/plenary.nvim" },
@@ -82,4 +73,5 @@ require("lazy").setup({
 	require("plugin.autopair"),
 	require("plugin.catppuccin"),
 	require("plugin.markdown-preview"),
+	require("plugin.neotree"),
 })
