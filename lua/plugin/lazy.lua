@@ -19,9 +19,6 @@ require("lazy").setup({
 	"francoiscabrol/ranger.vim",
 	"Yggdroot/indentLine",
 	"voldikss/vim-floaterm",
-	"SirVer/ultisnips",
-	"L3MON4D3/LuaSnip",
-	"rafamadriz/friendly-snippets",
 	"jose-elias-alvarez/typescript.nvim",
 
 	-- colorscheme
@@ -34,6 +31,11 @@ require("lazy").setup({
 	require("plugin.git.lazygit"),
 	require("plugin.git.neogit"),
 	require("plugin.git.git"),
+
+	-- snippets
+	require("plugin.snippet.friendly-snippets"),
+	require("plugin.snippet.luasnip"),
+	require("plugin.snippet.ultisnips"),
 
 	require("plugin.k9s"),
 	require("plugin.project"),
