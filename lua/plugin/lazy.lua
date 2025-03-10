@@ -16,11 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 -- Import plugin configurations
 require("lazy").setup({
 	{
-		"mrcjkb/rustaceanvim",
-		version = "^5", -- Recommended
-		lazy = false, -- This plugin is already lazy
-	},
-	{
 		"nvim-orgmode/orgmode",
 		event = "VeryLazy",
 		ft = { "org" },
@@ -133,4 +128,5 @@ require("lazy").setup({
 	require("plugin.dashboard"),
 	require("plugin.crates"),
 	require("plugin.pomodoro"),
+	require("plugin.rustacean"),
 })
