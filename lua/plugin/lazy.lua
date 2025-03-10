@@ -29,13 +29,16 @@ require("lazy").setup({
 	require("plugin.colorscheme.tokyonight"),
 	require("plugin.colorscheme.catppuccin"),
 
-	require("plugin.lazygit"),
+	-- git
+	require("plugin.git.fugitive"),
+	require("plugin.git.lazygit"),
+	require("plugin.git.neogit"),
+	require("plugin.git.git"),
+
 	require("plugin.k9s"),
 	require("plugin.project"),
-	require("plugin.git"),
 	require("plugin.tabnine"),
 	require("plugin.icon"),
-	require("plugin.neogit"),
 	require("plugin.spectre"),
 	require("plugin.telescope"),
 	require("plugin.hop"),
