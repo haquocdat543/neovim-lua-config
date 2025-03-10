@@ -16,7 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 -- Import plugin configurations
 require("lazy").setup({
 	"rbgrouleff/bclose.vim",
-	"voldikss/vim-floaterm",
 
 	-- colorscheme
 	require("plugin.colorscheme.gruvbox"),
@@ -61,9 +60,10 @@ require("lazy").setup({
 	require("plugin.visualize.markdown-preview"),
 
 	-- operation
-	require("plugin.k9s"),
-	require("plugin.kubectl"),
-	require("plugin.rest"),
+	require("plugin.operation.k9s"),
+	require("plugin.operation.kubectl"),
+	require("plugin.operation.rest"),
+	require("plugin.operation.floatterm"),
 
 	-- code
 	require("plugin.code.tabnine"),
