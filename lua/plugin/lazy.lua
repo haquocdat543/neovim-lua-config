@@ -17,7 +17,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	"rbgrouleff/bclose.vim",
 	"francoiscabrol/ranger.vim",
-	"Yggdroot/indentLine",
 	"voldikss/vim-floaterm",
 	"jose-elias-alvarez/typescript.nvim",
 
@@ -37,6 +36,10 @@ require("lazy").setup({
 	require("plugin.snippet.luasnip"),
 	require("plugin.snippet.ultisnips"),
 
+	-- format
+	require("plugin.format.indent-line"),
+	require("plugin.format.formatter"),
+
 	require("plugin.k9s"),
 	require("plugin.project"),
 	require("plugin.tabnine"),
@@ -52,7 +55,6 @@ require("lazy").setup({
 	require("plugin.treesitter"),
 	require("plugin.cmp"),
 	require("plugin.lsp"),
-	require("plugin.formatter"),
 	require("plugin.debugger"),
 	require("plugin.linter"),
 	require("plugin.rest"),
