@@ -50,18 +50,23 @@ require("lazy").setup({
 	require("plugin.navigation.hop"),
 	-- require("plugin.navigation.neotree"),
 
+	-- visualize
+	require("plugin.visualize.icon"),
+	require("plugin.visualize.parser"),
+	require("plugin.visualize.lualine"),
+	require("plugin.visualize.autopair"),
+	require("plugin.visualize.highlight"),
+	require("plugin.visualize.treesitter"),
+	require("plugin.visualize.markdown-preview"),
+
 	require("plugin.k9s"),
 	require("plugin.kubectl"),
 	require("plugin.rest"),
 
 	require("plugin.tabnine"),
-	require("plugin.icon"),
 	require("plugin.spectre"),
-	require("plugin.lualine"),
-	require("plugin.highlight"),
 	require("plugin.mason"),
 	require("plugin.saga"),
-	require("plugin.treesitter"),
 	require("plugin.cmp"),
 	require("plugin.lsp"),
 	require("plugin.debugger"),
@@ -70,6 +75,4 @@ require("lazy").setup({
 	require("plugin.pomodoro"),
 	require("plugin.rustacean"),
 	require("plugin.orgmode"),
-	require("plugin.autopair"),
-	require("plugin.markdown-preview"),
 })
