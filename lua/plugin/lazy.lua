@@ -15,13 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Import plugin configurations
 require("lazy").setup({
-	{
-		"windwp/nvim-autopairs",
-		event = "InsertEnter",
-		config = true,
-		-- use opts = {} for passing setup options
-		-- this is equivalent to setup({}) function
-	},
 	{ "catppuccin/nvim",     name = "catppuccin",       priority = 1000 },
 	{
 		"iamcco/markdown-preview.nvim",
@@ -95,4 +88,5 @@ require("lazy").setup({
 	require("plugin.rustacean"),
 	require("plugin.orgmode"),
 	require("plugin.barbar"),
+	require("plugin.autopair"),
 })
