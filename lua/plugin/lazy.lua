@@ -16,7 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 -- Import plugin configurations
 require("lazy").setup({
 	"rbgrouleff/bclose.vim",
-	"francoiscabrol/ranger.vim",
 	"voldikss/vim-floaterm",
 	"jose-elias-alvarez/typescript.nvim",
 
@@ -40,16 +39,26 @@ require("lazy").setup({
 	require("plugin.format.indent-line"),
 	require("plugin.format.formatter"),
 
+	-- Navigation
+	require("plugin.navigation.telescope"),
+	require("plugin.navigation.dashboard"),
+	-- require("plugin.navigation.navigator"),
+	require("plugin.navigation.nvim-tree"),
+	require("plugin.navigation.project"),
+	require("plugin.navigation.ranger"),
+	require("plugin.navigation.barbar"),
+	require("plugin.navigation.hop"),
+	-- require("plugin.navigation.neotree"),
+
 	require("plugin.k9s"),
-	require("plugin.project"),
+	require("plugin.kubectl"),
+	require("plugin.rest"),
+
 	require("plugin.tabnine"),
 	require("plugin.icon"),
 	require("plugin.spectre"),
-	require("plugin.telescope"),
-	require("plugin.hop"),
 	require("plugin.lualine"),
 	require("plugin.highlight"),
-	require("plugin.nvim-tree"),
 	require("plugin.mason"),
 	require("plugin.saga"),
 	require("plugin.treesitter"),
@@ -57,15 +66,10 @@ require("lazy").setup({
 	require("plugin.lsp"),
 	require("plugin.debugger"),
 	require("plugin.linter"),
-	require("plugin.rest"),
-	require("plugin.kubectl"),
-	require("plugin.dashboard"),
 	require("plugin.crates"),
 	require("plugin.pomodoro"),
 	require("plugin.rustacean"),
 	require("plugin.orgmode"),
-	require("plugin.barbar"),
 	require("plugin.autopair"),
 	require("plugin.markdown-preview"),
-	-- require("plugin.neotree"),
 })
