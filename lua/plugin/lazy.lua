@@ -15,7 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Import plugin configurations
 require("lazy").setup({
-	{ "catppuccin/nvim",     name = "catppuccin",       priority = 1000 },
 	{
 		"iamcco/markdown-preview.nvim",
 		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -89,4 +88,5 @@ require("lazy").setup({
 	require("plugin.orgmode"),
 	require("plugin.barbar"),
 	require("plugin.autopair"),
+	require("plugin.catppuccin"),
 })
