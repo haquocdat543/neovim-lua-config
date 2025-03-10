@@ -15,7 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Import plugin configurations
 require("lazy").setup({
-	"rbgrouleff/bclose.vim",
 
 	-- colorscheme
 	require("plugin.colorscheme.gruvbox"),
@@ -83,5 +82,8 @@ require("lazy").setup({
 	-- rust
 	require("plugin.rust.crates"),
 	require("plugin.rust.rustacean"),
+
+	-- misc
+	require("plugin.misc.bclose"),
 
 })
