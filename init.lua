@@ -6,7 +6,7 @@ require("core.format")
 require("core.option")
 require("core.function")
 
-require("plugin.lazy") -- Main lazy.nvim setup
+require("plugin.plugin") -- Main lazy.nvim setup
 
 require("core.vim")
 require("core.colorscheme")
