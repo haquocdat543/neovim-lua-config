@@ -250,7 +250,7 @@ vim.keymap.set("n", "<leader>lt", function() require("lint").try_lint() end, { d
 -- vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
 vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Find References" })
 vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
-vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename Symbol" })
+vim.keymap.set("n", "<leader>rn", ":Lspsaga rename<CR>", { desc = "Rename Symbol" })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
 vim.keymap.set("n", "ca", ":Lspsaga code_action<CR>")
 vim.keymap.set("n", "gd", ":Lspsaga goto_definition<CR>")
