@@ -1,5 +1,6 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	run = ":TSUpdate",
 	config = function()
 		vim.filetype.add({
 			extension = { gotmpl = "gotmpl" },
@@ -29,7 +30,9 @@ return {
 				"helm",
 				"dockerfile",
 				"yaml",
-				"gotmpl"
+				"gotmpl",
+				"go",
+				"gomod",
 			},
 			-- open_on_setup = true,
 			highlight = {
