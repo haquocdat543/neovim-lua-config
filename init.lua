@@ -9,5 +9,4 @@ require("core.function")
 require("plugin.plugin") -- Main lazy.nvim setup
 
 require("core.vim")
-require("core.nvim")
 require("core.colorscheme")
