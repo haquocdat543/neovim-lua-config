@@ -13,6 +13,9 @@ return {
 		-- Golang
 		require("plugin.snippet.luasnip.go")
 
+		-- Makefile
+		require("plugin.snippet.luasnip.make")
+
 		-- Keybindings for LuaSnip
 		vim.keymap.set({ "i", "s" }, "<C-j>", function()
 			if luasnip.expand_or_jumpable() then
