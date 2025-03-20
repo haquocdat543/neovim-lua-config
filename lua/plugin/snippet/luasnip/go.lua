@@ -1,31 +1,21 @@
 local luasnip = require("luasnip")
+local a = luasnip.add_snippets
 local s = luasnip.snippet
 local t = luasnip.text_node
 local i = luasnip.insert_node
 
-return {
-	-- Main function
-	s("main", {
-		t([[
-      package main
+a("go", {
 
-      func main() {
-    ]]),
-		i(1, "// Your code here"),
-		t([[
-      }
-    ]]),
+	s("check", {
+		t({
+			"",
+			"func check(e error) {",
+			"    if e != nil {",
+			"        panic(e)",
+			"    }",
+			"}",
+			"",
+		})
 	}),
 
-	-- Struct definition
-	s("struct", {
-		t([[type ]]),
-		i(1, "MyStruct"),
-		t([[ struct {
-    ]]),
-		i(2, "Field1 string"),
-		t([[
-      }
-    ]]),
-	}),
-}
+})

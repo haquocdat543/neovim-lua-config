@@ -2,26 +2,16 @@ return {
 	"L3MON4D3/LuaSnip",
 	config = function()
 		local luasnip = require("luasnip")
-		local s = luasnip.snippet
-		local t = luasnip.text_node
-		local i = luasnip.insert_node
 
 		-- Set up LuaSnip
 		luasnip.config.setup({
-			history = true,                            -- Keep track of snippet history
+			history = true,                         -- Keep track of snippet history
 			updateevents = "TextChanged,TextChangedI", -- Update snippets as you type
 		})
 
-		-- Custom Go snippets
-		luasnip.add_snippets("go", {
-			s("check", {
-				t({ "func check(e error) {",
-					"    if e != nil {",
-					"        panic(e)",
-					"    }",
-					"}" })
-			}),
-		})
+		-- Load all snippets
+		-- Golang
+		require("plugin.snippet.luasnip.go")
 
 		-- Keybindings for LuaSnip
 		vim.keymap.set({ "i", "s" }, "<C-j>", function()
