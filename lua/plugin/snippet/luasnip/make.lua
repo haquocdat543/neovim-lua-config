@@ -9,8 +9,15 @@ a("make", {
 	s("go", {
 		t({
 			"",
-			"run:",
-			"	go run main.go",
+			"i-air:",
+			"	go install github.com/air-verse/air@latest",
+			"i-reflex:",
+			"	go install github.com/cespare/reflex@latest",
+			"",
+			"air:",
+			"	air",
+			"reflex:",
+			"	reflex -r '\\.go$$' -s -- go run main.go",
 			"",
 		})
 	}),
