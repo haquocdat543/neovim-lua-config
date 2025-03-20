@@ -31,13 +31,15 @@ vim.keymap.set("n", "<leader>yy", '"*yy')
 vim.keymap.set("n", "<leader>el", "yypC")
 vim.keymap.set("n", "<leader>eL", "yyPC")
 
+-- Exit
+vim.keymap.set("n", "ZZ", ":wq!<CR>")
+vim.keymap.set("n", "ZQ", ":qa<CR>")
+
 -- System
 vim.keymap.set("n", ",ch", ":checkhealth ")
 vim.keymap.set("n", "+", "<C-a>")
 vim.keymap.set("n", "-", "<C-x>")
 vim.keymap.set("n", "<C-a>", "gg<M-v>G")
-vim.keymap.set("n", "ZQ", ":q!<CR>")
-vim.keymap.set("n", "ZZ", ":wq!<CR>")
 vim.keymap.set("n", "<leader>hr", ":%!xxd<CR> :set filetype=xxd<CR>")
 vim.keymap.set("n", "<leader>hw", ":%!xxd -r<CR> :set binary<CR> :set filetype=<CR>")
 vim.keymap.set("n", "<leader>el", "yypC")
