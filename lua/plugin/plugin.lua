@@ -20,6 +20,7 @@ require("lazy").setup({
 	require("plugin.colorscheme.gruvbox"),
 	require("plugin.colorscheme.tokyonight"),
 	require("plugin.colorscheme.catppuccin"),
+	require("plugin.colorscheme.dracula"),
 
 	-- git
 	require("plugin.git.fugitive"),
