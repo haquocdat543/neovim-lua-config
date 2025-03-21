@@ -34,4 +34,22 @@ a("go", {
 		})
 	}),
 
+	s("writefile", {
+		t({
+			"",
+			"content := []byte(",
+		}),
+		i(1, "\"Hello, Go!\""), -- Insert node for file content
+		t({ ")",
+			"err := os.WriteFile(",
+		}),
+		i(2, "\"example.txt\""), -- Insert node for filename
+		t({ ", content, 0644)",
+			"if err != nil {",
+			"	fmt.Println(\"Error writing file:\", err)",
+			"}",
+			"",
+		})
+	}),
+
 })
