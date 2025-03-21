@@ -21,6 +21,8 @@ a("make", {
 			"	air",
 			"reflex:",
 			"	reflex -r '\\.go$$' -s -- go run main.go",
+			"ginkgo-w:",
+			"	ginkgo watch",
 			"",
 		})
 	}),
