@@ -18,4 +18,20 @@ a("go", {
 		})
 	}),
 
+	s("readfile", {
+		t({
+			"",
+			"data, err := os.ReadFile(",
+		}),
+		i(1, "\"filename.txt\""), -- Insert node for filename
+		t({
+			")",
+			"if err != nil {",
+			"	fmt.Println(\"Error reading file:\", err)",
+			"	return",
+			"}",
+			"",
+		})
+	}),
+
 })
