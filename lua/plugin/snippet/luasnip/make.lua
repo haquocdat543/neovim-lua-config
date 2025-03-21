@@ -9,6 +9,9 @@ a("make", {
 	s("go", {
 		t({
 			"",
+			"i-ginkgo:",
+			"	go install github.com/onsi/ginkgo/v2/ginkgo@latest",
+			"	go get github.com/onsi/gomega",
 			"i-air:",
 			"	go install github.com/air-verse/air@latest",
 			"i-reflex:",
