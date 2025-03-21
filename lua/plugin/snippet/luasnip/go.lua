@@ -52,4 +52,55 @@ a("go", {
 		})
 	}),
 
+	s("gjson", {
+		t({
+			"",
+		}),
+		i(1,
+			"value"),
+		t({
+			" := gjson.Get(",
+		}),
+		i(2, "json"),
+		t({
+			",",
+		}),
+		i(3, "\"name.last\""),
+		t({ ")", }),
+	}),
+
+	s("marshal", {
+		t({
+			""
+		}),
+		i(1, "jsonData"),
+		t({
+			", err := json.Marshal("
+		}),
+		i(2, "struct"),
+		t({
+			")",
+			"if err != nil {",
+			"  fmt.Println(err)",
+			"  return",
+			"}",
+			"",
+		}),
+	}),
+
+	s("unmarshal", {
+		t({
+"json.Unmarshal([]byte(",
+		}),
+		i(1, "jsonStr"),
+		t({
+			"), &"
+		}),
+		i(2, "structName"),
+		t({
+			")",
+			""
+		}),
+	})
+
 })
