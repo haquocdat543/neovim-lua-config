@@ -25,6 +25,8 @@ return {
 			"terraformls",
 			"zls",
 			"zk",
+			"ltex",
+			"pylsp",
 		}
 
 		mason.setup()
