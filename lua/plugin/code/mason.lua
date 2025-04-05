@@ -27,6 +27,7 @@ return {
 			"zk",
 			"ltex",
 			"pylsp",
+			"csharp_ls",
 		}
 
 		mason.setup()
