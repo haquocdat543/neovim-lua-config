@@ -15,7 +15,7 @@ return {
 				"gohtmltmpl",
 				"gotexttmpl",
 				"gotmpl",
-				"yaml"
+				"yaml",
 			},
 		}
 	end,

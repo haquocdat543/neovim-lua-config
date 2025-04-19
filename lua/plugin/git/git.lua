@@ -32,7 +32,7 @@ return {
 			target_branch = "master",
 			-- Private gitlab hosts, if you use a private gitlab, put your private gitlab host here
 			private_gitlabs = {
-				"https://xxx.git.com"
+				"https://xxx.git.com",
 			},
 			-- Enable winbar in all windows created by this plugin
 			winbar = false,

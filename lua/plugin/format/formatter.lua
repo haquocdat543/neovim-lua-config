@@ -18,7 +18,10 @@ return {
 				-- HCL formatter using hclfmt
 				hcl = {
 					function()
-						return { exe = "hclfmt", stdin = true }
+						return {
+							exe = "hclfmt",
+							stdin = true,
+						}
 					end,
 				},
 
@@ -28,13 +31,22 @@ return {
 				-- JSON formatter (choose jq or prettier)
 				json = {
 					function()
-						return { exe = "jq", args = { "." }, stdin = true }
+						return {
+							exe = "jq",
+							args = {
+								".",
+							},
+							stdin = true,
+						}
 					end,
 				},
 
 				go = {
 					function()
-						return { exe = "gofmt", stdin = true }
+						return {
+							exe = "gofmt",
+							stdin = true,
+						}
 					end,
 				},
 				-- YAML formatter using yamlfmt (uncomment if needed)
