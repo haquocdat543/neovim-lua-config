@@ -29,6 +29,7 @@ return {
 			"lemminx",
 			"pylsp",
 			"csharp_ls",
+			"phpactor",
 		}
 
 		mason.setup()
