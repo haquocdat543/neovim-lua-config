@@ -22,7 +22,10 @@ return {
 					".terraform",
 					".vscode",
 					"dist",
-					"%.git/",
+					"%.git/objects",
+					"%.git/logs",
+					"%.git/hooks",
+					"%.git/lost-found",
 				},
 				mappings = {
 					i = {
