@@ -40,7 +40,11 @@ return {
 		local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 		local on_attach = function(client, bufnr)
-			local opts = { noremap = true, silent = true, buffer = bufnr }
+			local opts = {
+				noremap = true,
+				silent = true,
+				buffer = bufnr,
+			}
 			client.server_capabilities.documentFormattingProvider = true
 		end
 
