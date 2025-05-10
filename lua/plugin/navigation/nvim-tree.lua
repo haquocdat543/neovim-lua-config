@@ -26,6 +26,29 @@ return {
 			},
 			renderer = {
 				group_empty = true,
+				indent_markers = {
+					enable = true,
+					inline_arrows = true,
+					icons = {
+						corner = "└",
+						edge = "│",
+						item = "│",
+						bottom = "─",
+						none = " ",
+					},
+				},
+				icons = {
+					web_devicons = {
+						file = {
+							enable = true,
+							color = true,
+						},
+						folder = {
+							enable = true,
+							color = true,
+						},
+					},
+				}
 			},
 			filters = {
 				dotfiles = false,
