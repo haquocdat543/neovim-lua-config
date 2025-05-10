@@ -58,6 +58,7 @@ require("lazy").setup({
 	require("plugin.visualize.highlight"),
 	require("plugin.visualize.treesitter"),
 	require("plugin.visualize.markdown-preview"),
+	require("plugin.visualize.indent"),
 
 	-- operation
 	require("plugin.operation.k9s"),
