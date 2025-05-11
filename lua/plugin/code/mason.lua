@@ -31,6 +31,7 @@ return {
 			"csharp_ls",
 			"phpactor",
 			"html",
+			"cssls",
 		}
 
 		mason.setup()
