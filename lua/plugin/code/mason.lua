@@ -30,6 +30,7 @@ return {
 			"pylsp",
 			"csharp_ls",
 			"phpactor",
+			"html",
 		}
 
 		mason.setup()
