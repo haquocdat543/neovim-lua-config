@@ -10,8 +10,6 @@ return {
 	},
 	config = function()
 		local neogit = require("neogit")
-		neogit.setup({
-			kind = "split"
-		})
+		neogit.setup({})
 	end,
 }
