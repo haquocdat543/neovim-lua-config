@@ -32,6 +32,7 @@ return {
 			"phpactor",
 			"html",
 			"cssls",
+			"marksman",
 		}
 
 		mason.setup()
