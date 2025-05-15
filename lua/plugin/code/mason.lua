@@ -33,6 +33,8 @@ return {
 			"html",
 			"cssls",
 			"marksman",
+			"cmake",
+			"clangd",
 		}
 
 		mason.setup()
