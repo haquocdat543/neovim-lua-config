@@ -13,6 +13,9 @@ return {
 		-- Golang
 		require("plugin.snippet.luasnip.go")
 
+		-- CSS
+		require("plugin.snippet.luasnip.css")
+
 		-- Makefile
 		require("plugin.snippet.luasnip.make")
 
