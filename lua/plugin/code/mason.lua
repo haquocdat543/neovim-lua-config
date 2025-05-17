@@ -35,6 +35,7 @@ return {
 			"marksman",
 			"cmake",
 			"clangd",
+			"emmet_language_server",
 		}
 
 		mason.setup()
