@@ -13,7 +13,8 @@ return {
 		-- Golang
 		require("plugin.snippet.luasnip.go")
 
-		-- CSS
+		-- Web
+		require("plugin.snippet.luasnip.html")
 		require("plugin.snippet.luasnip.css")
 
 		-- Makefile
