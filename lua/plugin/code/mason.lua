@@ -36,6 +36,7 @@ return {
 			"cmake",
 			"clangd",
 			"emmet_language_server",
+			"elixirls",
 		}
 
 		mason.setup()
