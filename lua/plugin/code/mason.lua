@@ -62,6 +62,21 @@ return {
 				capabilities = capabilities,
 			})
 		end
-	end,
 
+		require 'lspconfig'.tailwindcss.setup {
+			filetypes = {
+				"html",
+				"css",
+				"scss",
+				"javascript",
+				"javascriptreact",
+				"typescript",
+				"typescriptreact",
+				"svelte",
+				"astro",
+			},
+			-- optionally, override root_dir if necessary:
+			-- root_dir = require('lspconfig').util.root_pattern('tailwind.config.js', 'tailwind.config.cjs', 'postcss.config.js', 'package.json', '.git'),
+		}
+	end,
 }
