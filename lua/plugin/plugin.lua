@@ -41,6 +41,7 @@ require("lazy").setup({
 	require("plugin.navigation.telescope"),
 	require("plugin.navigation.dashboard"),
 	-- require("plugin.navigation.navigator"),
+	require("plugin.navigation.oil"),
 	require("plugin.navigation.nvim-tree"),
 	require("plugin.navigation.project"),
 	require("plugin.navigation.spectre"),
