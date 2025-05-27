@@ -1,4 +1,7 @@
-local opts = { noremap = true, silent = true }
+local opts = {
+	noremap = true,
+	silent = true,
+}
 
 ----------------------------------------------------------------------------------------------------
 -- System
