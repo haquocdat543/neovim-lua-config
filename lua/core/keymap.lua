@@ -49,6 +49,9 @@ vim.keymap.set("n", "<leader>ra", ":call ReplaceAll")
 -- Map ESC
 vim.keymap.set("i", "<C-x>", "<Esc><Esc>")
 
+-- Oil
+vim.keymap.set("n", "<leader>oo", ":Oil<CR>")
+
 -- Nvimtree - resize
 vim.keymap.set("n", "<leader>vv", ":vertical res +5<CR>")
 vim.keymap.set("n", "<leader>vd", ":vertical res -5<CR>")
