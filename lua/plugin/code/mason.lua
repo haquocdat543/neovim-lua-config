@@ -37,6 +37,7 @@ return {
 			"clangd",
 			"emmet_language_server",
 			"elixirls",
+			"volar",
 		}
 
 		mason.setup()
