@@ -80,5 +80,20 @@ return {
 			-- optionally, override root_dir if necessary:
 			-- root_dir = require('lspconfig').util.root_pattern('tailwind.config.js', 'tailwind.config.cjs', 'postcss.config.js', 'package.json', '.git'),
 		}
+
+		require 'lspconfig'.emmet_language_server.setup {
+			filetypes = {
+				"html",
+				"css",
+				"scss",
+				"javascript",
+				"javascriptreact",
+				"typescript",
+				"typescriptreact",
+				"svelte",
+				"astro",
+			},
+		}
+
 	end,
 }
