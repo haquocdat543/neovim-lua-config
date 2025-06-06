@@ -13,6 +13,9 @@ return {
 		-- Golang
 		require("plugin.snippet.luasnip.go")
 
+		-- Python
+		require("plugin.snippet.luasnip.py")
+
 		-- Web
 		require("plugin.snippet.luasnip.html")
 		require("plugin.snippet.luasnip.css")
