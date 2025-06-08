@@ -7,6 +7,20 @@ local i = luasnip.insert_node
 
 a("html", {
 
+	-- FontAwesome via CDN
+	s("fontawesome", {
+		t({
+			"<link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css\">",
+		})
+	}),
+
+	-- BulmaCSS via CDN
+	s("bulma", {
+		t({
+			"<link rel=\"stylesheet\" href=\"https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css\">",
+		})
+	}),
+
 	-- Google font via CDN
 	s("google-font", {
 		t({
