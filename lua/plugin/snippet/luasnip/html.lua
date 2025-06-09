@@ -7,6 +7,13 @@ local i = luasnip.insert_node
 
 a("html", {
 
+	-- MathJax2 via CDN
+	s("mathjax2", {
+		t({
+			"<script id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js\"></script>",
+		})
+	}),
+
 	-- MathJax via CDN
 	s("mathjax", {
 		t({
