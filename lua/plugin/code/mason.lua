@@ -38,6 +38,7 @@ return {
 			"emmet_language_server",
 			"elixirls",
 			"volar",
+			"nginx_language_server",
 		}
 
 		mason.setup()
