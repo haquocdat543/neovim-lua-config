@@ -73,6 +73,13 @@ a("html", {
 		})
 	}),
 
+	-- TablerIcon via CDN
+	s("ti", {
+		t({
+			"<img src=\"https://unpkg.com/@tabler/icons/icons/home.svg\" width=\"24\" height=\"24\">",
+		})
+	}),
+
 	-- BulmaCSS via CDN
 	s("bulma", {
 		t({
