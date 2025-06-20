@@ -29,6 +29,14 @@ a("html", {
 		})
 	}),
 
+	-- MaterialIcon via CDN
+	s("mi", {
+		t({
+			"<link href=\"https://fonts.googleapis.com/css2?family=Material+Icons\" rel=\"stylesheet\">",
+			"<link href=\"https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined\" rel=\"stylesheet\">",
+		})
+	}),
+
 	-- BulmaCSS via CDN
 	s("bulma", {
 		t({
