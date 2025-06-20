@@ -59,6 +59,13 @@ a("html", {
 		})
 	}),
 
+	-- RemixIcon via CDN
+	s("ri", {
+		t({
+			"<link href=\"https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css\" rel=\"stylesheet\">",
+		})
+	}),
+
 	-- BulmaCSS via CDN
 	s("bulma", {
 		t({
