@@ -80,6 +80,13 @@ a("html", {
 		})
 	}),
 
+	-- DevIcon via CDN
+	s("di", {
+		t({
+			"<link href=\"https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css\" rel=\"stylesheet\">",
+		})
+	}),
+
 	-- BulmaCSS via CDN
 	s("bulma", {
 		t({
