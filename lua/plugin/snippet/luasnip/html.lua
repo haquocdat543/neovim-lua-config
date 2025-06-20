@@ -66,6 +66,13 @@ a("html", {
 		})
 	}),
 
+	-- BoxIcon via CDN
+	s("boxi", {
+		t({
+			"<link href=\"https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css\" rel=\"stylesheet\">",
+		})
+	}),
+
 	-- BulmaCSS via CDN
 	s("bulma", {
 		t({
