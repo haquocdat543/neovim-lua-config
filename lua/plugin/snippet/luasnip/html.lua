@@ -37,6 +37,13 @@ a("html", {
 		})
 	}),
 
+	-- BoostrapIcon via CDN
+	s("bi", {
+		t({
+			"<link href=\"https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css\" rel=\"stylesheet\">",
+		})
+	}),
+
 	-- BulmaCSS via CDN
 	s("bulma", {
 		t({
