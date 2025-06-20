@@ -44,6 +44,13 @@ a("html", {
 		})
 	}),
 
+	-- FeatherIcon via CDN
+	s("fi", {
+		t({
+			"<script src=\"https://unpkg.com/feather-icons\"></script>",
+		})
+	}),
+
 	-- BulmaCSS via CDN
 	s("bulma", {
 		t({
