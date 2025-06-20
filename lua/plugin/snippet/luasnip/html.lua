@@ -87,6 +87,13 @@ a("html", {
 		})
 	}),
 
+	-- Iconify via CDN
+	s("iconify", {
+		t({
+			"<script src=\"https://code.iconify.design/iconify-icon/1.0.8/iconify-icon.min.js\"></script>",
+		})
+	}),
+
 	-- BulmaCSS via CDN
 	s("bulma", {
 		t({
