@@ -26,4 +26,35 @@ a("css", {
 		})
 	}),
 
+	s("scrollable", {
+		t({
+			"body {",
+			"",
+			"  overflow: hidden;",
+			"",
+			"  height: 100vh;",
+			"  width: 100vw;",
+			"",
+			"  margin: 0;",
+			"  padding: 0;",
+			"",
+			"}",
+			"",
+			"#root {",
+			"",
+			"  position: fixed;",
+			"",
+			"  overflow-y: auto;",
+			"",
+			"  top: 0;",
+			"",
+			"  height: 100vh;",
+			"  width: 100vw;",
+			"",
+			"  background-color: white;",
+			"",
+			"}",
+		})
+	}),
+
 })
