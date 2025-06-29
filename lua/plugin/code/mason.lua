@@ -39,6 +39,7 @@ return {
 			"elixirls",
 			"volar",
 			"nginx_language_server",
+			"svelte",
 		}
 
 		mason.setup()
