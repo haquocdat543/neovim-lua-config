@@ -40,6 +40,7 @@ return {
 			"volar",
 			"nginx_language_server",
 			"svelte",
+			"angularjs",
 		}
 
 		mason.setup()
