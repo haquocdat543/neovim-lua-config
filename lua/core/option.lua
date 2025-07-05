@@ -30,3 +30,13 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+-- Rest Nvim
+vim.bo.formatexpr = ""
+vim.bo.formatprg = "jq"
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "json",
+  callback = function(ev)
+    vim.bo[ev.buf].formatprg = "jq"
+    print("It's a json file")
+  end,
+})
