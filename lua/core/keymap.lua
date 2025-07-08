@@ -258,6 +258,8 @@ vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action
 vim.keymap.set("n", "ca", ":Lspsaga code_action<CR>")
 vim.keymap.set("n", "gd", ":Lspsaga goto_definition<CR>")
 vim.keymap.set("n", "<leader>pd", ":Lspsaga peek_definition<CR>")
+vim.keymap.set("n", "<leader>fd", ":Lspsaga finder<CR>")
+vim.keymap.set("n", "<leader>sd", ":Lspsaga show_buf_diagnostics<CR>")
 vim.keymap.set("n", "<leader>ol", ":Lspsaga outline<CR>")
 vim.keymap.set("n", "<leader>tt", ":Lspsaga term_toggle<CR>")
 vim.keymap.set("n", "<leader>wt", ":Lspsaga winbar_toggle<CR>")
