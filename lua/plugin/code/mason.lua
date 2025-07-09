@@ -37,7 +37,7 @@ return {
 			"clangd",
 			"emmet_language_server",
 			"elixirls",
-			"volar",
+			"vue_ls",
 			"nginx_language_server",
 			"svelte",
 			"angularls",
