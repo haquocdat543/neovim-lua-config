@@ -41,6 +41,8 @@ return {
 			"nginx_language_server",
 			"svelte",
 			"angularls",
+			"ruby_lsp",
+			"rnix",
 		}
 
 		mason.setup()
