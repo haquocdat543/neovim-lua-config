@@ -16,6 +16,7 @@
   "fzf-lua": { "branch": "main", "commit": "f8805989fc8f164ea3fab37bdec963add9576964" },
   "git.nvim": { "branch": "main", "commit": "7354ed2efe31b979778cb62ffa2fa23df70eaf26" },
   "gitsigns.nvim": { "branch": "main", "commit": "362fe61f9f19e9bceff178792780df5cce118a7d" },
+  "graphql.nvim": { "branch": "master", "commit": "6e11c91efc3f2d08927649a066666c3b508b9d3a" },
   "gruvbox.nvim": { "branch": "main", "commit": "58a2cda2e953a99e2f87c12b7fb4602da4e0709c" },
   "hop.nvim": { "branch": "master", "commit": "1a1eceafe54b5081eae4cb91c723abd1d450f34b" },
   "indent-blankline.nvim": { "branch": "master", "commit": "005b56001b2cb30bfa61b7986bc50657816ba4ba" },

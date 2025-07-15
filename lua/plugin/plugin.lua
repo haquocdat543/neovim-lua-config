@@ -66,6 +66,7 @@ require("lazy").setup({
 	require("plugin.operation.k9s"),
 	require("plugin.operation.kubectl"),
 	require("plugin.operation.rest"),
+	require("plugin.operation.graphql"),
 	require("plugin.operation.floatterm"),
 
 	-- code
