@@ -100,5 +100,19 @@ return {
 			},
 		}
 
+		local home = os.getenv("HOME")
+
+		require 'lspconfig' .jdtls.setup {
+			cmd = {
+				'java',
+				'-javaagent:' .. home .. '/.m2/repository/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar',
+				'--add-modules=ALL-SYSTEM',
+				'--add-opens', 'java.base/java.lang=ALL-UNNAMED',
+				'-jar', home .. '/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.7.0.v20250519-0528.jar',
+				'-configuration', home .. '/.local/share/nvim/mason/packages/jdtls/config_mac', -- or config_mac_arm for Apple Silicon
+				'-data', home .. '/.cache/jdtls/workspace',
+			},
+			root_dir = require('lspconfig.util').root_pattern('pom.xml', '.git'),
+		}
 	end,
 }
