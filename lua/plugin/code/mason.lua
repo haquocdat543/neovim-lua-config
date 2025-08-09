@@ -70,6 +70,16 @@ return {
 			})
 		end
 
+		require 'lspconfig'.lua_ls.setup {
+			settings = {
+				Lua = {
+					codeLens = {
+						enable = true
+					}
+				}
+			}
+		}
+
 		require 'lspconfig'.tailwindcss.setup {
 			filetypes = {
 				"html",
