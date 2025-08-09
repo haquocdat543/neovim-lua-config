@@ -102,7 +102,7 @@ return {
 
 		local home = os.getenv("HOME")
 
-		require 'lspconfig' .jdtls.setup {
+		require 'lspconfig'.jdtls.setup {
 			cmd = {
 				'java',
 				'-javaagent:' .. home .. '/.m2/repository/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar',
@@ -113,6 +113,14 @@ return {
 				'-data', home .. '/.cache/jdtls/workspace',
 			},
 			root_dir = require('lspconfig.util').root_pattern('pom.xml', '.git'),
+			settings = {
+				java = {
+					saveActions = {
+						cleanup = true,
+						organizeImports = true,
+					},
+				}
+			}
 		}
 	end,
 }
