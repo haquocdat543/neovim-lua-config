@@ -79,6 +79,7 @@ require("lazy").setup({
 	require("plugin.code.debugger"),
 	require("plugin.code.linter"),
 	require("plugin.code.surround"),
+	require("plugin.code.conform"),
 
 	-- task
 	require("plugin.task.pomodoro"),
