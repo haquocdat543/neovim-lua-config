@@ -23,8 +23,6 @@ vim.opt.expandtab = true   -- Convert tabs to spaces
 vim.opt.autoindent = true  -- Maintain indentation level on new lines
 vim.opt.smartindent = true -- Auto-indent based on syntax
 
-vim.o.list = true
-
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "css",
   callback = function()
