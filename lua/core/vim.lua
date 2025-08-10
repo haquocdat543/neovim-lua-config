@@ -31,15 +31,14 @@ vim.api.nvim_create_autocmd("VimEnter", {
 	end,
 })
 
-vim.cmd([[
-    highlight RainbowDelimiterRed  guifg=#f4ca0d ctermfg=White
-    highlight RainbowDelimiterYellow guifg=#9d7cd8 ctermfg=White
-    highlight RainbowDelimiterBlue guifg=#7dcfff ctermfg=White
-    highlight RainbowDelimiterOrange guifg=#f4ca0d ctermfg=White
-    highlight RainbowDelimiterGreen guifg=#9d7cd8 ctermfg=White
-    highlight RainbowDelimiterViolet guifg=#7dcfff ctermfg=White
-    highlight RainbowDelimiterCyan guifg=#f4ca0d ctermfg=White
-]])
+-- Direct Lua highlight definitions
+vim.api.nvim_set_hl(0, "RainbowDelimiterRed", { fg = "#f4ca0d", ctermfg = "White" })
+vim.api.nvim_set_hl(0, "RainbowDelimiterYellow", { fg = "#9d7cd8", ctermfg = "White" })
+vim.api.nvim_set_hl(0, "RainbowDelimiterBlue", { fg = "#7dcfff", ctermfg = "White" })
+vim.api.nvim_set_hl(0, "RainbowDelimiterOrange", { fg = "#f4ca0d", ctermfg = "White" })
+vim.api.nvim_set_hl(0, "RainbowDelimiterGreen", { fg = "#9d7cd8", ctermfg = "White" })
+vim.api.nvim_set_hl(0, "RainbowDelimiterViolet", { fg = "#7dcfff", ctermfg = "White" })
+vim.api.nvim_set_hl(0, "RainbowDelimiterCyan", { fg = "#f4ca0d", ctermfg = "White" })
 
 -- Enable concealment for markdown files
 vim.api.nvim_create_autocmd("FileType", {
