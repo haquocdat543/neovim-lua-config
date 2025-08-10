@@ -24,7 +24,32 @@ vim.opt.autoindent = true -- Maintain indentation level on new lines
 vim.opt.smartindent = true -- Auto-indent based on syntax
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "css",
+	pattern = {
+		"html",
+		"htmldjango",
+		"javascript",
+		"javascriptreact",
+		"typescript",
+		"typescriptreact",
+		"vue",
+		"svelte",
+		"astro",
+		"css",
+		"scss",
+		"less",
+		"stylus",
+		"sass",
+		"php",
+		"twig",
+		"liquid",
+		"markdown",
+		"mdx",
+		"json",
+		"yaml",
+		"toml",
+		"xml",
+		"svg",
+	},
 	callback = function()
 		vim.opt_local.iskeyword:remove("-")
 	end,
