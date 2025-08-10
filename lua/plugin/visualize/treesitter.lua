@@ -2,22 +2,13 @@ return {
 	"nvim-treesitter/nvim-treesitter",
 	run = ":TSUpdate",
 	config = function()
-		vim.filetype.add({
-			extension = { gotmpl = "gotmpl" },
-			pattern = {
-				[".*/templates/.*%.tpl"] = "helm",
-				[".*/templates/.*%.ya?ml"] = "helm",
-				["helmfile.*%.ya?ml"] = "helm",
-			},
-		})
-
 		require("nvim-treesitter.configs").setup({
 			-- Add languages to be installed here that you want installed for treesitter
 			-- ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'typescript', 'help', 'vim' },
 
 			-- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
 			rainbow = {
-				enable = false
+				enable = false,
 			},
 			auto_install = true,
 			sync_install = true,
@@ -36,13 +27,13 @@ return {
 			},
 			-- open_on_setup = true,
 			highlight = {
-				enable = true
+				enable = true,
 			},
 			indent = {
 				enable = true,
 				disable = {
-					"python"
-				}
+					"python",
+				},
 			},
 			incremental_selection = {
 				enable = true,
@@ -98,5 +89,8 @@ return {
 				},
 			},
 		})
+
+		-- Register filetype for specific treesitter parsers
+		vim.treesitter.language.register("terraform", "terra")
 	end,
 }

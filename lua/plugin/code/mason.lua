@@ -116,6 +116,15 @@ return {
 			})
 		end
 
+		vim.lsp.config("terraformls", {
+			filetypes = {
+				"tf",
+				"hcl",
+				"terra",
+				"terraform",
+			},
+		})
+
 		require("lspconfig").lua_ls.setup({
 			settings = {
 				Lua = {
