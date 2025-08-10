@@ -56,6 +56,7 @@ return {
 			"ruby_lsp",
 			"rnix",
 			"clojure_lsp",
+			"astro",
 		}
 
 		local formatters = {
