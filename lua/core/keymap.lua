@@ -236,7 +236,9 @@ vim.keymap.set("n", "<leader>2", ":set nopaste<CR><Cmd>Telescope live_grep hidde
 vim.keymap.set("n", "<leader>3", ":set nopaste<CR><Cmd>Telescope buffers hidden=true no_ignore=true<CR>")
 vim.keymap.set("n", "<leader>4", ":set nopaste<CR><Cmd>Telescope oldfiles hidden=true no_ignore=true<CR>")
 vim.keymap.set("n", "<leader>5", ":set nopaste<CR><Cmd>Telescope projects<CR>")
-vim.keymap.set("n", "<leader>cs", function() require("telescope.builtin").colorscheme({ enable_preview = true }) end, opts)
+vim.keymap.set("n", "<leader>cs", function()
+	require("telescope.builtin").colorscheme({ enable_preview = true })
+end, opts)
 vim.keymap.set("n", "<leader>6", ":set nopaste<CR><Cmd>Telescope lsp_definitions<CR>")
 vim.keymap.set("n", "<leader>7", ":set nopaste<CR><Cmd>Telescope lsp_references<CR>")
 vim.keymap.set("n", "<leader>8", ":set nopaste<CR><Cmd>Telescope lsp_implementations<CR>")
@@ -245,7 +247,9 @@ vim.keymap.set("n", "<leader>9", ":set nopaste<CR><Cmd>Telescope git_status<CR>"
 ----------------------------------------------------------------------------------------------------
 -- Linter
 ----------------------------------------------------------------------------------------------------
-vim.keymap.set("n", "<leader>lt", function() require("lint").try_lint() end, { desc = "Run Linter" })
+vim.keymap.set("n", "<leader>lt", function()
+	require("lint").try_lint()
+end, { desc = "Run Linter" })
 
 ----------------------------------------------------------------------------------------------------
 -- LSP
@@ -264,37 +268,38 @@ vim.keymap.set("n", "<leader>ol", ":Lspsaga outline<CR>")
 vim.keymap.set("n", "<leader>tt", ":Lspsaga term_toggle<CR>")
 vim.keymap.set("n", "<leader>wt", ":Lspsaga winbar_toggle<CR>")
 vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Help" })
-vim.keymap.set("n", "<leader>fc", function() vim.lsp.buf.format({ async = true }) end, { desc = "Format Code" })
+vim.keymap.set("n", "<leader>fc", function()
+	vim.lsp.buf.format({ async = true })
+end, { desc = "Format Code" })
 
 vim.keymap.set("n", "<leader>ab", function()
-    local clients = vim.lsp.get_active_clients()
-    if #clients == 0 then
-        print("No active LSP clients")
-        return
-    end
+	local clients = vim.lsp.get_active_clients()
+	if #clients == 0 then
+		print("No active LSP clients")
+		return
+	end
 
-    local capabilities = vim.inspect(clients[1].server_capabilities)
+	local capabilities = vim.inspect(clients[1].server_capabilities)
 
-    -- Display in a floating window
-    local buf = vim.api.nvim_create_buf(false, true)
-    vim.api.nvim_buf_set_lines(buf, 0, -1, false, vim.split(capabilities, "\n"))
+	-- Display in a floating window
+	local buf = vim.api.nvim_create_buf(false, true)
+	vim.api.nvim_buf_set_lines(buf, 0, -1, false, vim.split(capabilities, "\n"))
 
-    local width = math.min(80, vim.o.columns - 4)
-    local height = math.min(20, vim.o.lines - 4)
+	local width = math.min(80, vim.o.columns - 4)
+	local height = math.min(20, vim.o.lines - 4)
 
-    local options = {
-        relative = "editor",
-        width = width,
-        height = height,
-        row = (vim.o.lines - height) / 2,
-        col = (vim.o.columns - width) / 2,
-        style = "minimal",
-        border = "rounded",
-    }
+	local options = {
+		relative = "editor",
+		width = width,
+		height = height,
+		row = (vim.o.lines - height) / 2,
+		col = (vim.o.columns - width) / 2,
+		style = "minimal",
+		border = "rounded",
+	}
 
-    vim.api.nvim_open_win(buf, true, options)
+	vim.api.nvim_open_win(buf, true, options)
 end, { desc = "Show LSP Capabilities" })
-
 
 ----------------------------------------------------------------------------------------------------
 -- Format
@@ -304,15 +309,33 @@ vim.keymap.set("n", "<leader>fm", ":Format<CR>")
 ----------------------------------------------------------------------------------------------------
 -- DAP
 ----------------------------------------------------------------------------------------------------
-vim.keymap.set("n", "<leader>dc", function() require("dap").continue() end)
-vim.keymap.set("n", "<leader>sv", function() require("dap").step_over() end)
-vim.keymap.set("n", "<leader>si", function() require("dap").step_into() end)
-vim.keymap.set("n", "<leader>so", function() require("dap").step_out() end)
-vim.keymap.set("n", "<Leader>b", function() require("dap").toggle_breakpoint() end)
-vim.keymap.set("n", "<Leader>B", function() require("dap").set_breakpoint() end)
-vim.keymap.set("n", "<Leader>dr", function() require("dap").repl.open() end)
-vim.keymap.set("n", "<Leader>du", function() require("dapui").toggle() end)
-vim.keymap.set("n", "<Leader>du", function() require("dapui").toggle() end)
+vim.keymap.set("n", "<leader>dc", function()
+	require("dap").continue()
+end)
+vim.keymap.set("n", "<leader>sv", function()
+	require("dap").step_over()
+end)
+vim.keymap.set("n", "<leader>si", function()
+	require("dap").step_into()
+end)
+vim.keymap.set("n", "<leader>so", function()
+	require("dap").step_out()
+end)
+vim.keymap.set("n", "<Leader>b", function()
+	require("dap").toggle_breakpoint()
+end)
+vim.keymap.set("n", "<Leader>B", function()
+	require("dap").set_breakpoint()
+end)
+vim.keymap.set("n", "<Leader>dr", function()
+	require("dap").repl.open()
+end)
+vim.keymap.set("n", "<Leader>du", function()
+	require("dapui").toggle()
+end)
+vim.keymap.set("n", "<Leader>du", function()
+	require("dapui").toggle()
+end)
 vim.keymap.set("n", "<leader>fm", ":Format<CR>")
 
 ----------------------------------------------------------------------------------------------------
