@@ -123,6 +123,14 @@ return {
 				"terra",
 				"terraform",
 			},
+			settings = {
+				terraform = {
+					experimentalFeatures = {
+						prefillRequiredFields = true,
+						validateOnSave = true,
+					},
+				},
+			},
 		})
 
 		require("lspconfig").lua_ls.setup({
