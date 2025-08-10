@@ -1,4 +1,4 @@
-vim.g.mapleader = " "      -- for normal mode
+vim.g.mapleader = " " -- for normal mode
 vim.g.maplocalleader = " " -- for local leader mappings
 vim.opt.title = true
 vim.opt.hlsearch = true
@@ -16,27 +16,27 @@ vim.opt.wildmenu = true
 vim.opt.laststatus = 2
 vim.opt.cursorline = true
 
-vim.opt.tabstop = 2        -- Visually represent a tab as 2 spaces
-vim.opt.shiftwidth = 2     -- Indent by 2 spaces
-vim.opt.softtabstop = 2    -- Backspace removes 2 spaces at a time
-vim.opt.expandtab = true   -- Convert tabs to spaces
-vim.opt.autoindent = true  -- Maintain indentation level on new lines
+vim.opt.tabstop = 2 -- Visually represent a tab as 2 spaces
+vim.opt.shiftwidth = 2 -- Indent by 2 spaces
+vim.opt.softtabstop = 2 -- Backspace removes 2 spaces at a time
+vim.opt.expandtab = true -- Convert tabs to spaces
+vim.opt.autoindent = true -- Maintain indentation level on new lines
 vim.opt.smartindent = true -- Auto-indent based on syntax
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "css",
-  callback = function()
-    vim.opt_local.iskeyword:remove("-")
-  end,
+	pattern = "css",
+	callback = function()
+		vim.opt_local.iskeyword:remove("-")
+	end,
 })
 
 -- Rest Nvim
 vim.bo.formatexpr = ""
 vim.bo.formatprg = "jq"
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "json",
-  callback = function(ev)
-    vim.bo[ev.buf].formatprg = "jq"
-    print("It's a json file")
-  end,
+	pattern = "json",
+	callback = function(ev)
+		vim.bo[ev.buf].formatprg = "jq"
+		print("It's a json file")
+	end,
 })
