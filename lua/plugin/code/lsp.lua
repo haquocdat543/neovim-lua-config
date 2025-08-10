@@ -23,23 +23,11 @@ return {
 		"antosha417/nvim-lsp-file-operations",
 	},
 	config = function()
-		require("lspconfig").terraformls.setup({
-			filetypes = {
-				"terraform",
-				"hcl",
-				"tf"
-			}, -- Include HCL
-			on_attach = function(client, bufnr)
-				-- Enable formatting
-				client.server_capabilities.documentFormattingProvider = true
-			end,
-		})
-
 		local signs = {
 			Error = "e ",
 			Warn = "w ",
 			Hint = "h ",
-			Info = "i "
+			Info = "i ",
 		}
 		for type, icon in pairs(signs) do
 			local hl = "DiagnosticSign" .. type
