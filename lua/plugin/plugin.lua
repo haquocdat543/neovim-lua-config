@@ -49,6 +49,7 @@ require("lazy").setup({
 	require("plugin.navigation.barbar"),
 	require("plugin.navigation.hop"),
 	-- require("plugin.navigation.neotree"),
+	require("plugin.navigation.multiline"),
 
 	-- visualize
 	require("plugin.visualize.icon"),
@@ -93,5 +94,4 @@ require("lazy").setup({
 
 	-- misc
 	require("plugin.misc.bclose"),
-
 })
