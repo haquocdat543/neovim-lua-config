@@ -12,6 +12,7 @@ return {
 				typescriptreact = { "prettier" },
 				vue = { "prettier" },
 				svelte = { "prettier" },
+				astro = { "prettier" },
 				css = { "prettier" },
 				html = { "prettier" },
 				json = { "prettier" },
