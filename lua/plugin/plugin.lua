@@ -45,6 +45,7 @@ require("lazy").setup({
 	require("plugin.navigation.nvim-tree"),
 	require("plugin.navigation.project"),
 	require("plugin.navigation.spectre"),
+	require("plugin.navigation.grugfar"),
 	require("plugin.navigation.ranger"),
 	require("plugin.navigation.barbar"),
 	require("plugin.navigation.hop"),
