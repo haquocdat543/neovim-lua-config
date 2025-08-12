@@ -407,3 +407,12 @@ vim.keymap.set("n", "<Space>bw", "<Cmd>BufferOrderByWindowNumber<CR>")
 -- Other:
 -- :BarbarEnable - enables barbar (enabled by default)
 -- :BarbarDisable - very bad command, should never be used
+
+----------------------------------------------------------------------------------------------------
+-- Parrot
+----------------------------------------------------------------------------------------------------
+vim.keymap.set("n", "<Space>p1", "<Cmd>PrtAsk<CR>")
+vim.keymap.set("n", "<Space>p2", "<Cmd>PrtChatNew<CR>")
+vim.keymap.set("n", "<Space>p3", "<Cmd>PrtChatToggle<CR>")
+vim.keymap.set("n", "<Space>p4", "<Cmd>PrtChatFinder<CR>")
+vim.keymap.set("n", "<Space>p5", "<Cmd>PrtChatResponde<CR>")
