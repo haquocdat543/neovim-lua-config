@@ -81,6 +81,7 @@ require("lazy").setup({
 	require("plugin.code.linter"),
 	require("plugin.code.surround"),
 	require("plugin.code.conform"),
+	require("plugin.code.ollama"),
 	require("plugin.code.parrot"),
 	require("plugin.code.mcphub"),
 	require("plugin.code.avante"),
