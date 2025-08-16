@@ -82,6 +82,7 @@ require("lazy").setup({
 	require("plugin.code.surround"),
 	require("plugin.code.conform"),
 	require("plugin.code.parrot"),
+	require("plugin.code.mcphub"),
 
 	-- task
 	require("plugin.task.pomodoro"),
