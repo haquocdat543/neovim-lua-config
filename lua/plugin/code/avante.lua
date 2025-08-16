@@ -11,11 +11,11 @@ return {
 	opts = {
 		-- add any opts here
 		-- for example
-		provider = "claude",
+		provider = "ollama",
 		providers = {
-			ollama3 = {
-				endpoint = "http://127.0.0.1:11434",
-				model = "llama3",
+			ollama = {
+				endpoint = "http://localhost:11434",
+				model = "llama3:latest",
 				timeout = 30000, -- Timeout in milliseconds
 				extra_request_body = {
 					temperature = 0.75,
