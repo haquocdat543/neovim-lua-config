@@ -65,3 +65,13 @@ vim.api.nvim_create_autocmd("FileType", {
 		print("It's a json file")
 	end,
 })
+
+vim.api.nvim_create_autocmd(
+	{ "BufRead", "BufReadPost", "BufNewFile", "BufWinEnter", "BufEnter", "BufWritePre", "BufWritePost" },
+	{
+		pattern = "*.md",
+		callback = function()
+			vim.cmd("LspStop ltex")
+		end,
+	}
+)
