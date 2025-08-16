@@ -262,6 +262,8 @@ end, { desc = "Run Linter" })
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(ev)
 		-- vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
+		vim.keymap.set("n", "<leader>lp", ":LspStop<CR>")
+		vim.keymap.set("n", "<leader>ls", ":LspStart<CR>")
 		vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Find References" })
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
 		vim.keymap.set("n", "<leader>rn", ":Lspsaga rename<CR>", { desc = "Rename Symbol" })
