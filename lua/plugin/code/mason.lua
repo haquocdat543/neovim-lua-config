@@ -37,7 +37,6 @@ return {
 			"terraformls",
 			"zls",
 			"zk",
-			"ltex",
 			"lemminx",
 			"pylsp",
 			"csharp_ls",
