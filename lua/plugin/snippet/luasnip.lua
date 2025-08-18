@@ -5,7 +5,7 @@ return {
 
 		-- Set up LuaSnip
 		luasnip.config.setup({
-			history = true,                         -- Keep track of snippet history
+			history = true, -- Keep track of snippet history
 			updateevents = "TextChanged,TextChangedI", -- Update snippets as you type
 		})
 
@@ -22,6 +22,9 @@ return {
 
 		-- Makefile
 		require("plugin.snippet.luasnip.make")
+
+		-- Markdown
+		require("plugin.snippet.luasnip.md")
 
 		-- Keybindings for LuaSnip
 		vim.keymap.set(
