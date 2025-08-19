@@ -176,28 +176,6 @@ return {
 		local home = os.getenv("HOME")
 
 		require("lspconfig").jdtls.setup({
-			cmd = {
-				"java",
-				"-javaagent:" .. home .. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
-				"-Xbootclasspath/a:" .. home .. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
-				"-Declipse.application=org.eclipse.jdt.ls.core.id1",
-				"-Dosgi.bundles.defaultStartLevel=4",
-				"-Declipse.product=org.eclipse.jdt.ls.core.product",
-				"-Dlog.protocol=true",
-				"-Dlog.level=ALL",
-				"--add-modules=ALL-SYSTEM",
-				"--add-opens",
-				"java.base/java.lang=ALL-UNNAMED",
-				"--add-opens",
-				"java.base/java.util=ALL-UNNAMED",
-				"-jar",
-				home
-					.. "/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.7.0.v20250519-0528.jar",
-				"-configuration",
-				home .. "/.local/share/nvim/mason/packages/jdtls/config_mac", -- or config_mac_arm for Apple Silicon
-				"-data",
-				home .. "/.cache/jdtls/workspace",
-			},
 			root_dir = require("lspconfig.util").root_pattern("pom.xml", ".git", "nvnw", "gradlew", "build.gradle"),
 			capabilities = {
 				workspace = {
