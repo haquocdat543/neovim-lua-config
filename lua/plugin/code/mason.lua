@@ -178,10 +178,18 @@ return {
 		require("lspconfig").jdtls.setup({
 			cmd = {
 				"java",
-				"-javaagent:" .. home .. "/.m2/repository/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar",
+				"-javaagent:" .. home .. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
+				"-Xbootclasspath/a:" .. home .. "/.local/share/nvim/mason/packages/jdtls/lombok.jar",
+				"-Declipse.application=org.eclipse.jdt.ls.core.id1",
+				"-Dosgi.bundles.defaultStartLevel=4",
+				"-Declipse.product=org.eclipse.jdt.ls.core.product",
+				"-Dlog.protocol=true",
+				"-Dlog.level=ALL",
 				"--add-modules=ALL-SYSTEM",
 				"--add-opens",
 				"java.base/java.lang=ALL-UNNAMED",
+				"--add-opens",
+				"java.base/java.util=ALL-UNNAMED",
 				"-jar",
 				home
 					.. "/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.7.0.v20250519-0528.jar",
@@ -190,12 +198,42 @@ return {
 				"-data",
 				home .. "/.cache/jdtls/workspace",
 			},
-			root_dir = require("lspconfig.util").root_pattern("pom.xml", ".git"),
+			root_dir = require("lspconfig.util").root_pattern("pom.xml", ".git", "nvnw", "gradlew", "build.gradle"),
+			capabilities = {
+				workspace = {
+					configuration = true,
+				},
+				textDocument = {
+					completion = {
+						snippetSupport = true,
+					},
+				},
+			},
+			extendedClientCapabilities = {
+				classFileContentsSupport = true,
+			},
 			settings = {
 				java = {
+					maven = { downloadSources = true },
+					compile = {
+						annotationProcessing = {
+							enabled = true,
+							generateComments = true,
+						},
+					},
+					symbols = {
+						includeSourceMethodDeclarations = true,
+					},
+					references = {
+						includeDecompiledSources = true,
+					},
 					saveActions = {
 						cleanup = true,
 						organizeImports = true,
+					},
+					contentProvider = { preferred = "fernflower" },
+					configuration = {
+						updateBuildConfiguration = "interactive",
 					},
 				},
 			},
