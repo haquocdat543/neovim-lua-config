@@ -58,6 +58,7 @@ require("lazy").setup({
 	require("plugin.visualize.lualine"),
 	require("plugin.visualize.orgmode"),
 	require("plugin.visualize.autopair"),
+	require("plugin.visualize.autotag"),
 	require("plugin.visualize.highlight"),
 	require("plugin.visualize.treesitter"),
 	require("plugin.visualize.markdown-preview"),
