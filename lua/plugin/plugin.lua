@@ -97,6 +97,7 @@ require("lazy").setup({
 	-- rust
 	require("plugin.rust.crates"),
 	require("plugin.rust.rustacean"),
+	require("plugin.rust.rustowl"),
 
 	-- misc
 	require("plugin.misc.bclose"),
