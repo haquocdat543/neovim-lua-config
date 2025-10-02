@@ -87,6 +87,7 @@ require("lazy").setup({
 	require("plugin.code.parrot"),
 	require("plugin.code.mcphub"),
 	require("plugin.code.avante"),
+	require("plugin.code.openscad"),
 
 	-- task
 	require("plugin.task.pomodoro"),
