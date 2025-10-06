@@ -48,7 +48,6 @@ return {
 			"clangd",
 			"emmet_language_server",
 			"elixirls",
-			"vue_ls",
 			"nginx_language_server",
 			"svelte",
 			"angularls",
@@ -67,7 +66,6 @@ return {
 			"prettier",
 			"prettierd",
 			"shfmt",
-			"stylua",
 		}
 
 		local daps = {
@@ -133,7 +131,7 @@ return {
 			},
 		})
 
-		require("lspconfig").lua_ls.setup({
+		vim.lsp.config("lua_ls", {
 			settings = {
 				Lua = {
 					codeLens = {
@@ -143,7 +141,7 @@ return {
 			},
 		})
 
-		require("lspconfig").tailwindcss.setup({
+		vim.lsp.config("tailwindcss", {
 			filetypes = {
 				"html",
 				"css",
@@ -159,7 +157,7 @@ return {
 			-- root_dir = require('lspconfig').util.root_pattern('tailwind.config.js', 'tailwind.config.cjs', 'postcss.config.js', 'package.json', '.git'),
 		})
 
-		require("lspconfig").emmet_language_server.setup({
+		vim.lsp.config("emmet_language_server", {
 			filetypes = {
 				"html",
 				"css",
@@ -175,7 +173,7 @@ return {
 
 		local home = os.getenv("HOME")
 
-		require("lspconfig").jdtls.setup({
+		vim.lsp.config("jdtls", {
 			root_dir = require("lspconfig.util").root_pattern("pom.xml", ".git", "nvnw", "gradlew", "build.gradle"),
 			capabilities = {
 				workspace = {
