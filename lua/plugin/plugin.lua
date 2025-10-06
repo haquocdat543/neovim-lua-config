@@ -85,7 +85,7 @@ require("lazy").setup({
 	require("plugin.code.ollama"),
 	require("plugin.code.codecompanion"),
 	require("plugin.code.parrot"),
-	require("plugin.code.mcphub"),
+	-- require("plugin.code.mcphub"),
 	require("plugin.code.avante"),
 	require("plugin.code.openscad"),
 
