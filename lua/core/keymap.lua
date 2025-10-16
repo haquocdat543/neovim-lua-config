@@ -249,6 +249,9 @@ vim.keymap.set("n", "<leader>7", ":set nopaste<CR><Cmd>Telescope lsp_references<
 vim.keymap.set("n", "<leader>8", ":set nopaste<CR><Cmd>Telescope lsp_implementations<CR>")
 vim.keymap.set("n", "<leader>9", ":set nopaste<CR><Cmd>Telescope git_status<CR>")
 
+-- Extension
+vim.keymap.set("n", "<leader>j", ":set nopaste<CR><Cmd>Telescope emoji<CR>")
+
 ----------------------------------------------------------------------------------------------------
 -- Linter
 ----------------------------------------------------------------------------------------------------
