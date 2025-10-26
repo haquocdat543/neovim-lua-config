@@ -51,6 +51,7 @@ require("lazy").setup({
 	-- require("plugin.navigation.hop"),
 	-- require("plugin.navigation.neotree"),
 	require("plugin.navigation.multiline"),
+	require("plugin.navigation.undotree"),
 
 	-- visualize
 	require("plugin.visualize.icon"),
