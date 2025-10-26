@@ -88,6 +88,8 @@ require("lazy").setup({
 	-- require("plugin.code.mcphub"),
 	require("plugin.code.avante"),
 	require("plugin.code.openscad"),
+	require("plugin.code.tidal-vim"),
+	require("plugin.code.tidal"),
 
 	-- task
 	require("plugin.task.pomodoro"),

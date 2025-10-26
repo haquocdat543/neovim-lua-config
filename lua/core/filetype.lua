@@ -2,6 +2,8 @@ vim.filetype.add({
 	extension = {
 		-- TERRAFORM
 		-- tf = "tf",
+		tidal = "tidal",
+		scd   = "tidal"
 	},
 	filename = {
 		-- TERRAFORM
