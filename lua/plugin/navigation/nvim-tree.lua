@@ -60,6 +60,9 @@ return {
 			},
 			filters = {
 				dotfiles = false,
+				custom = {
+					"^.git$"
+				}
 			},
 		})
 	end,
