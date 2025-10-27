@@ -91,6 +91,7 @@ require("lazy").setup({
 	require("plugin.code.openscad"),
 	require("plugin.code.tidal-vim"),
 	require("plugin.code.tidal"),
+	require("plugin.code.sonicpi"),
 
 	-- task
 	require("plugin.task.pomodoro"),
