@@ -90,6 +90,7 @@ require("lazy").setup({
 	require("plugin.code.avante"),
 	require("plugin.code.openscad"),
 	require("plugin.code.tidal-vim"),
+	require("plugin.code.tidal2"),
 	-- require("plugin.code.sonicpi"),
 	require("plugin.code.supercollider"),
 
