@@ -72,6 +72,14 @@ vim.keymap.set("n", "<leader>tm", ":split<CR><C-w>w:horizontal resize -10<CR>:te
 vim.keymap.set("n", "<leader>dd", ":windo diffthis<CR>")
 vim.keymap.set("n", "<leader>do", ":diffoff!<CR>")
 
+-- Close Diffview with 'q'
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "DiffviewFiles", "DiffviewFileHistoryPanel" },
+	callback = function()
+		vim.keymap.set("n", "q", "<cmd>DiffviewClose<CR>", { buffer = true, silent = true })
+	end,
+})
+
 -- System - default file open
 vim.keymap.set("n", "<leader>en", ":tabnew ~/.config/nvim/init.lua<CR>")
 vim.keymap.set("n", "<leader>ev", ":tabnew ~/.vimrc<CR>")
