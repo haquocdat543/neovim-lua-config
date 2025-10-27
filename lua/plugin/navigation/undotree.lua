@@ -15,6 +15,6 @@ return {
 		},
 	},
 	keys = { -- load the plugin only when using it's keybinding:
-		{ "<leader>ut", "<cmd>lua require('undotree').toggle()<cr>" },
+		{ "<leader>ud", "<cmd>lua require('undotree').toggle()<cr>" },
 	},
 }
