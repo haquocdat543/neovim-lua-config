@@ -3,7 +3,7 @@ vim.filetype.add({
 		-- TERRAFORM
 		-- tf = "tf",
 		tidal = "tidal",
-		scd   = "tidal"
+		scd   = "supercollider"
 	},
 	filename = {
 		-- TERRAFORM
