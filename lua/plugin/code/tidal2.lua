@@ -3,6 +3,14 @@ return {
 	opts = {
 		-- Your configuration here
 		-- See configuration section for defaults
+		mappings = {
+			send_line = { mode = { "i", "n" }, key = "<leader>t6" },
+			send_visual = { mode = { "x" }, key = "<leader>t5" },
+			send_block = { mode = { "i", "n", "x" }, key = "<leader>t4" },
+			send_node = { mode = "n", key = "<leader>t7" },
+			send_silence = { mode = "n", key = "<leader>t3" },
+			send_hush = { mode = "n", key = "<leader>t2" },
+		},
 	},
 	-- Recommended: Install TreeSitter parsers for Haskell and SuperCollider
 	dependencies = {
@@ -10,9 +18,8 @@ return {
 		opts = { ensure_installed = { "haskell", "supercollider" } },
 	},
 
-	vim.keymap.set("n", "<leader>t1", ":TidalLaunch<CR>"),
-	vim.keymap.set("n", "<leader>t2", ":TidalQuit<CR>"),
-	vim.keymap.set("n", "<leader>t3", ":TidalStartEventHighlighting<CR>"),
-	vim.keymap.set("n", "<leader>t4", ":TidalStopEventHighlighting<CR>"),
+	vim.keymap.set("n", "<leader>t1", ":TidalLaunch<CR>:TidalStartEventHighlighting<CR>"),
+
+	vim.keymap.set("n", "<leader>t3", "$a,<ESC>yyp$d0ci\""),
 
 }
