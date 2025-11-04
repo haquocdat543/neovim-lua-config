@@ -27,6 +27,7 @@ require("lazy").setup({
 	require("plugin.git.lazygit"),
 	require("plugin.git.neogit"),
 	require("plugin.git.git"),
+	require("plugin.git.gitgutter"),
 
 	-- snippets
 	require("plugin.snippet.friendly-snippets"),
