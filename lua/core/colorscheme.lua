@@ -1,4 +1,11 @@
-vim.cmd.colorscheme("gruvbox")
+-- vim.cmd.colorscheme("gruvbox")
 -- vim.cmd.colorscheme("tokyonight-night")
 -- vim.cmd.colorscheme("catppuccin-mocha")
 -- vim.cmd.colorscheme("tokyonight-day")
+local time = os.date("*t")
+if time.hour < 8 or time.hour > 19 then
+	vim.g.tokyonight_style = "night"
+	vim.cmd([[colorscheme tokyonight]])
+else
+	vim.cmd([[colorscheme gruvbox]])
+end
