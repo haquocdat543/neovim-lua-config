@@ -121,15 +121,6 @@ vim.keymap.set("n", "<leader>ft", ":FloatermNew<CR>")
 vim.keymap.set("n", "<leader>tt", ":terminal<CR>")
 
 ----------------------------------------------------------------------------------------------------
--- Hop ( movement )
-----------------------------------------------------------------------------------------------------
--- vim.keymap.set("n", "<leader><leader>g", ":HopAnywhere<CR>")
--- vim.keymap.set("n", "<leader>j", ":HopWord<CR>")
--- vim.keymap.set("n", "<leader><leader>l", ":HopLine<CR>")
--- vim.keymap.set("n", "<leader><leader>c", ":HopChar1<CR>")
--- vim.keymap.set("n", "<leader>b", ",,")
-
-----------------------------------------------------------------------------------------------------
 -- Lazy
 ----------------------------------------------------------------------------------------------------
 vim.keymap.set("n", "<leader>ll", ":Lazy<CR>")
