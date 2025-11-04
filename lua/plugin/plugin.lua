@@ -28,6 +28,7 @@ require("lazy").setup({
 	require("plugin.git.neogit"),
 	require("plugin.git.git"),
 	require("plugin.git.gitgutter"),
+	require("plugin.git.gitsigns"),
 
 	-- snippets
 	require("plugin.snippet.friendly-snippets"),
@@ -65,7 +66,6 @@ require("lazy").setup({
 	require("plugin.visualize.treesitter"),
 	require("plugin.visualize.markdown-preview"),
 	require("plugin.visualize.indent"),
-	require("plugin.visualize.gitsigns"),
 
 	-- operation
 	require("plugin.operation.k9s"),
