@@ -3,6 +3,20 @@ return {
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
+	keys = {
+		{
+			"<leader>nt",
+			"<CMD>NvimTreeToggle<CR>",
+		},
+		{
+			"<leader>nf",
+			"<CMD>NvimTreeFindFile<CR>",
+		},
+		{
+			"<leader>nc",
+			"<CMD>NvimTreeFocus<CR>",
+		},
+	},
 	config = function()
 		require("nvim-tree").setup({
 			git = {

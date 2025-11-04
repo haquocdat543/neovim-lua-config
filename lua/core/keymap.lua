@@ -116,13 +116,6 @@ vim.keymap.set("n", "<leader>tt", ":terminal<CR>")
 ----------------------------------------------------------------------------------------------------
 vim.keymap.set("n", "<leader>ll", ":Lazy<CR>")
 
-----------------------------------------------------------------------------------------------------
--- Nvim tree
-----------------------------------------------------------------------------------------------------
-vim.keymap.set("n", "<leader>nt", ":NvimTreeToggle<CR>")
-vim.keymap.set("n", "<leader>nf", ":NvimTreeFindFile<CR>")
-vim.keymap.set("n", "<leader>nc", ":NvimTreeFocus<CR>")
--- vim.keymap.set('n','<leader>nt',':NERDTreeToggle<CR>')
 vim.keymap.set("n", "<leader>db", ":Dashboard<CR>")
 
 ----------------------------------------------------------------------------------------------------
