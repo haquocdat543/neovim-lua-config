@@ -205,27 +205,6 @@ vim.keymap.set("n", "<leader>mm", ":Mason<CR>")
 vim.keymap.set("n", "<leader>mi", ":MasonInstall ")
 
 ----------------------------------------------------------------------------------------------------
--- Fugitive git
-----------------------------------------------------------------------------------------------------
-vim.keymap.set("n", "<leader>gs", ":G status<CR>")
-vim.keymap.set("n", "<leader>ga", ":G add ")
-vim.keymap.set("n", "<leader>gA", ":G add .<CR>")
-vim.keymap.set("n", "<leader>gc", ":G commit<CR>")
-vim.keymap.set("n", "<leader>Gc", ":G add .<CR>:G commit<CR>")
-vim.keymap.set("n", "<leader>gC", ":G checkout ")
-vim.keymap.set("n", "<leader>gb", ":G branch<CR>")
-vim.keymap.set("n", "<leader>gB", ":G branch ")
-vim.keymap.set("n", "<leader>gm", ":G merge ")
-vim.keymap.set("n", "<leader>gp", ":G pull<CR>")
-vim.keymap.set("n", "<leader>gP", ":G push<CR>")
-vim.keymap.set("n", "<leader>gl", ":G log<CR>")
-
-----------------------------------------------------------------------------------------------------
--- Git fugitive
-----------------------------------------------------------------------------------------------------
-vim.keymap.set("n", "<leader>gb", ":Git blame<CR>")
-
-----------------------------------------------------------------------------------------------------
 -- Nvim tree
 ----------------------------------------------------------------------------------------------------
 vim.keymap.set("n", "<leader>nt", ":NvimTreeToggle<CR>")
