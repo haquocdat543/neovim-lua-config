@@ -15,11 +15,21 @@ return {
 	-- Recommended: Install TreeSitter parsers for Haskell and SuperCollider
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
-		opts = { ensure_installed = { "haskell", "supercollider" } },
+		opts = {
+			ensure_installed = {
+				"haskell",
+				"supercollider",
+			}
+		},
 	},
-
-	vim.keymap.set("n", "<leader>t1", ":TidalLaunch<CR>:TidalStartEventHighlighting<CR>"),
-
-	vim.keymap.set("n", "<leader>t3", "$a,<ESC>yyp$d0ci\""),
-
+	keys = {
+		{
+			"<leader>t1",
+			":TidalLaunch<CR>:TidalStartEventHighlighting<CR>",
+		},
+		{
+			"<leader>t3",
+			"$a,<ESC>yyp$d0ci\""
+		}
+	},
 }
