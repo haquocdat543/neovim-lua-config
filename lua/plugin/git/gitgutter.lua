@@ -1,5 +1,6 @@
 return {
 	"airblade/vim-gitgutter",
+	enabled = false,
 	config = function()
 		vim.g.gitgutter_sign_added = "+"
 		vim.g.gitgutter_sign_modified = "*"
