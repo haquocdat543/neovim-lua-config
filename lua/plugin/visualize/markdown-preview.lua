@@ -9,4 +9,10 @@ return {
 	build = function()
 		vim.fn["mkdp#util#install"]()
 	end,
+	keys = {
+		{
+			"<leader>md",
+			"<CMD>MarkdownPreview<CR>",
+		},
+	},
 }
