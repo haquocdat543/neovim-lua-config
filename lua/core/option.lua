@@ -23,5 +23,7 @@ vim.opt.expandtab = true   -- Convert tabs to spaces
 vim.opt.autoindent = true  -- Maintain indentation level on new lines
 vim.opt.smartindent = true -- Auto-indent based on syntax
 
+vim.opt.viminfo = "'100,<1000000,s100000,h"
+
 -- Set option
 vim.api.nvim_win_set_option(0, "paste", false)

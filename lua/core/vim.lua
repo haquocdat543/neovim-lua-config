@@ -3,7 +3,6 @@ vim.g.gitgutter_sign_modified = "*"
 vim.g.gitgutter_sign_removed = "x"
 vim.g.gitgutter_sign_removed_first_line = "^"
 vim.g.gitgutter_sign_modified_removed = "<"
-vim.opt.viminfo = "'100,<1000000,s100000,h"
 
 -- Direct Lua highlight definitions
 vim.api.nvim_set_hl(0, "RainbowDelimiterRed", { fg = "#f4ca0d", ctermfg = "White" })
