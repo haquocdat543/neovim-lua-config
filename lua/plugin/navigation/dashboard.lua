@@ -5,4 +5,10 @@ return {
 	config = function()
 		require("dashboard").setup({})
 	end,
+	keys = {
+		{
+			"<leader>db",
+			"<CMD>Dashboard<CR>",
+		},
+	},
 }
