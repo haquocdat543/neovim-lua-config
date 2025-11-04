@@ -1,3 +1,4 @@
+-- Terraform
 vim.filetype.add({
 	extension = {
 		-- TERRAFORM
@@ -16,11 +17,20 @@ vim.filetype.add({
 	},
 })
 
+-- Helm Chart
 vim.filetype.add({
 	extension = { gotmpl = "gotmpl" },
 	pattern = {
 		[".*/templates/.*%.tpl"] = "helm",
 		[".*/templates/.*%.ya?ml"] = "helm",
 		["helmfile.*%.ya?ml"] = "helm",
+	},
+})
+--
+-- TidalCycles
+vim.filetype.add({
+	extension = {
+		tidal = "tidal",
+		scd   = "supercollider"
 	},
 })
