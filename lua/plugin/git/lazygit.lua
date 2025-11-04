@@ -1,5 +1,16 @@
 return {
 	"kdheepak/lazygit.nvim",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+	},
+	lazy = true,
+	cmd = {
+		"LazyGit",
+		"LazyGitConfig",
+		"LazyGitCurrentFile",
+		"LazyGitFilter",
+		"LazyGitFilterCurrentFile",
+	},
 	config = function()
 		vim.g.lazygit_floating_window_winblend = 0 -- transparency of floating window
 		vim.g.lazygit_floating_window_scaling_factor = 0.9 -- scaling factor for floating window
