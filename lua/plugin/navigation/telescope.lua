@@ -19,6 +19,20 @@ return {
 
 		telescope.setup({
 			defaults = {
+				vimgrep_arguments = {
+					'rg',
+					'--color=never',
+					'--no-heading',
+					'--with-filename',
+					'--line-number',
+					'--column',
+					'--smart-case',
+					'--hidden',  -- include hidden files
+					'--glob',
+					'!.git/',    -- exclude .git directory explicitly
+					'!node_modules/', -- exclude nodejs node_modules
+					'!target/',  -- exclude rust build target
+				},
 				file_ignore_patterns = {
 					"%.terragrunt%-cache/",
 					"node_modules/",
