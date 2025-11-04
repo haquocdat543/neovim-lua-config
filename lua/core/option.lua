@@ -23,8 +23,11 @@ vim.opt.expandtab = true   -- Convert tabs to spaces
 vim.opt.autoindent = true  -- Maintain indentation level on new lines
 vim.opt.smartindent = true -- Auto-indent based on syntax
 
+-- Set option
 vim.api.nvim_win_set_option(0, "paste", false)
 
+-- AutoCommand
+-- Remove - on jump
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = {
 		"html",
@@ -58,16 +61,17 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 -- Rest Nvim
-vim.bo.formatexpr = ""
-vim.bo.formatprg = "jq"
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "json",
 	callback = function(ev)
+		vim.bo.formatexpr = ""
+		vim.bo.formatprg = "jq"
 		vim.bo[ev.buf].formatprg = "jq"
 		print("It's a json file")
 	end,
 })
 
+-- Ltex LSP
 vim.api.nvim_create_autocmd(
 	{
 		"BufRead",
