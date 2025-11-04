@@ -57,3 +57,11 @@ vim.api.nvim_create_autocmd("FileType", {
 		print("It's a json file")
 	end,
 })
+
+-- Close Diffview with 'q'
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "DiffviewFiles", "DiffviewFileHistoryPanel" },
+	callback = function()
+		vim.keymap.set("n", "q", "<cmd>DiffviewClose<CR>", { buffer = true, silent = true })
+	end,
+})
