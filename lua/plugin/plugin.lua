@@ -76,7 +76,7 @@ require("lazy").setup({
 	require("plugin.operation.floatterm"),
 
 	-- code
-	-- require("plugin.code.tabnine"),
+	require("plugin.code.tabnine"),
 	require("plugin.code.mason"),
 	require("plugin.code.saga"),
 	require("plugin.code.cmp"),

@@ -1,5 +1,6 @@
 return {
 	"codota/tabnine-nvim",
+	enabled = false,
 	build = "./dl_binaries.sh",
 	config = function()
 		require("tabnine").setup({
