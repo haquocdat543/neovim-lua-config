@@ -50,7 +50,7 @@ require("lazy").setup({
 	require("plugin.navigation.grugfar"),
 	require("plugin.navigation.ranger"),
 	require("plugin.navigation.barbar"),
-	-- require("plugin.navigation.hop"),
+	require("plugin.navigation.hop"),
 	require("plugin.navigation.neotree"),
 	require("plugin.navigation.multiline"),
 	require("plugin.navigation.undotree"),
