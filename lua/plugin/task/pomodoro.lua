@@ -24,29 +24,39 @@ return {
 			pomodoro = {
 				{
 					name = "Work",
-					duration = "25m"
+					duration = "25m",
 				},
 				{
 					name = "Short Break",
-					duration = "5m"
+					duration = "5m",
 				},
 				{
 					name = "Work",
-					duration = "25m"
+					duration = "25m",
 				},
 				{
 					name = "Short Break",
-					duration = "5m"
+					duration = "5m",
 				},
 				{
 					name = "Work",
-					duration = "25m"
+					duration = "25m",
 				},
 				{
 					name = "Long Break",
-					duration = "15m"
+					duration = "15m",
 				},
 			},
+		},
+	},
+	keys = {
+		{
+			"<leader>ts",
+			"<CMD>TimerShow<CR>",
+		},
+		{
+			"<leader>th",
+			"<CMD>TimerHide<CR>",
 		},
 	},
 }
