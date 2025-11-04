@@ -8,10 +8,6 @@ return {
 		"nvim-telescope/telescope.nvim", -- optional
 		"ibhagwan/fzf-lua",            -- optional
 	},
-	config = function()
-		local neogit = require("neogit")
-		neogit.setup({})
-	end,
 	keys = {
 		{ "<leader>ng", "<cmd>Neogit<cr>", desc = "Open Neogit" },
 	}
