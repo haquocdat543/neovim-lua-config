@@ -96,6 +96,7 @@ require("lazy").setup({
 
 	-- task
 	require("plugin.task.pomodoro"),
+	require("plugin.task.todo-comments"),
 
 	-- typescipe
 	require("plugin.typescipt.typescipt"),
