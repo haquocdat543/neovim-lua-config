@@ -27,27 +27,3 @@ vim.api.nvim_set_hl(0, "RainbowDelimiterOrange", { fg = "#f4ca0d", ctermfg = "Wh
 vim.api.nvim_set_hl(0, "RainbowDelimiterGreen", { fg = "#9d7cd8", ctermfg = "White" })
 vim.api.nvim_set_hl(0, "RainbowDelimiterViolet", { fg = "#7dcfff", ctermfg = "White" })
 vim.api.nvim_set_hl(0, "RainbowDelimiterCyan", { fg = "#f4ca0d", ctermfg = "White" })
-
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "markdown",
-	callback = function()
-		vim.g.indentLine_enabled = 0
-	end,
-})
-
-vim.api.nvim_create_augroup("TestBufEnterCondition", { clear = true })
-
-vim.api.nvim_create_autocmd("VimEnter", {
-	group = "TestBufEnterCondition",
-	callback = function()
-		-- Open NvimTree
-		vim.cmd("NvimTreeOpen")
-		vim.cmd("wincmd w")
-	end,
-})
-
--- Enable concealment for markdown files
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "markdown",
-	command = "setlocal conceallevel=0",
-})

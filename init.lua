@@ -6,6 +6,8 @@ require("core.format")
 require("core.option")
 require("core.function")
 require("core.filetype")
+require("core.autocmd.autocmd")
+require("core.autogroup.autogroup")
 
 require("plugin.plugin") -- Main lazy.nvim setup
 
