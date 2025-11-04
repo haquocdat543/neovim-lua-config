@@ -7,5 +7,14 @@ return {
 		vim.g.floaterm_title = "Terminal $1/$2"
 		vim.g.floaterm_wintype = "float"
 		vim.g.floaterm_rootmarkers = { ".pro" }
-	end
+	end,
+	init = function()
+		vim.keymap.set("n", "<leader>tt", ":terminal<CR>")
+	end,
+	keys = {
+		{
+			"<leader>ft",
+			"<CMD>FloatermNew<CR>",
+		},
+	},
 }
