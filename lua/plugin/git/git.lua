@@ -35,7 +35,7 @@ return {
 				"https://xxx.git.com",
 			},
 			-- Enable winbar in all windows created by this plugin
-			winbar = false,
+			winbar = true,
 		})
 	end,
 }
