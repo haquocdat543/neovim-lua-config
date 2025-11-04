@@ -51,7 +51,7 @@ require("lazy").setup({
 	require("plugin.navigation.ranger"),
 	require("plugin.navigation.barbar"),
 	-- require("plugin.navigation.hop"),
-	-- require("plugin.navigation.neotree"),
+	require("plugin.navigation.neotree"),
 	require("plugin.navigation.multiline"),
 	require("plugin.navigation.undotree"),
 	require("plugin.navigation.which-keys"),
