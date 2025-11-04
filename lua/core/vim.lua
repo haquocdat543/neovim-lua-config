@@ -1,9 +1,3 @@
-vim.g.UltiSnipsExpandTrigger = "<tab>"
-vim.g.UltiSnipsListSnippets = "<c-y>"
-vim.g.UltiSnipsJumpForwardTrigger = "<CR>"
-vim.g.UltiSnipsJumpBackwardTrigger = "<C-n>n"
-vim.g.UltiSnipsEditSplit = "vertical"
-vim.g.UltiSnipsSnippetDirectories = { "~/snippet" }
 vim.g.floaterm_position = "topright"
 vim.g.floaterm_width = 0.6
 vim.g.floaterm_height = 0.8
