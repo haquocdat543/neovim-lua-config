@@ -137,11 +137,6 @@ vim.keymap.set("n", "<leader>9", ":set nopaste<CR><Cmd>Telescope git_status<CR>"
 vim.keymap.set("n", "<leader>j", ":set nopaste<CR><Cmd>Telescope emoji<CR>")
 
 ----------------------------------------------------------------------------------------------------
--- Linter
-----------------------------------------------------------------------------------------------------
-vim.keymap.set("n", "<leader>lt", function()
-	require("lint").try_lint()
-end, { desc = "Run Linter" })
 
 ----------------------------------------------------------------------------------------------------
 -- LSP
