@@ -5,4 +5,7 @@ return {
 		require("openscad")
 	end,
 	dependencies = { "L3MON4D3/LuaSnip", "junegunn/fzf.vim" },
+	ft = {
+		"openscad",
+	},
 }
