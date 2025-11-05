@@ -35,5 +35,5 @@ return {
 		},
 		-- Enable winbar in all windows created by this plugin
 		winbar = true,
-	}
+	},
 }
