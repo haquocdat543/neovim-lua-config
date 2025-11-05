@@ -8,7 +8,11 @@ return {
 		vim.g.UltiSnipsEditSplit = "vertical"
 		vim.g.UltiSnipsSnippetDirectories = { "~/snippet" }
 	end,
-	init = function()
-		vim.keymap.set("n", "<leader>sg", ":Snippets<CR>")
-	end,
+	keys = {
+
+		{
+			"<leader>sg",
+			"<CMD>Snippets<CR>",
+		},
+	},
 }
