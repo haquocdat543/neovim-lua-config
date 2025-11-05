@@ -3,6 +3,20 @@ return {
 	dependencies = {
 		"nvim-tree/nvim-web-devicons",
 	},
+	keys = {
+		{
+			"<leader>nt",
+			"<CMD>NvimTreeToggle<CR>",
+		},
+		{
+			"<leader>nf",
+			"<CMD>NvimTreeFindFile<CR>",
+		},
+		{
+			"<leader>nc",
+			"<CMD>NvimTreeFocus<CR>",
+		},
+	},
 	config = function()
 		require("nvim-tree").setup({
 			git = {
@@ -15,10 +29,10 @@ return {
 			update_cwd = true,
 			auto_reload_on_write = true,
 			update_focused_file = {
-				enable = true,  -- Enable updating the focused file
+				enable = true, -- Enable updating the focused file
 				update_cwd = true, -- Change the root directory of the tree to the current file's directory
 				update_root = true, -- Change the root directory of the tree to the current file's directory
-				ignore_list = {}
+				ignore_list = {},
 			},
 			sort = {
 				sorter = "case_sensitive",
@@ -56,13 +70,13 @@ return {
 							arrow_open = "", -- arrow when folder is open
 						},
 					},
-				}
+				},
 			},
 			filters = {
 				dotfiles = false,
 				custom = {
-					"^.git$"
-				}
+					"^.git$",
+				},
 			},
 		})
 	end,

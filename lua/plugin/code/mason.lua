@@ -215,4 +215,8 @@ return {
 			},
 		})
 	end,
+	init = function()
+		vim.keymap.set("n", "<leader>mm", ":Mason<CR>")
+		vim.keymap.set("n", "<leader>mi", ":MasonInstall ")
+	end,
 }

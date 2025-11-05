@@ -1,10 +1,10 @@
-vim.g.mapleader = " " -- for normal mode
+vim.g.mapleader = " "      -- for normal mode
 vim.g.maplocalleader = " " -- for local leader mappings
 vim.opt.title = true
 vim.opt.hlsearch = true
 -- vim.opt.shell = "/opt/homebrew/bin/zsh"
 vim.opt.history = 200
-vim.opt.background = "dark"
+-- vim.opt.background = "dark"
 vim.opt.paste = true
 vim.opt.wrap = true
 vim.opt.number = true
@@ -16,64 +16,14 @@ vim.opt.wildmenu = true
 vim.opt.laststatus = 2
 vim.opt.cursorline = true
 
-vim.opt.tabstop = 2 -- Visually represent a tab as 2 spaces
-vim.opt.shiftwidth = 2 -- Indent by 2 spaces
-vim.opt.softtabstop = 2 -- Backspace removes 2 spaces at a time
-vim.opt.expandtab = true -- Convert tabs to spaces
-vim.opt.autoindent = true -- Maintain indentation level on new lines
+vim.opt.tabstop = 2        -- Visually represent a tab as 2 spaces
+vim.opt.shiftwidth = 2     -- Indent by 2 spaces
+vim.opt.softtabstop = 2    -- Backspace removes 2 spaces at a time
+vim.opt.expandtab = true   -- Convert tabs to spaces
+vim.opt.autoindent = true  -- Maintain indentation level on new lines
 vim.opt.smartindent = true -- Auto-indent based on syntax
 
+vim.opt.viminfo = "'100,<1000000,s100000,h"
+
+-- Set option
 vim.api.nvim_win_set_option(0, "paste", false)
-
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = {
-		"html",
-		"htmldjango",
-		"javascript",
-		"javascriptreact",
-		"typescript",
-		"typescriptreact",
-		"vue",
-		"svelte",
-		"astro",
-		"css",
-		"scss",
-		"less",
-		"stylus",
-		"sass",
-		"php",
-		"twig",
-		"liquid",
-		"markdown",
-		"mdx",
-		"json",
-		"yaml",
-		"toml",
-		"xml",
-		"svg",
-	},
-	callback = function()
-		vim.opt_local.iskeyword:remove("-")
-	end,
-})
-
--- Rest Nvim
-vim.bo.formatexpr = ""
-vim.bo.formatprg = "jq"
-vim.api.nvim_create_autocmd("FileType", {
-	pattern = "json",
-	callback = function(ev)
-		vim.bo[ev.buf].formatprg = "jq"
-		print("It's a json file")
-	end,
-})
-
-vim.api.nvim_create_autocmd(
-	{ "BufRead", "BufReadPost", "BufNewFile", "BufWinEnter", "BufEnter", "BufWritePre", "BufWritePost" },
-	{
-		pattern = "*.md",
-		callback = function()
-			vim.cmd("LspStop ltex")
-		end,
-	}
-)

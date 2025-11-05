@@ -2,14 +2,22 @@ return {
 	"NeogitOrg/neogit",
 	dependencies = {
 		"nvim-lua/plenary.nvim", -- required
-		"sindrets/diffview.nvim", -- optional - Diff integration
+		{
+			"sindrets/diffview.nvim",
+			opts = {
+				keymaps = {
+					view = {
+						{ { "n", "v" }, "q", "<Cmd>DiffviewClose<CR>", { silent = true } },
+					},
+				},
+			},
+		},
 
 		-- Only one of these is needed, not both.
 		"nvim-telescope/telescope.nvim", -- optional
-		"ibhagwan/fzf-lua",            -- optional
+		"ibhagwan/fzf-lua", -- optional
 	},
-	config = function()
-		local neogit = require("neogit")
-		neogit.setup({})
-	end,
+	keys = {
+		{ "<leader>ng", "<cmd>Neogit<cr>", desc = "Open Neogit" },
+	},
 }

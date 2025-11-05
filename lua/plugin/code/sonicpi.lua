@@ -1,5 +1,6 @@
 return {
 	"magicmonty/sonicpi.nvim",
+	enabled = false,
 	config = function()
 		require("sonicpi").setup()
 	end,

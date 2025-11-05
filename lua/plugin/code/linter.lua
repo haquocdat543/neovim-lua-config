@@ -24,4 +24,13 @@ return {
 			},
 		}
 	end,
+	keys = {
+		{
+			"<leader>lt",
+			function()
+				require("lint").try_lint()
+			end,
+			desc = "Runter linter",
+		},
+	},
 }

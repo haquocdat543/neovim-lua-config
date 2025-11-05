@@ -1,4 +1,4 @@
 return {
-  -- add dracula
-  "Mofiqul/dracula.nvim",
+	-- add dracula
+	"Mofiqul/dracula.nvim",
 }

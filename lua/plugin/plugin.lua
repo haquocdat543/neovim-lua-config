@@ -27,6 +27,8 @@ require("lazy").setup({
 	require("plugin.git.lazygit"),
 	require("plugin.git.neogit"),
 	require("plugin.git.git"),
+	require("plugin.git.gitgutter"),
+	require("plugin.git.gitsigns"),
 
 	-- snippets
 	require("plugin.snippet.friendly-snippets"),
@@ -39,7 +41,7 @@ require("lazy").setup({
 
 	-- Navigation
 	require("plugin.navigation.telescope"),
-	-- require("plugin.navigation.dashboard"),
+	require("plugin.navigation.dashboard"),
 	-- require("plugin.navigation.navigator"),
 	require("plugin.navigation.oil"),
 	require("plugin.navigation.nvim-tree"),
@@ -48,10 +50,11 @@ require("lazy").setup({
 	require("plugin.navigation.grugfar"),
 	require("plugin.navigation.ranger"),
 	require("plugin.navigation.barbar"),
-	-- require("plugin.navigation.hop"),
-	-- require("plugin.navigation.neotree"),
+	require("plugin.navigation.hop"),
+	require("plugin.navigation.neotree"),
 	require("plugin.navigation.multiline"),
 	require("plugin.navigation.undotree"),
+	require("plugin.navigation.which-keys"),
 
 	-- visualize
 	require("plugin.visualize.icon"),
@@ -64,7 +67,6 @@ require("lazy").setup({
 	require("plugin.visualize.treesitter"),
 	require("plugin.visualize.markdown-preview"),
 	require("plugin.visualize.indent"),
-	require("plugin.visualize.gitsigns"),
 
 	-- operation
 	require("plugin.operation.k9s"),
@@ -74,7 +76,7 @@ require("lazy").setup({
 	require("plugin.operation.floatterm"),
 
 	-- code
-	-- require("plugin.code.tabnine"),
+	require("plugin.code.tabnine"),
 	require("plugin.code.mason"),
 	require("plugin.code.saga"),
 	require("plugin.code.cmp"),
@@ -84,14 +86,14 @@ require("lazy").setup({
 	require("plugin.code.surround"),
 	require("plugin.code.conform"),
 	require("plugin.code.ollama"),
-	-- require("plugin.code.codecompanion"),
+	require("plugin.code.codecompanion"),
 	require("plugin.code.parrot"),
-	-- require("plugin.code.mcphub"),
+	require("plugin.code.mcphub"),
 	require("plugin.code.avante"),
 	require("plugin.code.openscad"),
 	require("plugin.code.tidal-vim"),
 	require("plugin.code.tidal2"),
-	-- require("plugin.code.sonicpi"),
+	require("plugin.code.sonicpi"),
 	require("plugin.code.supercollider"),
 
 	-- task

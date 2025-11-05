@@ -1,6 +1,18 @@
 return {
 	"frankroeder/parrot.nvim",
-	dependencies = { "ibhagwan/fzf-lua", "nvim-lua/plenary.nvim", "folke/noice.nvim" },
+	dependencies = {
+		"ibhagwan/fzf-lua",
+		"nvim-lua/plenary.nvim",
+		"folke/noice.nvim"
+	},
+	keys = {
+		{ "<leader>p1", "<cmd>PrtAsk<cr>", },
+		{ "<leader>p2", "<cmd>PrtChatNew<cr>", },
+		{ "<leader>p3", "<cmd>PrtChatToggle<cr>" },
+		{ "<leader>p4", "<cmd>PrtChatFinder<cr>" },
+		{ "<leader>p5", "<cmd>PrtChatResponse<cr>" },
+		{ "<leader>p6", "<cmd>PrtModel<cr>" },
+	},
 	-- optionally include "folke/noice.nvim" or "rcarriga/nvim-notify" for beautiful notifications
 	config = function()
 		require("parrot").setup({

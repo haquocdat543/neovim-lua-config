@@ -1,6 +1,9 @@
 return {
 	"ramilito/kubectl.nvim",
-	config = function()
-		require("kubectl").setup({})
-	end,
+	keys = {
+		{
+			"<leader>kk",
+			'<cmd>lua require("kubectl").toggle()<CR>',
+		},
+	},
 }

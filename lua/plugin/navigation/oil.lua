@@ -1,14 +1,9 @@
 return {
-	'stevearc/oil.nvim',
+	"stevearc/oil.nvim",
 	dependencies = {
-		{
-			"echasnovski/mini.icons",
-			opts = {
-
-			}
-		}
+		"echasnovski/mini.icons",
 	},
-	opts = {
-
+	keys = {
+		{ "<leader>oi", "<cmd>Oil<cr>" },
 	},
 }

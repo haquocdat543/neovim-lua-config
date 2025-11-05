@@ -10,4 +10,11 @@ return {
 			-- there are no required options atm
 		})
 	end,
+	keys = {
+		{
+			"<leader>gf",
+			"<Cmd>GrugFar<Cr>",
+			desc = "Toggle GrugFar",
+		},
+	},
 }
