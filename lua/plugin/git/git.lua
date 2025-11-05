@@ -28,7 +28,7 @@ return {
 			revert_file = "<leader>gR",
 		},
 		-- Default target branch when create a pull request
-		target_branch = "master",
+		target_branch = "develop",
 		-- Private gitlab hosts, if you use a private gitlab, put your private gitlab host here
 		private_gitlabs = {
 			"https://xxx.git.com",
