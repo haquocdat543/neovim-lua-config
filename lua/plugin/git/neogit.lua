@@ -17,6 +17,11 @@ return {
 		"nvim-telescope/telescope.nvim", -- optional
 		"ibhagwan/fzf-lua", -- optional
 	},
+	opts = {
+		integrations = {
+			telescope = true,
+		},
+	},
 	keys = {
 		{ "<leader>ng", "<cmd>Neogit<cr>", desc = "Open Neogit" },
 	},

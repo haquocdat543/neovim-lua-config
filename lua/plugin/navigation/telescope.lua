@@ -69,6 +69,11 @@ return {
 				},
 			},
 			pickers = {
+				find_files = {
+					"rg",
+					"--files",
+					"--hidden",
+				},
 				live_grep = {
 					additional_args = function(opts)
 						return { "--hidden" }
