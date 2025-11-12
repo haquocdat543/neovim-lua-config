@@ -18,6 +18,7 @@ return {
 		"ibhagwan/fzf-lua", -- optional
 	},
 	opts = {
+		disable_commit_confirmation = true,
 		integrations = {
 			telescope = true,
 		},
