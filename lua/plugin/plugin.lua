@@ -95,6 +95,7 @@ require("lazy").setup({
 	require("plugin.code.tidal2"),
 	require("plugin.code.sonicpi"),
 	require("plugin.code.supercollider"),
+	require("plugin.code.strudel"),
 
 	-- task
 	require("plugin.task.pomodoro"),
