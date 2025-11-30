@@ -1,5 +1,6 @@
 return {
 	"letieu/graphql.nvim",
+	enabled = false,
 	keys = {
 		{
 			"<leader>gg",
@@ -19,6 +20,6 @@ return {
 			function()
 				require("graphql").run()
 			end,
-		}
+		},
 	},
 }
