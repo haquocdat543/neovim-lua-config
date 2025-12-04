@@ -5,30 +5,121 @@ return {
 		"LukasPietzschmann/telescope-tabs",
 		"xiyaowong/telescope-emoji.nvim",
 	},
-	init = function()
-		vim.keymap.set("n", "<leader>tl", ":set nopaste<CR>:Telescope<CR>")
-		vim.keymap.set("n", "<leader>1", ":set nopaste<CR><Cmd>Telescope find_files hidden=true no_ignore=true<CR>")
-		vim.keymap.set("n", "<leader>2", ":set nopaste<CR><Cmd>Telescope live_grep hidden=true no_ignore=true<CR>")
-		vim.keymap.set("n", "<leader>3", ":set nopaste<CR><Cmd>Telescope buffers hidden=true no_ignore=true<CR>")
-		vim.keymap.set("n", "<leader>4", ":set nopaste<CR><Cmd>Telescope oldfiles hidden=true no_ignore=true<CR>")
-		vim.keymap.set("n", "<leader>5", ":set nopaste<CR><Cmd>Telescope projects<CR>")
-		vim.keymap.set("n", "<leader>6", ":set nopaste<CR><Cmd>Telescope lsp_definitions<CR>")
-		vim.keymap.set("n", "<leader>7", ":set nopaste<CR><Cmd>Telescope lsp_references<CR>")
-		vim.keymap.set("n", "<leader>8", ":set nopaste<CR><Cmd>Telescope lsp_implementations<CR>")
-		vim.keymap.set("n", "<leader>9", ":set nopaste<CR><Cmd>Telescope git_status<CR>")
+	keys = {
+		{
+			"<leader>tl",
+			function()
+				vim.o.paste = false
+				require("telescope").extensions.projects.projects()
+			end,
+			desc = "Open Telescope",
+		},
 
-		-- Colorscheme
-		vim.keymap.set("n", "<leader>cs", function()
-			require("telescope.builtin").colorscheme({ enable_preview = true })
-		end)
+		{
+			"<leader>1",
+			function()
+				vim.o.paste = false
+				require("telescope.builtin").find_files({
+					hidden = true,
+				})
+			end,
+			desc = "Find files",
+		},
 
-		-- Extension
-		vim.keymap.set("n", "<leader>j", ":set nopaste<CR><Cmd>Telescope emoji<CR>")
-	end,
+		{
+			"<leader>2",
+			function()
+				vim.o.paste = false
+				require("telescope.builtin").live_grep({
+					additional_args = { "--hidden" },
+				})
+			end,
+			desc = "Live grep",
+		},
+
+		{
+			"<leader>3",
+			function()
+				vim.o.paste = false
+				require("telescope.builtin").buffers()
+			end,
+			desc = "Buffers",
+		},
+
+		{
+			"<leader>4",
+			function()
+				vim.o.paste = false
+				require("telescope.builtin").oldfiles()
+			end,
+			desc = "Recent files",
+		},
+
+		{
+			"<leader>5",
+			function()
+				vim.o.paste = false
+				require("telescope").extensions.projects.projects()
+			end,
+			desc = "Projects",
+		},
+
+		{
+			"<leader>6",
+			function()
+				vim.o.paste = false
+				require("telescope.builtin").lsp_definitions()
+			end,
+			desc = "LSP Definitions",
+		},
+
+		{
+			"<leader>7",
+			function()
+				vim.o.paste = false
+				require("telescope.builtin").lsp_references()
+			end,
+			desc = "LSP References",
+		},
+
+		{
+			"<leader>8",
+			function()
+				vim.o.paste = false
+				require("telescope.builtin").lsp_implementations()
+			end,
+			desc = "LSP Implementations",
+		},
+
+		{
+			"<leader>9",
+			function()
+				vim.o.paste = false
+				require("telescope.builtin").git_status()
+			end,
+			desc = "Git status",
+		},
+
+		{
+			"<leader>j",
+			function()
+				vim.o.paste = false
+				require("telescope").extensions.emoji.emoji()
+			end,
+			desc = "Emoji Picker",
+		},
+
+		{
+			"<leader>cs",
+			function()
+				vim.o.paste = false
+				require("telescope.builtin").colorscheme({ enable_preview = true })
+			end,
+			desc = "Colorscheme picker",
+		},
+	},
+	init = function() end,
 	config = function()
-		require("telescope").load_extension("projects")
-		require("telescope").load_extension("emoji")
-
 		local status_ok, telescope = pcall(require, "telescope")
 		if not status_ok then
 			return
@@ -70,16 +161,51 @@ return {
 			},
 			pickers = {
 				find_files = {
-					"rg",
-					"--files",
-					"--hidden",
+					find_command = {
+						"fd",
+						"--type",
+						"f",
+						"--hidden",
+						"--exclude",
+						".git",
+						"--exclude",
+						"node_modules",
+						"--exclude",
+						".vscode",
+						"--exclude",
+						"dist",
+						"--exclude",
+						"build",
+						"--exclude",
+						"__pycache__",
+						"--exclude",
+						".venv",
+					},
 				},
 				live_grep = {
-					additional_args = function(opts)
-						return { "--hidden" }
+					additional_args = function()
+						return {
+							"--hidden",
+							"--glob",
+							"!.git/*",
+							"--glob",
+							"!.vscode/*",
+							"--glob",
+							"!**/.venv/*",
+							"--glob",
+							"!**/__pycache__/*",
+							"--glob",
+							"!**/.cache/*",
+							"--glob",
+							"!**/.local/*",
+							"--glob",
+							"!**/node_modules/*",
+						}
 					end,
 				},
 			},
 		})
+		require("telescope").load_extension("projects")
+		require("telescope").load_extension("emoji")
 	end,
 }
