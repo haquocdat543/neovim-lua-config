@@ -54,6 +54,7 @@ return {
 					cmd = "sd",
 				},
 			},
+			replace_vim_cmd = nil,
 		})
 	end,
 	keys = {
