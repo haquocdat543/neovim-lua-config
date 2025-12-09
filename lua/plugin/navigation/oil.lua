@@ -3,6 +3,9 @@ return {
 	dependencies = {
 		"echasnovski/mini.icons",
 	},
+	config = function()
+		require("oil").setup()
+	end,
 	keys = {
 		{ "<leader>oi", "<cmd>Oil<cr>" },
 	},
