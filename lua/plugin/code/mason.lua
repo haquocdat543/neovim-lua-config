@@ -56,6 +56,7 @@ return {
 			"clojure_lsp",
 			"astro",
 			"taplo",
+			"move_analyzer",
 		}
 
 		local formatters = {
