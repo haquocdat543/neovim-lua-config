@@ -55,6 +55,14 @@ return {
 				},
 			},
 			replace_vim_cmd = nil,
+			open_template = {
+				-- Bech32 address
+				{
+					search_text = "(?<![a-zA-Z0-9])(cosmos|agoric|osmo|juno|atone|axelar|bbn)([a-z0-9]{16,})",
+					replace_text = "",
+					path = "",
+				},
+			},
 		})
 	end,
 	keys = {
