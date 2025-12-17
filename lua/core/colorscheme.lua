@@ -7,5 +7,5 @@ if time.hour < 5 or time.hour > 17 then
 	vim.g.tokyonight_style = "night"
 	vim.cmd([[colorscheme solarized]])
 else
-	vim.cmd([[colorscheme solarized]])
+	vim.cmd([[colorscheme catppuccin]])
 end
