@@ -70,7 +70,7 @@ require("lazy").setup({
 	require("plugin.visualize.indent"),
 
 	-- operation
-	require("plugin.operation.k9s"),
+	-- require("plugin.operation.k9s"),
 	require("plugin.operation.kubectl"),
 	require("plugin.operation.rest"),
 	require("plugin.operation.graphql"),
