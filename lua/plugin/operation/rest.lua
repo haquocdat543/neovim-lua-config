@@ -1,5 +1,6 @@
 return {
 	"rest-nvim/rest.nvim",
+	enabled = false,
 	config = function()
 		require("rest-nvim").setup({
 			response = {
