@@ -57,7 +57,6 @@ return {
 			"astro",
 			"taplo",
 			"move_analyzer",
-			"autotools_ls",
 		}
 
 		local formatters = {
