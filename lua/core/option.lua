@@ -26,7 +26,7 @@ vim.opt.smartindent = true -- Auto-indent based on syntax
 vim.opt.viminfo = "'100,<1000000,s100000,h"
 
 -- Set option
-vim.api.nvim_win_set_option(0, "paste", false)
+vim.o.paste = true -- global option
 
 -- Detect OS / environment
 local uname = vim.loop.os_uname().sysname
