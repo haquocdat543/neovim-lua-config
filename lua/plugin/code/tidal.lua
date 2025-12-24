@@ -1,3 +1,4 @@
 return {
-	"tidalcycles/vim-tidal"
+	"tidalcycles/vim-tidal",
+	enabled = false,
 }
