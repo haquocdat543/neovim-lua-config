@@ -112,4 +112,8 @@ require("lazy").setup({
 
 	-- misc
 	require("plugin.misc.bclose"),
+}, {
+	rocks = {
+		enabled = false,
+	},
 })

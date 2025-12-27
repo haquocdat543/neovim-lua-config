@@ -1,6 +1,6 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	run = ":TSUpdate",
+	build = ":TSUpdate",
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			-- Add languages to be installed here that you want installed for treesitter
@@ -24,6 +24,7 @@ return {
 				"go",
 				"gomod",
 				"gotmpl",
+				"http",
 			},
 			-- open_on_setup = true,
 			highlight = {
