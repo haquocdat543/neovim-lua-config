@@ -1,5 +1,6 @@
 return {
 	"gruvw/strudel.nvim",
+	enabled = vim.env.NVIM_ENABLE_STRUDEL == "1",
 	build = "npm install",
 	config = function()
 		require("strudel").setup({
