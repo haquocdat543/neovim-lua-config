@@ -8,8 +8,10 @@ require("core.function")
 require("core.filetype")
 require("core.autocmd.autocmd")
 require("core.autogroup.autogroup")
+require("core.plugin.plugin")
 
 require("plugin.plugin") -- Main lazy.nvim setup
 
 require("core.vim")
 require("core.colorscheme")
+
