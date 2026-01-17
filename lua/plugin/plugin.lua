@@ -116,4 +116,14 @@ require("lazy").setup({
 	rocks = {
 		enabled = false,
 	},
+	install = {
+		missing = true,
+	},
+	checker = {
+		enabled = false, -- no update checking
+	},
+	change_detection = {
+		enabled = false, -- no reload on config change
+		notify = false,
+	},
 })
