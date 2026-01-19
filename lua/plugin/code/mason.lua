@@ -173,6 +173,23 @@ return {
 			},
 		})
 
+		vim.lsp.config("ts_ls", {
+
+			root_dir = require("lspconfig.util").root_pattern(".git", "tsconfig.json", "package.json"),
+
+			init_options = {
+				hostInfo = "neovim"
+			},
+
+			settings = {
+				typescipt = {
+					preferences = {
+						importModuleSpecifierPreference = "non-relative"
+					}
+				}
+			}
+		})
+
 		local home = os.getenv("HOME")
 
 		vim.lsp.config("jdtls", {
