@@ -9,7 +9,7 @@ return {
 		vim.g.floaterm_rootmarkers = { ".pro" }
 	end,
 	init = function()
-		vim.keymap.set("n", "<leader>tt", ":terminal<CR>")
+		-- vim.keymap.set("n", "<leader>tt", ":terminal<CR>")
 	end,
 	keys = {
 		{
