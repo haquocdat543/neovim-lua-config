@@ -1,7 +1,7 @@
 return {
 	"romgrk/barbar.nvim",
 	dependencies = {
-		"lewis6991/gitsigns.nvim", -- OPTIONAL: for git status
+		"lewis6991/gitsigns.nvim",   -- OPTIONAL: for git status
 		"nvim-tree/nvim-web-devicons", -- OPTIONAL: for file icons
 	},
 	init = function()
@@ -44,7 +44,7 @@ return {
 		vim.keymap.set("n", "<A-0>", "<Cmd>BufferLast<CR>")
 
 		-- Pin/unpin buffer
-		vim.keymap.set("n", "<A-p>", "<Cmd>BufferPin<CR>")
+		vim.keymap.set("n", "<leader>k", "<Cmd>BufferPick<CR>")
 
 		-- Goto pinned/unpinned buffer
 		--                 :BufferGotoPinned
