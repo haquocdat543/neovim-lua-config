@@ -1,24 +1,37 @@
 return {
 	"glepnir/lspsaga.nvim",
+	keys = {
+		{
+			"<leader>K",
+			vim.lsp.buf.hover,
+			desc = "Hover documentation"
+		},
+		{
+			"<leader>gr",
+			vim.lsp.buf.references,
+			desc = "Find references"
+		},
+		{
+			"<leader>fc",
+			function() vim.lsp.buf.format({ async = true }) end,
+			desc = "Format code"
+		},
+		{ "<leader>lp", "<cmd>LspStop<cr>",                 desc = "Stop LSP" },
+		{ "<leader>ls", "<cmd>LspStart<cr>",                desc = "Start LSP" },
+		{ "<leader>rn", "<cmd>Lspsaga rename<cr>",          desc = "Rename symbol" },
+		{ "ca",         "<cmd>Lspsaga code_action<cr>",     desc = "Open code action" },
+		{ "gd",         "<cmd>Lspsaga goto_definition<cr>", desc = "Goto definition" },
+		{ "<leader>pd", "<cmd>Lspsaga peek_definition<cr>", desc = "Open peek definition" },
+		{ "<leader>fd", "<cmd>Lspsaga finder<cr>",          desc = "Open finder" },
+		{ "<leader>tt", "<cmd>Lspsaga term_toggle<cr>",     desc = "Open terminal" },
+		{ "<leader>wt", "<cmd>Lspsaga winbar_toggle<cr>",   desc = "Toggle winbar" },
+		{ "<leader>ol", "<cmd>Lspsaga outline<cr>",         desc = "Open outline" },
+	},
 	init = function()
 		vim.api.nvim_create_autocmd("LspAttach", {
 			callback = function(ev)
-				-- vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to Definition" })
-				vim.keymap.set("n", "<leader>lp", ":LspStop<CR>")
-				vim.keymap.set("n", "<leader>ls", ":LspStart<CR>")
-				vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "Find References" })
-				vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover Documentation" })
-				vim.keymap.set("n", "<leader>rn", ":Lspsaga rename<CR>", { desc = "Rename Symbol" })
-				vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action" })
-				vim.keymap.set("n", "ca", ":Lspsaga code_action<CR>")
-				vim.keymap.set("n", "gd", ":Lspsaga goto_definition<CR>")
-				vim.keymap.set("n", "<leader>pd", ":Lspsaga peek_definition<CR>")
-				vim.keymap.set("n", "<leader>fd", ":Lspsaga finder<CR>")
-				vim.keymap.set("n", "<leader>sd", ":Lspsaga show_buf_diagnostics<CR>")
-				vim.keymap.set("n", "<leader>ol", ":Lspsaga outline<CR>")
-				vim.keymap.set("n", "<leader>tt", ":Lspsaga term_toggle<CR>")
-				vim.keymap.set("n", "<leader>wt", ":Lspsaga winbar_toggle<CR>")
 				vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, { desc = "Signature Help" })
+
 				vim.keymap.set("n", "<leader>fc", function()
 					vim.lsp.buf.format({ async = true })
 				end, { desc = "Format Code" })
