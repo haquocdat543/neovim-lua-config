@@ -23,9 +23,9 @@ return {
 			-- Close git diff
 			diff_close = "<leader>gD",
 			-- Revert to the specific commit
-			revert = "<leader>gr",
+			-- revert = "<leader>gr",
 			-- Revert the current file to the specific commit
-			revert_file = "<leader>gR",
+			-- revert_file = "<leader>gR",
 		},
 		-- Default target branch when create a pull request
 		target_branch = "develop",
