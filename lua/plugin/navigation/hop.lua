@@ -2,7 +2,7 @@ return {
 	"phaazon/hop.nvim",
 	enabled = true,
 	config = function()
-		require("hop").setup()
+		require("hop").setup() { keys = "etovxqpdygfblzhckisuran" }
 	end,
 	keys = {
 		{
