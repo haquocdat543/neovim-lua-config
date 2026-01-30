@@ -142,12 +142,12 @@ return {
 					i = {
 						["<C-j>"] = actions.move_selection_next, -- Move down
 						["<C-k>"] = actions.move_selection_previous, -- Move up
-						["<C-n>"] = false,                     -- Disable default <C-n>
-						["<C-p>"] = false,                     -- Disable default <C-p>
-						["<C-o>"] = actions.select_default,    -- Open with <C-o>
+						["<C-n>"] = false, -- Disable default <C-n>
+						["<C-p>"] = false, -- Disable default <C-p>
+						["<C-o>"] = actions.select_default, -- Open with <C-o>
 					},
 					n = {
-						["q"] = actions.close,    -- Quit with 'q' in normal mode
+						["q"] = actions.close, -- Quit with 'q' in normal mode
 						["o"] = actions.select_default, -- Open with <C-o>
 					},
 				},
@@ -200,5 +200,6 @@ return {
 		})
 		require("telescope").load_extension("projects")
 		require("telescope").load_extension("emoji")
+		-- require("telescope").load_extension("remote-sshfs")
 	end,
 }
