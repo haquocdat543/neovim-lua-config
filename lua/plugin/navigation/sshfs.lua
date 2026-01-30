@@ -23,7 +23,7 @@ return {
 			},
 			mounts = {
 				base_dir = vim.fn.expand("$HOME") .. "/.sshfs/", -- base directory for mount points
-				unmount_on_exit = true, -- run sshfs as foreground, will unmount on vim exit
+				unmount_on_exit = true,                      -- run sshfs as foreground, will unmount on vim exit
 			},
 			handlers = {
 				on_connect = {
@@ -32,19 +32,19 @@ return {
 				on_disconnect = {
 					clean_mount_folders = false, -- remove mount point folder on disconnect/unmount
 				},
-				on_edit = {}, -- not yet implemented
+				on_edit = {},             -- not yet implemented
 			},
 			ui = {
 				select_prompts = false, -- not yet implemented
 				confirm = {
-					connect = true, -- prompt y/n when host is selected to connect to
+					connect = true,   -- prompt y/n when host is selected to connect to
 					change_dir = false, -- prompt y/n to change working directory on connection (only applicable if handlers.on_connect.change_dir is enabled)
 				},
 			},
 			log = {
 				enabled = false, -- enable logging
 				truncate = false, -- truncate logs
-				types = { -- enabled log types
+				types = {     -- enabled log types
 					all = false,
 					util = false,
 					handler = false,
@@ -54,11 +54,11 @@ return {
 		})
 	end,
 	keys = {
-		{ "<leader>s1", "<cmd>RemoteSSHFSConnect<cr>", desc = "Open Lazygit" },
-		{ "<leader>s2", "<cmd>RemoteSSHFSDisconnect<cr>", desc = "Open Lazygit" },
-		{ "<leader>s3", "<cmd>RemoteSSHFSEdit<cr>", desc = "Open Lazygit" },
-		{ "<leader>s4", "<cmd>RemoteSSHFSFindFiles<cr>", desc = "Open Lazygit" },
-		{ "<leader>s5", "<cmd>RemoteSSHFSLivegrep<cr>", desc = "Open Lazygit" },
-		{ "<leader>s6", "<cmd>RemoteSSHFSReload<cr>", desc = "Open Lazygit" },
+		{ "<leader>s1", "<cmd>RemoteSSHFSConnect<cr>",    desc = "Remote SSHFS Connect" },
+		{ "<leader>s2", "<cmd>RemoteSSHFSDisconnect<cr>", desc = "Remote SSHFS Disconnect" },
+		{ "<leader>s3", "<cmd>RemoteSSHFSEdit<cr>",       desc = "Remote SSHFS Edit" },
+		{ "<leader>s4", "<cmd>RemoteSSHFSFindFiles<cr>",  desc = "Remote SSHFS Find Files" },
+		{ "<leader>s5", "<cmd>RemoteSSHFSLivegrep<cr>",   desc = "Remote SSHFS Livegrep" },
+		{ "<leader>s6", "<cmd>RemoteSSHFSReload<cr>",     desc = "Remote SSHFS Reload" },
 	},
 }

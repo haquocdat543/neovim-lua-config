@@ -65,6 +65,7 @@
   "pomo.nvim": { "branch": "main", "commit": "7e06e5221d8d1e596a0ab29dd4d7fcee5f3cd05a" },
   "project.nvim": { "branch": "main", "commit": "8c6bad7d22eef1b71144b401c9f74ed01526a4fb" },
   "ranger.nvim": { "branch": "main", "commit": "fd2cc999f3ef88f7cdcbcad5f26000c52b16c489" },
+  "remote-sshfs.nvim": { "branch": "main", "commit": "45502b3892774811153aeab5f7f9b0033c82005c" },
   "rest.nvim": { "branch": "main", "commit": "714d5512aaec5565d55652480c16c26f8d95645d" },
   "rustaceanvim": { "branch": "master", "commit": "e9c5aaba16fead831379d5f44617547a90b913c7" },
   "rustowl": { "branch": "main", "commit": "aaf7d15cc55ff6f48c577cdd6352d51fbc031aea" },
