@@ -4,7 +4,8 @@ return {
 		"nvim-telescope/telescope-fzf-native.nvim",
 		"LukasPietzschmann/telescope-tabs",
 		"xiyaowong/telescope-emoji.nvim",
-		"jonarrien/telescope-cmdline.nvim"
+		"jonarrien/telescope-cmdline.nvim",
+		"debugloop/telescope-undo.nvim",
 	},
 	keys = {
 		{
@@ -116,6 +117,11 @@ return {
 			"<Cmd>Telescope cmdline<CR>",
 			desc = "Cmdline",
 		},
+		{
+			"<leader>tu",
+			"<Cmd>Telescope undo<CR>",
+			desc = "Undo",
+		},
 	},
 	init = function() end,
 	config = function()
@@ -204,10 +210,6 @@ return {
 				},
 			},
 		})
-		require("telescope").load_extension("projects")
-		require("telescope").load_extension("emoji")
-		-- require("telescope").load_extension("remote-sshfs")
-
 		-- cmdline
 		extensions = {
 			cmdline = {
@@ -229,6 +231,27 @@ return {
 					enabled = true,
 				},
 			},
+			undo = {
+				mappings = {
+					i = {
+						["<cr>"] = require("telescope-undo.actions").yank_additions,
+						["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
+						["<C-cr>"] = require("telescope-undo.actions").restore,
+						-- alternative defaults, for users whose terminals do questionable things with modified <cr>
+						["<C-y>"] = require("telescope-undo.actions").yank_deletions,
+						["<C-r>"] = require("telescope-undo.actions").restore,
+					},
+					n = {
+						["y"] = require("telescope-undo.actions").yank_additions,
+						["Y"] = require("telescope-undo.actions").yank_deletions,
+						["u"] = require("telescope-undo.actions").restore,
+					},
+				},
+			},
 		}
+
+		require("telescope").load_extension("projects")
+		require("telescope").load_extension("emoji")
+		require("telescope").load_extension("undo")
 	end,
 }
