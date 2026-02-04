@@ -4,9 +4,7 @@
 -- vim.cmd.colorscheme("tokyonight-day")
 local time = os.date("*t")
 if time.hour < 5 or time.hour > 17 then
-	vim.g.tokyonight_style = "night"
-	vim.cmd([[colorscheme tokyonight]])
+	vim.cmd([[colorscheme tokyonight-day]])
 else
-	vim.g.tokyonight_style = "day"
-	vim.cmd([[colorscheme tokyonight]])
+	vim.cmd([[colorscheme tokyonight-night]])
 end
