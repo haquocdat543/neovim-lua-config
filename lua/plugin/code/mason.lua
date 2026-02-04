@@ -173,21 +173,36 @@ return {
 			},
 		})
 
+		vim.lsp.config("rust-analyzer", {
+			settings = {
+				["rust-analyzer"] = {
+					procMacro = {
+						enable = true,
+					},
+					cargo = {
+						buildScripts = {
+							enable = true,
+						},
+					},
+				},
+			},
+		})
+
 		vim.lsp.config("ts_ls", {
 
 			root_dir = require("lspconfig.util").root_pattern(".git", "tsconfig.json", "package.json"),
 
 			init_options = {
-				hostInfo = "neovim"
+				hostInfo = "neovim",
 			},
 
 			settings = {
 				typescipt = {
 					preferences = {
-						importModuleSpecifierPreference = "non-relative"
-					}
-				}
-			}
+						importModuleSpecifierPreference = "non-relative",
+					},
+				},
+			},
 		})
 
 		local home = os.getenv("HOME")
