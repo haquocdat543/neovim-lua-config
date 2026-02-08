@@ -18,6 +18,7 @@
 
 return {
 	"neovim/nvim-lspconfig",
+	tag = "v2.5.0",
 	dependencies = {
 		"onsails/lspkind.nvim",
 		"antosha417/nvim-lsp-file-operations",
