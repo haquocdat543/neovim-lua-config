@@ -40,7 +40,7 @@ return {
 			"zk",
 			-- "lemminx",
 			"pylsp",
-			"csharp_ls",
+			"omnisharp",
 			"phpactor",
 			"html",
 			"cssls",
