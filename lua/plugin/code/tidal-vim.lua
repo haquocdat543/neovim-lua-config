@@ -1,5 +1,6 @@
 return {
 	"tidalcycles/vim-tidal",
+	enabled = false,
 	keys = {
 		{
 			"<leader>0",

@@ -1,5 +1,6 @@
 return {
 	"thgrund/tidal.nvim",
+	enabled = false,
 	opts = {
 		-- Your configuration here
 		-- See configuration section for defaults
