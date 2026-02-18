@@ -34,7 +34,7 @@ return {
 			"jsonls",
 			"bashls",
 			"gopls",
-			-- "rust_analyzer",
+			"rust_analyzer",
 			"terraformls",
 			"zls",
 			"zk",
