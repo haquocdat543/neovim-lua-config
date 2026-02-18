@@ -31,5 +31,16 @@ return {
 			dap = {
 			},
 		}
+		vim.api.nvim_create_autocmd(
+			{
+				"BufRead",
+			},
+			{
+				pattern = "*.rs",
+				callback = function()
+					vim.keymap.set("n", "<leader>rr", "<CMD>RustRun<CR>", { desc = "Run Rust" })
+				end,
+			}
+		)
 	end
 }

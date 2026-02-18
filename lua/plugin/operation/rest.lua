@@ -13,17 +13,17 @@ return {
 				winbar = true,
 			},
 		})
+		vim.api.nvim_create_autocmd(
+			{
+				"BufRead",
+			},
+			{
+				pattern = "*.http",
+				callback = function()
+					vim.keymap.set("n", "<leader>rr", "<CMD>Rest run<CR>", { desc = "Run RestfulAPI under cursor" })
+					vim.keymap.set("n", "<leader>rc", "<C-w>h<C-w>c", { desc = "Close left window" })
+				end,
+			}
+		)
 	end,
-	keys = {
-		{
-			"<leader>rr",
-			"<CMD>Rest run<CR>",
-			desc = "Run RestfulAPI under cursor",
-		},
-		{
-			"<leader>rc",
-			"<C-w>h<C-w>c",
-			desc = "Close left window",
-		},
-	},
 }
