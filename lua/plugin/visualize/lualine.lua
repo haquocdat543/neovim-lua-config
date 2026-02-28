@@ -37,6 +37,38 @@ return {
 				-- theme = "catppuccin",
 				-- theme = "tokyonight",
 				theme = "auto",
+				globalstatus = true,
+			},
+			sections = {},
+			tabline = {},
+			winbar = {
+				lualine_a = { "mode" },
+				lualine_b = { "branch", "diff" },
+				lualine_c = {
+					{
+						-- git working directory
+						function()
+							return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
+						end
+					},
+					{
+						-- current working directory
+						function()
+							return vim.fn.fnamemodify(
+								vim.fn.expand("%:p:h"),
+								":t"
+							)
+						end
+					}
+					,
+					"filename", "diagnostics"
+				},
+				lualine_x = { "encoding", "fileformat", "filetype" },
+				lualine_y = { "progress" },
+				lualine_z = { "location", {
+					"datetime",
+					style = "%H:%M",
+				} },
 			},
 		})
 	end,
