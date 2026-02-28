@@ -39,10 +39,10 @@ return {
 				theme = "auto",
 				globalstatus = true,
 			},
-			sections = {},
+			winbar = {},
 			tabline = {},
 			inactive_winbar = {},
-			winbar = {
+			sections = {
 				lualine_a = { "mode" },
 				lualine_b = { "branch", "diff" },
 				lualine_c = {
