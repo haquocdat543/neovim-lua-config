@@ -47,23 +47,51 @@ return {
 				lualine_c = {
 					{
 						function()
-							local git_dir = vim.fs.find(".git", { upward = true })[1]
-							if not git_dir then
+							local file_path = vim.fn.expand("%:p")
+							if file_path == "" then
 								return ""
 							end
 
-							local git_root = vim.fs.dirname(git_dir)
-							local git_name = vim.fn.fnamemodify(git_root, ":t")
+							local file_dir = vim.fn.fnamemodify(file_path, ":h")
+							local home = vim.fn.expand("~")
 
-							local file_dir = vim.fn.expand("%:p:h")
+							-- Detect git root from current file (not cwd)
+							local git_dir = vim.fs.find(".git", {
+								path = file_dir,
+								upward = true,
+							})[1]
 
-							if file_dir == git_root then
-								return git_name
+							-- Inside Git Repo
+							if git_dir then
+								local git_root = vim.fs.dirname(git_dir)
+								local git_name = vim.fn.fnamemodify(git_root, ":t")
+
+								if file_dir == git_root then
+									return git_name
+								end
+
+								local relative = file_dir:sub(#git_root + 2)
+								if relative and relative ~= "" then
+									relative = relative:gsub("/", "  ")
+									return git_name .. "  " .. relative
+								else
+									return git_name
+								end
 							end
 
-							local relative = file_dir:sub(#git_root + 2)
+							-- Not in Git, inside HOME
+							if file_dir:sub(1, #home) == home then
+								local relative = file_dir:sub(#home + 2)
 
-							return git_name .. "/" .. relative
+								if relative == "" then
+									return "~"
+								end
+
+								return relative:gsub("/", "  ")
+							end
+
+							-- Outside HOME → absolute
+							return file_dir:gsub("/", "  ")
 						end,
 					}
 					,
