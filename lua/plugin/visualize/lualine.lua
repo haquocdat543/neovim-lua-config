@@ -41,6 +41,7 @@ return {
 			},
 			sections = {},
 			tabline = {},
+			inactive_winbar = {},
 			winbar = {
 				lualine_a = { "mode" },
 				lualine_b = { "branch", "diff" },
