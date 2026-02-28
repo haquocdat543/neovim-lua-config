@@ -46,19 +46,25 @@ return {
 				lualine_b = { "branch", "diff" },
 				lualine_c = {
 					{
-						-- git working directory
 						function()
-							return vim.fn.fnamemodify(vim.fn.getcwd(), ":t")
-						end
-					},
-					{
-						-- current working directory
-						function()
-							return vim.fn.fnamemodify(
-								vim.fn.expand("%:p:h"),
-								":t"
-							)
-						end
+							local git_dir = vim.fs.find(".git", { upward = true })[1]
+							if not git_dir then
+								return ""
+							end
+
+							local git_root = vim.fs.dirname(git_dir)
+							local git_name = vim.fn.fnamemodify(git_root, ":t")
+
+							local file_dir = vim.fn.expand("%:p:h")
+
+							if file_dir == git_root then
+								return git_name
+							end
+
+							local relative = file_dir:sub(#git_root + 2)
+
+							return git_name .. "/" .. relative
+						end,
 					}
 					,
 					"filename", "diagnostics"
