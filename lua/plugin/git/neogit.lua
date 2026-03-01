@@ -29,7 +29,7 @@ return {
 				["d"] = false,
 				["D"] = "Drop",
 				["p"] = false,
-				["P"] = "Pick",
+				["P"] = false,
 			},
 		},
 	},
