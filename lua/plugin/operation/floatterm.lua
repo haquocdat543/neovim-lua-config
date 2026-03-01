@@ -15,6 +15,7 @@ return {
 		{
 			"<leader>ft",
 			"<CMD>FloatermNew<CR>",
+			{ desc = "Open float terminal" }
 		},
 	},
 }
