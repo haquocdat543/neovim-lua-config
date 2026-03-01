@@ -8,10 +8,7 @@ return {
 	keys = {
 		{
 			"<leader>tl",
-			function()
-				vim.o.paste = false
-				require("telescope").extensions.projects.projects()
-			end,
+			"<CMD>Telescope<CR>",
 			desc = "Open Telescope",
 		},
 
