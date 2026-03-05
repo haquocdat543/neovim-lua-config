@@ -39,8 +39,6 @@ return {
 				theme = "auto",
 				globalstatus = true,
 			},
-			winbar = {},
-			tabline = {},
 			inactive_winbar = {},
 			sections = {
 				lualine_a = { "mode" },
