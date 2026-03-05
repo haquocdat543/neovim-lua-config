@@ -86,7 +86,7 @@ return {
 									return "~"
 								end
 
-								return relative:gsub("/", "  ")
+								return "~  " .. relative:gsub("/", "  ")
 							end
 
 							-- Outside HOME → absolute
