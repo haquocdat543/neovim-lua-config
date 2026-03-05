@@ -39,7 +39,6 @@ return {
 				theme = "auto",
 				globalstatus = true,
 			},
-			inactive_winbar = {},
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = { "branch", "diff" },
