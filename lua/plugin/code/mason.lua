@@ -195,6 +195,13 @@ return {
 					procMacro = {
 						enable = true,
 					},
+					hover = {
+						actions = {
+							references = {
+								enable = true
+							}
+						}
+					},
 					lens = {
 						references = {
 							adt = {
