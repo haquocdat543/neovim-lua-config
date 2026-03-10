@@ -109,12 +109,25 @@ return {
 		end
 
 		local servers = mason_lspconfig.get_installed_servers()
+		local skip_servers = {
+			lua_ls = true,
+			rust_analyzer = true,
+			taplo = true,
+			gopls = true,
+			-- jdtls = true,
+			ts_ls = true,
+			emmet_language_server = true,
+			tailwindcss = true,
+			terraformls = true,
+		}
 
 		for _, server in ipairs(servers) do
-			lspconfig[server].setup({
-				on_attach = on_attach,
-				capabilities = capabilities,
-			})
+			if not skip_servers[server] then
+				lspconfig[server].setup({
+					on_attach = on_attach,
+					capabilities = capabilities,
+				})
+			end
 		end
 
 		vim.lsp.config("terraformls", {
