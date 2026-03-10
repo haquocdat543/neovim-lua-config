@@ -119,6 +119,7 @@ return {
 			jsonls = true,
 			ts_ls = true,
 			emmet_language_server = true,
+			cssls = true,
 			tailwindcss = true,
 			terraformls = true,
 		}
@@ -156,6 +157,14 @@ return {
 						enable = true,
 					},
 				},
+			},
+		})
+
+		vim.lsp.config("cssls", {
+			settings = {
+				css = { validate = true },
+				scss = { validate = true },
+				less = { validate = true },
 			},
 		})
 
