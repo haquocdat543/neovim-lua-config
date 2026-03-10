@@ -195,6 +195,11 @@ return {
 					procMacro = {
 						enable = true,
 					},
+					diagnostics = {
+						styleLints = {
+							enable = true
+						}
+					},
 					imports = {
 						granularity = {
 							enforce = true
