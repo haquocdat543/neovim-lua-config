@@ -195,6 +195,11 @@ return {
 					procMacro = {
 						enable = true,
 					},
+					imports = {
+						granularity = {
+							enforce = true
+						}
+					},
 					hover = {
 						actions = {
 							references = {
