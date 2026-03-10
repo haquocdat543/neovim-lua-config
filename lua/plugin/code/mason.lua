@@ -117,7 +117,7 @@ return {
 			dockerls = true,
 			-- jdtls = true,
 			jsonls = true,
-			ts_ls = true,
+			-- ts_ls = true,
 			emmet_language_server = true,
 			cssls = true,
 			tailwindcss = true,
