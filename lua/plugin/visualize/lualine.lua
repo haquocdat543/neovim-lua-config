@@ -90,8 +90,8 @@ return {
 
 								local relative = file_dir:sub(#git_root + 2)
 								if relative and relative ~= "" then
-									relative = relative:gsub("/", "  ")
-									return git_name .. "  " .. relative
+									relative = relative:gsub("/", " → ")
+									return git_name .. " → " .. relative
 								else
 									return git_name
 								end
@@ -105,15 +105,25 @@ return {
 									return "~"
 								end
 
-								return "~  " .. relative:gsub("/", "  ")
+								return "~ / " .. relative:gsub("/", " → ")
 							end
 
 							-- Outside HOME → absolute
-							return file_dir:gsub("/", "  ")
+							return file_dir:gsub("/", " → ")
 						end,
-					}
-					,
-					"filename", "diagnostics", "lsp_status"
+						separator = "→",
+					},
+					{
+						"filename",
+						separator = "->>",
+					},
+					{
+						"lsp_status",
+						separator = "->>",
+					},
+					{
+						"diagnostics",
+					},
 				},
 				lualine_x = { "searchcount", "selectioncount", "encoding", "fileformat", "filetype" },
 				lualine_y = { "progress" },
