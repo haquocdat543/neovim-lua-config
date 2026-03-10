@@ -55,7 +55,13 @@ return {
 			},
 			sections = {
 				lualine_a = { "mode" },
-				lualine_b = { "branch", "diff" },
+				lualine_b = {
+					{
+						"branch",
+						icon = ""
+					},
+					"diff"
+				},
 				lualine_c = {
 					{
 						function()
@@ -107,67 +113,15 @@ return {
 						end,
 					}
 					,
-					"filename", "diagnostics"
+					"filename", "diagnostics", "lsp_status"
 				},
-				lualine_x = { "encoding", "fileformat", "filetype" },
+				lualine_x = { "searchcount", "selectioncount", "encoding", "fileformat", "filetype" },
 				lualine_y = { "progress" },
 				lualine_z = { "location", {
 					"datetime",
 					style = "%H:%M",
 				} },
 			},
-		}
-
-		local conditions = {
-			buffer_not_empty = function()
-				return vim.fn.empty(vim.fn.expand('%:t')) ~= 1
-			end,
-			hide_in_width = function()
-				return vim.fn.winwidth(0) > 80
-			end,
-			check_git_workspace = function()
-				local filepath = vim.fn.expand('%:p:h')
-				local gitdir = vim.fn.finddir('.git', filepath .. ';')
-				return gitdir and #gitdir > 0 and #gitdir < #filepath
-			end,
-		}
-
-		-- Inserts a component in lualine_c at left section
-		local function ins_left(component)
-			table.insert(config.sections.lualine_c, component)
-		end
-
-		-- Inserts a component in lualine_x at right section
-		-- local function ins_right(component)
-		-- 	table.insert(config.sections.lualine_x, component)
-		-- end
-		--
-		--
-
-		ins_left {
-			-- Lsp server name .
-			function()
-				local msg = 'No Active Lsp'
-				local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
-				local clients = vim.lsp.get_active_clients()
-				if next(clients) == nil then
-					return msg
-				end
-				local X = ""
-				for _, client in ipairs(clients) do
-					local filetypes = client.config.filetypes
-					if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
-						X = client.name .. "," .. X
-					end
-				end
-				if not (X == "") then
-					return X:sub(1, -2)
-				else
-					return msg
-				end
-			end,
-			icon = ' LSP:',
-			color = { fg = '#ffffff', gui = 'bold' },
 		}
 
 		lualine.setup(config)
