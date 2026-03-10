@@ -34,5 +34,11 @@ return {
 			local hl = "DiagnosticSign" .. type
 			vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 		end
+
+		vim.keymap.set("n", "<leader>-", function()
+			for _, d in ipairs(vim.diagnostic.get(0)) do
+				print(vim.inspect(d))
+			end
+		end, { desc = "Show LSP diagnostic sources" })
 	end,
 }
