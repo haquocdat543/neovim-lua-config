@@ -1,21 +1,29 @@
 return {
-	"voldikss/vim-floaterm",
-	config = function()
-		vim.g.floaterm_position = "topright"
-		vim.g.floaterm_width = 0.6
-		vim.g.floaterm_height = 0.8
-		vim.g.floaterm_title = "Terminal $1/$2"
-		vim.g.floaterm_wintype = "float"
-		vim.g.floaterm_rootmarkers = { ".pro" }
+	"nvzone/floaterm",
+	dependencies = "nvzone/volt",
+	opts = function()
+		return {
+			border = true,
+			size = { w = 80, h = 80 }, -- use dynamic size
+			mappings = {
+				sidebar = nil,
+				term = function(buf)
+					vim.keymap.set({ "n", "t" }, "<C-e>", "<CMD>FloatermToggle<CR>", { buffer = buf })
+				end,
+			},
+			terminals = {
+				{ name = "Terminal" },
+				{ name = "Terminal", cmd = "neofetch" },
+				-- more terminals
+			},
+		}
 	end,
-	init = function()
-		-- vim.keymap.set("n", "<leader>tt", ":terminal<CR>")
-	end,
+	cmd = "FloatermToggle",
 	keys = {
 		{
-			"<leader>ft",
-			"<CMD>FloatermNew<CR>",
-			{ desc = "Open float terminal" }
+			"<C-e>",
+			"<CMD>FloatermToggle<CR>",
+			{ desc = "Toggle float terminal" }
 		},
 	},
 }
