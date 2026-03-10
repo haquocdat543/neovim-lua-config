@@ -195,6 +195,22 @@ return {
 					procMacro = {
 						enable = true,
 					},
+					lens = {
+						references = {
+							adt = {
+								enable = true
+							},
+							enumVariant = {
+								enable = true
+							},
+							method = {
+								enable = true
+							},
+							trait = {
+								enable = true
+							}
+						}
+					},
 					cargo = {
 						buildScripts = {
 							enable = true,
