@@ -207,6 +207,18 @@ return {
 							}
 						}
 					},
+					inlayHints = {
+						genericParameterHints = {
+							lifetime = {
+								enable = true
+							}
+						},
+						parameterHints = {
+							missingArguments = {
+								enable = true
+							}
+						}
+					},
 					lens = {
 						references = {
 							adt = {
