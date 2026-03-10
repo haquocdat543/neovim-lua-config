@@ -97,6 +97,15 @@ return {
 			desc = "Git status",
 		},
 
+		{
+			"<leader>0",
+			function()
+				vim.o.paste = false
+				require("telescope.builtin").lsp_document_symbols()
+			end,
+			desc = "Git status",
+		},
+
 		-- { "<leader>j", function() vim.o.paste = false require("telescope").extensions.emoji.emoji() end, desc = "Emoji Picker", },
 
 		{
