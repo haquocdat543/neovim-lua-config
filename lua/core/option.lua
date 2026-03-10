@@ -21,6 +21,8 @@ vim.opt.shiftwidth = 2   -- Indent by 2 spaces
 vim.opt.softtabstop = 2  -- Backspace removes 2 spaces at a time
 vim.opt.expandtab = true -- Convert tabs to spaces on insert
 vim.opt.smartindent = true
+vim.opt.list = true
+vim.opt.listchars = { tab = "→ ", space = "·" }
 
 vim.opt.autoindent = true  -- Maintain indentation level on new lines
 vim.opt.smartindent = true -- Auto-indent based on syntax
