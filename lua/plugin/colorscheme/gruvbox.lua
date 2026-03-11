@@ -5,7 +5,7 @@ return {
 			contrast = "hard",
 			palette_overrides = { dark0_hard = "#0E1018" },
 			overrides = {
-				NormalFloat = { fg = "#ebdbb2", bg = "#504945" },
+				NormalFloat = { fg = "#ebdbb2", bg = "#0E1018" },
 				Comment = { fg = "#81878f", italic = true, bold = true },
 				Define = { link = "GruvboxPurple" },
 				Macro = { link = "GruvboxPurple" },
