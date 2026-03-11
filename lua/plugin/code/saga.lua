@@ -1,8 +1,9 @@
 return {
 	"glepnir/lspsaga.nvim",
+	lazy = false,
 	keys = {
 		{
-			"<leader>K",
+			"K",
 			vim.lsp.buf.hover,
 			desc = "Hover documentation"
 		},
