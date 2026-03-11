@@ -8,7 +8,7 @@ return {
 			mappings = {
 				sidebar = nil,
 				term = function(buf)
-					vim.keymap.set({ "n", "t" }, "<C-e>", "<CMD>FloatermToggle<CR>", { buffer = buf })
+					vim.keymap.set({ "n", "t" }, "<C-,>", "<CMD>FloatermToggle<CR>", { buffer = buf })
 				end,
 			},
 			terminals = {
@@ -21,7 +21,7 @@ return {
 	cmd = "FloatermToggle",
 	keys = {
 		{
-			"<C-e>",
+			"<C-,>",
 			"<CMD>FloatermToggle<CR>",
 			{ desc = "Toggle float terminal" }
 		},
