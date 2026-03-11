@@ -20,7 +20,7 @@ return {
 				luaError = { link = "NONE" },
 				ContextVt = { fg = "#878788" },
 				CopilotSuggestion = { fg = "#878787" },
-				CocCodeLens = { fg = "#878787" },
+				CocCodeLens = { fg = "#0E1018" },
 				CocWarningFloat = { fg = "#dfaf87" },
 				CocInlayHint = { fg = "#ABB0B6" },
 				CocPumShortcut = { fg = "#fe8019" },
