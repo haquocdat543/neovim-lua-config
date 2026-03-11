@@ -29,9 +29,38 @@ return {
 		local capabilities = cmp_nvim_lsp.default_capabilities()
 
 		cmp.setup({
+			formatting = {
+				-- order of columns in completion menu
+				fields = { "abbr", "menu", "icon", "kind" },
+
+				-- function to format each item
+				format = lspkind.cmp_format({
+					mode = 'symbol', -- only show the icon
+					maxwidth = 50, -- optional: truncate long items
+					ellipsis_char = '…',
+					before = function(entry, vim_item)
+						-- Set menu to show the source
+						vim_item.menu = ({
+							buffer = "[Buffer]",
+							nvim_lsp = "[LSP]",
+							nvim_lua = "[Lua]",
+							path = "[Path]",
+							luasnip = "[Snip]",
+						})[entry.source.name]
+						return vim_item
+					end
+				}),
+			},
 
 			window = {
-				completion = cmp.config.window.bordered(),
+				completion = cmp.config.window.bordered({
+					border = "rounded",
+					winhighlight = "Normal:CmpPmenu,CursorLine:PmenuSel,Search:None",
+				}),
+				documentation = cmp.config.window.bordered({
+					border = "rounded",
+					winhighlight = "Normal:CmpDoc,FloatBorder:CmpDocBorder",
+				}),
 			},
 
 			snippet = {
