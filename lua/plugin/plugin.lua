@@ -58,6 +58,7 @@ require("lazy").setup({
 	require("plugin.navigation.which-keys"),
 	require("plugin.navigation.sshfs"),
 	require("plugin.navigation.neoscroll"),
+	require("plugin.navigation.auto-session"),
 
 	-- visualize
 	require("plugin.visualize.icon"),
