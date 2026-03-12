@@ -71,6 +71,7 @@ require("lazy").setup({
 	require("plugin.visualize.markdown-preview"),
 	require("plugin.visualize.indent"),
 	require("plugin.visualize.noice"),
+	require("plugin.visualize.trouble"),
 
 	-- operation
 	require("plugin.operation.k9s"),
