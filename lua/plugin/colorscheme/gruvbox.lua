@@ -1,11 +1,14 @@
 return {
 	"ellisonleao/gruvbox.nvim",
 	config = function()
+		local color = {
+			dark = "#0E1018"
+		}
 		require("gruvbox").setup({
 			contrast = "hard",
-			palette_overrides = { dark0_hard = "#0E1018" },
+			palette_overrides = { dark0_hard = color.dark },
 			overrides = {
-				NormalFloat = { fg = "#ebdbb2", bg = "#0E1018" },
+				NormalFloat = { fg = "#ebdbb2", bg = color.dark },
 				Comment = { fg = "#81878f", italic = true, bold = true },
 				Define = { link = "GruvboxPurple" },
 				Macro = { link = "GruvboxPurple" },
@@ -20,15 +23,15 @@ return {
 				luaError = { link = "NONE" },
 				ContextVt = { fg = "#878788" },
 				CopilotSuggestion = { fg = "#878787" },
-				CocCodeLens = { fg = "#0E1018" },
+				CocCodeLens = { fg = color.dark },
 				CocWarningFloat = { fg = "#dfaf87" },
 				CocInlayHint = { fg = "#ABB0B6" },
 				CocPumShortcut = { fg = "#fe8019" },
 				CocPumDetail = { fg = "#fe8019" },
-				DiagnosticVirtualTextWarn = { fg = "#dfaf87" },
+				DiagnosticVirtualTextWarn = { fg = color.dark },
 				-- fold
-				Folded = { fg = "#fe8019", bg = "#0E1018", italic = true },
-				-- SignColumn = { bg = "#fe8019" },
+				Folded = { fg = "#fe8019", bg = color.dark, italic = true },
+				SignColumn = { bg = color.dark },
 				-- new git colors
 				DiffAdd = {
 					bold = true,
