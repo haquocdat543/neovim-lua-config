@@ -32,6 +32,9 @@ vim.opt.viminfo = "'100,<1000000,s100000,h"
 -- Set option
 vim.o.paste = true -- global option
 
+-- Always enable sign column
+vim.opt.signcolumn = "yes"
+
 -- Detect OS / environment
 local uname = vim.loop.os_uname().sysname
 
