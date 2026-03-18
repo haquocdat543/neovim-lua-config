@@ -24,6 +24,28 @@ return {
 		integrations = {
 			telescope = true,
 		},
+		sections = {
+			stashes = {
+				folded = false,
+				hidden = false,
+			},
+			unpulled_upstream = {
+				folded = false,
+				hidden = false,
+			},
+			unpulled_pushRemote = {
+				folded = false,
+				hidden = false,
+			},
+			recent = {
+				folded = false,
+				hidden = false,
+			},
+			rebase = {
+				folded = false,
+				hidden = false,
+			},
+		},
 		mappings = {
 			rebase_editor = {
 				["d"] = false,
