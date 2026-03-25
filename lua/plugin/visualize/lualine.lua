@@ -115,11 +115,9 @@ return {
 					},
 					{
 						"filename",
-						separator = "->>",
 					},
 					{
 						"lsp_status",
-						separator = "->>",
 					},
 					{
 						"diagnostics",
