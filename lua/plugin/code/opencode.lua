@@ -1,6 +1,6 @@
 return {
 	"nickjvandyke/opencode.nvim",
-	enable = false,
+	enable = true,
 	dependencies = {
 		-- Recommended for `ask()` and `select()`.
 		-- Required for `snacks` provider.
