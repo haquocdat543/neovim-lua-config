@@ -60,9 +60,9 @@ vim.keymap.set("i", "<C-x>", "<Esc><Esc>")
 vim.keymap.set("n", "<leader>rg", ":registers<CR>", { desc = "Registers" })
 
 -- Terminal
-vim.keymap.set("n", "<leader>tn", ":split<CR><C-w>w:term<CR>i")
-vim.keymap.set("n", "<leader>tm", ":split<CR><C-w>w:horizontal resize -10<CR>:term<CR>i",
-	{ desc = "Open terminal at bottom" })
+-- vim.keymap.set("n", "<leader>tn", ":split<CR><C-w>w:term<CR>i")
+-- vim.keymap.set("n", "<leader>tm", ":split<CR><C-w>w:horizontal resize -10<CR>:term<CR>i",
+-- 	{ desc = "Open terminal at bottom" })
 
 -- Diff
 -- vim.keymap.set("n", "<leader>dd", ":windo diffthis<CR>", { desc = "Diff these" })
