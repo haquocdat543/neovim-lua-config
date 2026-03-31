@@ -65,8 +65,8 @@ vim.keymap.set("n", "<leader>tm", ":split<CR><C-w>w:horizontal resize -10<CR>:te
 	{ desc = "Open terminal at bottom" })
 
 -- Diff
-vim.keymap.set("n", "<leader>dd", ":windo diffthis<CR>", { desc = "Diff these" })
-vim.keymap.set("n", "<leader>do", ":diffoff!<CR>", { desc = "Diff close" })
+-- vim.keymap.set("n", "<leader>dd", ":windo diffthis<CR>", { desc = "Diff these" })
+-- vim.keymap.set("n", "<leader>do", ":diffoff!<CR>", { desc = "Diff close" })
 
 -- System - default file open
 vim.keymap.set("n", "<leader>nn", ":set nopaste<CR>", { desc = "Set no paste" })
