@@ -73,6 +73,7 @@ require("lazy").setup({
 	require("plugin.visualize.indent"),
 	require("plugin.visualize.noice"),
 	require("plugin.visualize.trouble"),
+	require("plugin.visualize.namu"),
 
 	-- operation
 	require("plugin.operation.k9s"),
