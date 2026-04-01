@@ -103,7 +103,16 @@ return {
 				vim.o.paste = false
 				require("telescope.builtin").lsp_document_symbols()
 			end,
-			desc = "Git status",
+			desc = "LSP document symbols",
+		},
+
+		{
+			"<leader>-",
+			function()
+				vim.o.paste = false
+				require("telescope.builtin").lsp_dynamic_workspace_symbols()
+			end,
+			desc = "LSP dynamic workspace symbols",
 		},
 
 		-- { "<leader>j", function() vim.o.paste = false require("telescope").extensions.emoji.emoji() end, desc = "Emoji Picker", },
