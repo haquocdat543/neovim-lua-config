@@ -318,6 +318,10 @@ return {
 				},
 			},
 		})
+		require('lspconfig').clangd.setup {
+			cmd = { "clangd" },
+			filetypes = { "c", "cpp", "llvm" },
+		}
 	end,
 	init = function()
 		vim.keymap.set("n", "<leader>mm", ":Mason<CR>")
