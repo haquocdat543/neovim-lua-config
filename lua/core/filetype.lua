@@ -5,6 +5,7 @@ vim.filetype.add({
 		-- tf = "tf",
 		tidal = "tidal",
 		scd = "supercollider",
+		ll = "llvm",
 	},
 	filename = {
 		-- TERRAFORM
