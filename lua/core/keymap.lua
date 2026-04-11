@@ -23,7 +23,7 @@ vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { desc = "Move line up" })
 vim.keymap.set("n", "<A-k>", ":m .-2<CR>==", { desc = "Move line down" })
 vim.keymap.set("n", "<leader>aa", ":UltiSnipsEdit<CR>", { desc = "Open Ultisnip " })
 vim.keymap.set("n", "<leader>ww", ":w!<CR>", { desc = "Write to file" })
-vim.keymap.set("n", "<C-s>s", ":<ESC>w!<CR>")
+-- vim.keymap.set("n", "<C-s>s", ":<ESC>w!<CR>")
 vim.keymap.set("n", "<A-n>n", ":n<CR>")
 vim.keymap.set("n", "<A-p>p", ":p<CR>")
 
