@@ -74,6 +74,7 @@ require("lazy").setup({
 	require("plugin.visualize.noice"),
 	require("plugin.visualize.trouble"),
 	require("plugin.visualize.namu"),
+	require("plugin.visualize.crypto"),
 
 	-- operation
 	require("plugin.operation.k9s"),
