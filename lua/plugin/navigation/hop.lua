@@ -1,5 +1,5 @@
 return {
-	"phaazon/hop.nvim",
+	"cmoka7/hop.nvim",
 	enabled = true,
 	config = function()
 		require("hop").setup() { keys = "etovxqpdygfblzhckisuran" }
