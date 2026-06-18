@@ -9,4 +9,4 @@
 -- 	vim.cmd([[colorscheme tokyonight-night]])
 -- end
 
-vim.cmd([[colorscheme gruvbox]])
+vim.cmd([[colorscheme tokyonight-night]])
