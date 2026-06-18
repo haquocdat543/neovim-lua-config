@@ -105,6 +105,7 @@ require("lazy").setup({
 	require("plugin.code.supercollider"),
 	require("plugin.code.strudel"),
 	require("plugin.code.opencode"),
+	require("plugin.code.claude"),
 
 	-- task
 	require("plugin.task.pomodoro"),
