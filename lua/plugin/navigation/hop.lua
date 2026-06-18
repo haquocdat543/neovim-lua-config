@@ -1,5 +1,5 @@
 return {
-	"cmoka7/hop.nvim",
+	"smoka7/hop.nvim",
 	enabled = true,
 	config = function()
 		require("hop").setup() { keys = "etovxqpdygfblzhckisuran" }
