@@ -275,6 +275,10 @@ return {
 			},
 		})
 
+		require('lspconfig').ruby_lsp.setup {
+			cmd = { vim.fn.expand("~/.local/share/mise/shims/ruby-lsp") },
+		}
+
 		local home = os.getenv("HOME")
 
 		vim.lsp.config("jdtls", {
