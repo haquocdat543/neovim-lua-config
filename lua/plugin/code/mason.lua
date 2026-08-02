@@ -279,6 +279,11 @@ return {
 			cmd = { vim.fn.expand("~/.local/share/mise/shims/ruby-lsp") },
 		}
 
+		vim.lsp.config("pylsp", {
+			cmd = { ".venv/bin/pylsp" },
+			root_dir = require("lspconfig.util").root_pattern("pyproject.toml", ".git"),
+		})
+
 		local home = os.getenv("HOME")
 
 		vim.lsp.config("jdtls", {
